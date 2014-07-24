@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>sprite</key>
+	<dict>
+		<key>walk</key>
+		<integer>4</integer>
+		<key>attack</key>
+		<integer>2</integer>
+	</dict>
+	<key>maxHP</key>
+	<integer>25</integer>
+	<key>strength</key>
+	<integer>22</integer>
+	<key>defense</key>
+	<integer>22</integer>
+	<key>defaultSpeed</key>
+	<real>0.5</real>
+	<key>experience</key>
+	<integer>55</integer>
+	<key>attackSound</key>
+	<string>attackTamara.caf</string>
+	<key>shadowSize</key>
+	<integer>0</integer>
+	<key>pNapping</key>
+	<integer>40</integer>
+</dict>
+</plist>

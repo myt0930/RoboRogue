@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="80" tilewidth="25" tileheight="25">
+ <properties>
+  <property name="iPadScaleFactor" value="2.0"/>
+ </properties>
+ <tileset firstgid="1" name="ground" tilewidth="25" tileheight="25">
+  <image source="ground.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="5" name="wall" tilewidth="25" tileheight="25">
+  <image source="wall.png" width="100" height="150"/>
+ </tileset>
+ <tileset firstgid="29" name="shadow" tilewidth="25" tileheight="25">
+  <image source="shadow.png" width="100" height="100"/>
+ </tileset>
+ <layer name="groundLayer" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3RwQnAMBDAsEvb/WduZshHGPIwGsBrZp7duh757r7rsfpfXf2vrv5XV/+rq//V1f/q6n919b+6+l9d/a+u/ldX/6ur/9XV/+rqf3X1v7r6X139r67+V1f/q6v/1dX/6up/dfW/uvpfXf2vrv5XV/+rq//V1f/q6n919b+6+l9d/a+u/ldX/6ur/9XV/+rqf3X1v7r6X139r67+V1f/q6v/1dX/6up/dfW/uvpfXf2vrv5XV/+rq//V1f/q6n919b+6+l9d/a+u/ldX/6ur/9XV/+rqf3X1v7r6X139r67+V1f/q6v/1dX/6up/dfW/uvpfXf2vrv5XV/+rq//V1f/q/nS4brUAZAAA
+  </data>
+ </layer>
+ <layer name="wallLayer" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BIQEAAAACIIv/L/vBDDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAax5vL0kAZAAA
+  </data>
+ </layer>
+ <layer name="shadowLayer0" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer1" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer2" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer3" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer4" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer5" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer6" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer7" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer8" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+ <layer name="shadowLayer9" width="80" height="80">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3DQQ0AAAwDodNS/yLnYW9IWDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX19QDItbPoAGQAAA==
+  </data>
+ </layer>
+</map>

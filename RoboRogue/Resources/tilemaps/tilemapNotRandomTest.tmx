@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="25" tileheight="25">
+ <properties>
+  <property name="iPadScaleFactor" value="2.0"/>
+ </properties>
+ <tileset firstgid="1" name="ground" tilewidth="25" tileheight="25">
+  <image source="ground.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="5" name="wall" tilewidth="25" tileheight="25">
+  <image source="wall.png" width="100" height="150"/>
+ </tileset>
+ <layer name="groundLayer" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3PsREAIAzEsA+w/8xkikChwudalWR1NfzdnQefdvLy8vLy8vLy8vLy8v7qveC+apoQDgAA
+  </data>
+ </layer>
+ <layer name="wallLayer" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2PMQqAMBAEr1NQlFw0iv7/n25xwVQpN80GhmWuymQzu0CJzQT32BW84AELwT3+cNv/ToKX6D2aeyK4etWrXvWqt+/qVa961avevo/ube+J4LV3BjvYwETw2usD9gP2yF9TEA4AAA==
+  </data>
+ </layer>
+ <objectgroup name="itemAndTrapLayer" width="30" height="30"/>
+ <objectgroup name="characterLayer" width="30" height="30">
+  <object name="Player" x="364" y="59" width="21" height="12"/>
+  <object name="Golem" x="159" y="60" width="23" height="11"/>
+  <object name="Pikanyan" x="459" y="65" width="31" height="7"/>
+  <object name="Pikagon" x="559" y="64" width="32" height="9"/>
+  <object name="Slime" x="265" y="59" width="21" height="11"/>
+ </objectgroup>
+</map>

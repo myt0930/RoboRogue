@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>goal</key>
+	<integer>6</integer>
+	<key>initialItems</key>
+	<array/>
+	<key>floor1</key>
+	<dict>
+		<key>tiledFileName</key>
+		<string>tilemapNotRandomTest.tmx</string>
+		<key>random</key>
+		<false/>
+		<key>baseMapID</key>
+		<integer>-4</integer>
+		<key>shadow</key>
+		<false/>
+		<key>water</key>
+		<false/>
+		<key>lava</key>
+		<false/>
+		<key>moreLine</key>
+		<false/>
+		<key>pMaze</key>
+		<integer>0</integer>
+		<key>pOneRoom</key>
+		<integer>0</integer>
+		<key>pShop</key>
+		<integer>0</integer>
+		<key>pMonstersNest</key>
+		<integer>0</integer>
+		<key>itemNames</key>
+		<array/>
+		<key>enemyNames</key>
+		<array>
+			<string>Tamara</string>
+		</array>
+	</dict>
+</dict>
+</plist>
