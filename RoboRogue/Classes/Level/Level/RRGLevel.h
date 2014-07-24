@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, ZOrder)
     ZOrderGameOverLayer
 };
 
-@class RRGTiledMap, RRGAction, RRGPlayer, RRGRoom, RRGLevelObject, RRGCharacter, RRGItem, RRGTrap, RRGLabelLayer, RRGButtonLayer, RRGMessageWindowLayer, RRGLevelMapLayer, RRGItemWindowLayer, RRGModalLayer;
+@class RRGTiledMap, RRGAction, RRGPlayer, RRGRoom, RRGLevelObject, RRGCharacter, RRGItem, RRGTrap, RRGLabelLayer, RRGButtonLayer, RRGMessageWindowLayer, RRGLevelMapLayer, RRGItemWindowLayer, RRGModalLayer, RRGShadowInPathLayer;
 
 @interface RRGLevel : CCNode <NSCoding>
 /*
@@ -87,7 +87,7 @@ typedef NS_ENUM(NSUInteger, ZOrder)
 @property (nonatomic, weak) CCNode* currentShadowLayer;
 
 @property (nonatomic) RRGTiledMap* tiledMap;
-@property (nonatomic) CCTiledMap* shadowInPath;
+@property (nonatomic) RRGShadowInPathLayer* shadowInPathLayer;
 
 @property (nonatomic) RRGLabelLayer* labelLayer;
 @property (nonatomic) RRGButtonLayer* buttonLayer;

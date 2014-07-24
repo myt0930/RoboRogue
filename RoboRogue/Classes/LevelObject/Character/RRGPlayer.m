@@ -529,6 +529,6 @@ NSUInteger experienceForCharacterLevel(NSInteger level)
 }
 -(void)update:(CCTime)delta
 {
-    
+    //do nothing
 }
 @end

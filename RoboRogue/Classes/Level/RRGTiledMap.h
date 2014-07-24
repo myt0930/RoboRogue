@@ -45,6 +45,7 @@ typedef NS_ENUM(NSUInteger, ZOrderInTiledMap)
 @property (nonatomic) NSUInteger waterGID1;
 @property (nonatomic) NSUInteger skyGID1;
 @property (nonatomic) NSUInteger shadowGID1;
+@property (nonatomic) NSUInteger shadowGID;
 
 //tileCoord and position
 -(CGPoint)tileCoordForTilePoint:(CGPoint)tilePoint;

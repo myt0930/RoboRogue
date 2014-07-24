@@ -9,6 +9,8 @@
 #import "RRGLevel+MapID.h"
 
 #import "RRGRoom.h"
+#import "RRGTiledMap.h"
+#import "RRGShadowInPathLayer.h"
 
 const NSInteger RoomMapIDNotRoom = -11;
 
@@ -97,5 +99,19 @@ const NSInteger RoomMapIDNotRoom = -11;
 -(BOOL)skyAtTileCoord:(CGPoint)tileCoord
 {
     return ([self mapIDAtTileCoord:tileCoord] == MapIDSky)?YES:NO;
+}
+-(BOOL)shadowAtTilePoint:(CGPoint)tilePoint
+{
+    if (self.currentShadowLayer == self.shadowInPathLayer) {
+        // in path
+        CGPoint worldPos = [self.tiledMap convertToWorldSpace:tilePoint];
+        return [self.shadowInPathLayer shadowAtWorldPosition:worldPos];
+    } else {
+        // in room
+        CGPoint tileCoord = [self.tiledMap tileCoordForTilePoint:tilePoint];
+        tileCoord = ccpMult(tileCoord, 2);
+        CCTiledMapLayer* shadowLayer = (CCTiledMapLayer*)self.currentShadowLayer;
+        return ([shadowLayer tileGIDAt:tileCoord] == self.tiledMap.shadowGID)?YES:NO;
+    }
 }
 @end

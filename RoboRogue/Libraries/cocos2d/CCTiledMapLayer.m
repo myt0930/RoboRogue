@@ -192,7 +192,7 @@
 
 -(uint32_t) tileGIDAt:(CGPoint)pos withFlags:(ccTMXTileFlags*)flags
 {
-	NSAssert( pos.x < _mapColumns && pos.y < _mapRows && pos.x >=0 && pos.y >=0, @"TMXLayer: invalid position");
+	NSAssert( pos.x < _mapColumns && pos.y < _mapRows && pos.x >=0 && pos.y >=0, @"TMXLayer: invalid position. %@, %@", NSStringFromClass([self class]), NSStringFromCGPoint(pos));
 	NSAssert( _tiles, @"TMXLayer: the tiles map has been released");
 
 	NSInteger idx = (int)pos.x + (int)pos.y*_mapColumns;

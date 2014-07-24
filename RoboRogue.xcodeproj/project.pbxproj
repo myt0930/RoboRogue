@@ -383,6 +383,7 @@
 		8C14DC30194D2C4400AADB4A /* RRGLabelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C14DC2F194D2C4400AADB4A /* RRGLabelLayer.m */; };
 		8C1F7E3A196ED13C006E3475 /* RRGModalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F7E39196ED13C006E3475 /* RRGModalLayer.m */; };
 		8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456931980C74700748F59 /* shadowInPath.tmx */; };
+		8C445697198130AF00748F59 /* RRGShadowInPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C445696198130AF00748F59 /* RRGShadowInPathLayer.m */; };
 		8C94E7F7196B969500A14C82 /* RRGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E7F6196B969500A14C82 /* RRGGameScene.m */; };
 		8C961AE61956837200D9B8E5 /* RRGLevel+AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AE51956837200D9B8E5 /* RRGLevel+AddObject.m */; };
 		8C961AEC1956E06000D9B8E5 /* RRGLevel+MapID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AEB1956E06000D9B8E5 /* RRGLevel+MapID.m */; };
@@ -1033,6 +1034,8 @@
 		8C1F7E38196ED13C006E3475 /* RRGModalLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGModalLayer.h; path = ../RRGModalLayer.h; sourceTree = "<group>"; };
 		8C1F7E39196ED13C006E3475 /* RRGModalLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGModalLayer.m; path = ../RRGModalLayer.m; sourceTree = "<group>"; };
 		8C4456931980C74700748F59 /* shadowInPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shadowInPath.tmx; sourceTree = "<group>"; };
+		8C445695198130AF00748F59 /* RRGShadowInPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGShadowInPathLayer.h; sourceTree = "<group>"; };
+		8C445696198130AF00748F59 /* RRGShadowInPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGShadowInPathLayer.m; sourceTree = "<group>"; };
 		8C94E7F5196B969500A14C82 /* RRGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGGameScene.h; path = Classes/RRGGameScene.h; sourceTree = "<group>"; };
 		8C94E7F6196B969500A14C82 /* RRGGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGGameScene.m; path = Classes/RRGGameScene.m; sourceTree = "<group>"; };
 		8C961AE41956837200D9B8E5 /* RRGLevel+AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRGLevel+AddObject.h"; sourceTree = "<group>"; };
@@ -2238,6 +2241,8 @@
 			children = (
 				8C14DB9B194C758C00AADB4A /* RRGTiledMap.h */,
 				8C14DB9C194C758C00AADB4A /* RRGTiledMap.m */,
+				8C445695198130AF00748F59 /* RRGShadowInPathLayer.h */,
+				8C445696198130AF00748F59 /* RRGShadowInPathLayer.m */,
 				8C14DC2E194D2C4400AADB4A /* RRGLabelLayer.h */,
 				8C14DC2F194D2C4400AADB4A /* RRGLabelLayer.m */,
 				8C14DB91194C758C00AADB4A /* RRGButtonLayer.h */,
@@ -2280,10 +2285,10 @@
 		8C14DB9F194C758C00AADB4A /* LevelObject */ = {
 			isa = PBXGroup;
 			children = (
-				8C14DB97194C758C00AADB4A /* RRGMagicBullet.h */,
-				8C14DB98194C758C00AADB4A /* RRGMagicBullet.m */,
 				8C14DBC3194C758C00AADB4A /* RRGLevelObject.h */,
 				8C14DBC4194C758C00AADB4A /* RRGLevelObject.m */,
+				8C14DB97194C758C00AADB4A /* RRGMagicBullet.h */,
+				8C14DB98194C758C00AADB4A /* RRGMagicBullet.m */,
 				8C0A8A0719627DFE008B61BA /* RRGNonCharacterObject.h */,
 				8C0A8A0819627DFE008B61BA /* RRGNonCharacterObject.m */,
 				8CC34C40197385270033D7ED /* WarpPoint */,
@@ -2780,6 +2785,7 @@
 				8C14D8BC194C730E00AADB4A /* CCSprite9Slice.m in Sources */,
 				8C14D8FC194C730E00AADB4A /* CCDirectorMac.m in Sources */,
 				8C14D992194C730F00AADB4A /* CCControl.m in Sources */,
+				8C445697198130AF00748F59 /* RRGShadowInPathLayer.m in Sources */,
 				8C14D88C194C730E00AADB4A /* CCParticleSystem.m in Sources */,
 				8C0A8A061960DB3E008B61BA /* RRGLevel+TurnSequence.m in Sources */,
 				8C14DC14194C758C00AADB4A /* PygmyTrap.m in Sources */,

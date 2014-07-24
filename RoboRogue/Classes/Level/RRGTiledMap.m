@@ -49,7 +49,8 @@ static NSString* const kSkyLayer = @"skyLayer";
         _lavaGID1 = [_lavaLayer tileGIDAt:CGPointZero];
         _waterGID1 = [_waterLayer tileGIDAt:CGPointZero];
         _skyGID1 = [_skyLayer tileGIDAt:CGPointZero];
-        _shadowGID1 = [_shadowLayers[0] tileGIDAt:CGPointZero] - 5;
+        _shadowGID = [_shadowLayers[0] tileGIDAt:CGPointZero];
+        _shadowGID1 = _shadowGID - 5;
     }
     return self;
 }
@@ -60,7 +61,7 @@ static NSString* const kSkyLayer = @"skyLayer";
 #pragma mark - gameMapSize and gameTileSize
 -(CGSize)gameMapSize
 {
-    return CGSizeMake([super mapSize].width / 2, [super mapSize].height / 2);
+    return CGSizeMake([super mapSize].width * .5f, [super mapSize].height * .5f);
 }
 -(CGSize)gameTileSize
 {

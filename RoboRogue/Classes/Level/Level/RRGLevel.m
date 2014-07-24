@@ -28,6 +28,7 @@
 #import "RRGModalLayer.h"
 #import "RRGWarpPoint.h"
 #import "RRGGameOverLayer.h"
+#import "RRGShadowInPathLayer.h"
 
 static NSString* const kProfileTMXFileName = @"tmxFileName";
 static NSString* const kProfileMapWidth = @"mapWidth";
@@ -253,7 +254,7 @@ static NSUInteger const MessageCapacity = 30;
         [self roomNumAtTileCoord:playerTileCoordForPos]:-1;
         
         CCNode* nextShadowLayer = (roomNum >= 0)?
-        self.tiledMap.shadowLayers[roomNum]:_shadowInPath;
+        self.tiledMap.shadowLayers[roomNum]:_shadowInPathLayer;
         
         if (nextShadowLayer != _currentShadowLayer) {
             _currentShadowLayer.visible = NO;
@@ -292,13 +293,11 @@ static NSUInteger const MessageCapacity = 30;
     [_tiledMap addChild:_characterLayer z:ZOrderInTiledMapCharacterLayer];
     
     if (_shadow) {
-        _shadowInPath = [CCTiledMap tiledMapWithFile:@"shadowInPath.tmx"];
-        _shadowInPath.anchorPoint = ccp(.5, .5f);
-        CGSize viewSize = [[CCDirector sharedDirector] viewSize];
-        _shadowInPath.position = ccp(viewSize.width * .5f, viewSize.height * .5f);
-        [_shadowInPath layerNamed:@"shadowLayer"].opacity = .5f;
-        _shadowInPath.visible = NO;
-        [self addChild:_shadowInPath z:ZOrderShadowInPath];
+        _shadowInPathLayer = [RRGShadowInPathLayer layer];
+        CGSize layerSize = _shadowInPathLayer.contentSize;
+        _shadowInPathLayer.position = ccp((_contentSize.width - layerSize.width) * .5f,
+                                          (_contentSize.height - layerSize.height) * .5f);
+        [self addChild:_shadowInPathLayer z:ZOrderShadowInPath];
     }
 }
 -(void)p_addLayers
@@ -337,7 +336,7 @@ static NSUInteger const MessageCapacity = 30;
                                              level:self];
     [self addChild:_modalLayer z:ZOrderModalLayer];
     
-    //[self p_addDebugLabels];
+    [self p_addDebugLabels];
 }
 -(void)p_setUpLevelAtRandom
 {

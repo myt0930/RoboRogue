@@ -9,11 +9,6 @@
 #import "RRGLevelObject.h"
 #import "RRGCategories.h"
 #import "RRGProfileCache.h"
-#import "RRGLevel.h"
-#import "RRGLevel+MapID.h"
-#import "RRGLevel+TurnSequence.h"
-#import "RRGLevel+AddObject.h"
-#import "RRGLevel+Particle.h"
 #import "RRGPlayer.h"
 #import "RRGMagicBullet.h"
 #import "RRGSavedDataHandler.h"
@@ -21,6 +16,12 @@
 #import "RRGTiledMap.h"
 #import "RRGAction.h"
 #import "RRGItem.h"
+
+#import "RRGLevel.h"
+#import "RRGLevel+MapID.h"
+#import "RRGLevel+TurnSequence.h"
+#import "RRGLevel+AddObject.h"
+#import "RRGLevel+Particle.h"
 
 NSString* const kProfileSprite = @"sprite";
 static NSString* const kProfileDisplayName = @"displayName";
@@ -256,6 +257,13 @@ static NSString* const kLevel = @"level";
         magicBullet.reflected = YES;
         [magicBullet shootToDirection:reverseDirection(magicBullet.direction)
                         fromTileCoord:self.tileCoord];
+    }
+}
+#pragma mark - update
+-(void)update:(CCTime)delta
+{
+    if (self.level.shadow) {
+        _visible = ![self.level shadowAtTilePoint:_position];
     }
 }
 @end
