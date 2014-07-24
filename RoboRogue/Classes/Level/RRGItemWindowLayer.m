@@ -74,6 +74,18 @@ static const NSUInteger ItemWindowWidth = 280;
         _sortButton.anchorPoint = ccp(0,1);
         _sortButton.positionType = CCPositionTypeNormalized;
         _sortButton.position = ccp(0,1);
+        
+        __weak RRGItemWindowLayer* weakSelf = self;
+        _sortButton.block = ^(id sender){
+            [[OALSimpleAudio sharedInstance] playEffect:@"sort.caf"];
+            [weakSelf.player sortItems];
+            weakSelf.selectedItem = nil;
+            weakSelf.selectedButton = nil;
+            if ([weakSelf.itemWindow isKindOfClass:[RRGScrollWindow class]]) {
+                ((RRGScrollWindow*)weakSelf.itemWindow).scrollPosition = CGPointZero;
+            }
+            [weakSelf update];
+        };
         [self addChild:_sortButton];
         
         _itemWindowScrollPosition = CGPointZero;
@@ -355,6 +367,7 @@ static const NSUInteger ItemWindowWidth = 280;
     };*/
     return button;
 }
+/*
 #pragma mark - button callback
 -(void)sortButtonPressed
 {
@@ -362,7 +375,9 @@ static const NSUInteger ItemWindowWidth = 280;
     [self.player sortItems];
     _selectedItem = nil;
     _selectedButton = nil;
-    _itemWindowScrollPosition = CGPointZero;
+    if ([_itemWindow isKindOfClass:[RRGScrollWindow class]]) {
+        ((RRGScrollWindow*)_itemWindow).scrollPosition = CGPointZero;
+    }
     [self update];
-}
+}*/
 @end

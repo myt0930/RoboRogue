@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="22" height="16" tilewidth="25" tileheight="25">
+ <properties>
+  <property name="iPadScaleFactor" value="2.0"/>
+ </properties>
+ <tileset firstgid="1" name="shadow" tilewidth="25" tileheight="25">
+  <image source="shadow.png" width="100" height="100"/>
+ </tileset>
+ <layer name="shadowLayer" width="22" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NjYGBgG8XDDjMCMRMDAjADMQsVzGVlwAQcVDAXFxis5nJiMZOHCubyAjEfkpn8QCxABXNH8eDEAFVEAH2ABQAA
+  </data>
+ </layer>
+</map>

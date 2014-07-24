@@ -244,6 +244,24 @@ static NSUInteger const MessageCapacity = 30;
 {
     CCLOG(@"%s", __PRETTY_FUNCTION__);
 }
+#pragma mark - update
+-(void)update:(CCTime)delta
+{
+    if (_shadow && self.player) {
+        CGPoint playerTileCoordForPos = [self.tiledMap tileCoordForTilePoint:self.player.position];
+        NSInteger roomNum = ([self inRoomAtTileCoord:playerTileCoordForPos])?
+        [self roomNumAtTileCoord:playerTileCoordForPos]:-1;
+        
+        CCNode* nextShadowLayer = (roomNum >= 0)?
+        self.tiledMap.shadowLayers[roomNum]:_shadowInPath;
+        
+        if (nextShadowLayer != _currentShadowLayer) {
+            _currentShadowLayer.visible = NO;
+            _currentShadowLayer = nextShadowLayer;
+            _currentShadowLayer.visible = YES;
+        }
+    }
+}
 #pragma mark - private methods
 -(NSMutableArray*)p_blankMapWithSize:(CGSize)size
 {
@@ -272,6 +290,16 @@ static NSUInteger const MessageCapacity = 30;
     
     _characterLayer = [CCNode node];
     [_tiledMap addChild:_characterLayer z:ZOrderInTiledMapCharacterLayer];
+    
+    if (_shadow) {
+        _shadowInPath = [CCTiledMap tiledMapWithFile:@"shadowInPath.tmx"];
+        _shadowInPath.anchorPoint = ccp(.5, .5f);
+        CGSize viewSize = [[CCDirector sharedDirector] viewSize];
+        _shadowInPath.position = ccp(viewSize.width * .5f, viewSize.height * .5f);
+        [_shadowInPath layerNamed:@"shadowLayer"].opacity = .5f;
+        _shadowInPath.visible = NO;
+        [self addChild:_shadowInPath z:ZOrderShadowInPath];
+    }
 }
 -(void)p_addLayers
 {
@@ -318,6 +346,7 @@ static NSUInteger const MessageCapacity = 30;
     _mapIDMap = map.mapIDMap;
     _roomIDMap = map.roomIDMap;
     _roomArray = map.roomArray;
+    
     [self createTileLayers];
     if (_shadow) [self createShadowLayers];
     
@@ -581,10 +610,10 @@ NSString* stateString(LevelState state)
 }
 -(CGRect)viewRect
 {
-    return CGRectMake(MAX(self.player.tileCoord.x - 5, 0),
-                      MAX(self.player.tileCoord.y - 4, 0),
-                      11,
-                      9);
+    return CGRectMake(MAX(self.player.tileCoord.x - 6, 0),
+                      MAX(self.player.tileCoord.y - 5, 0),
+                      13,
+                      11);
 }
 -(NSArray*)characters
 {

@@ -527,4 +527,8 @@ NSUInteger experienceForCharacterLevel(NSInteger level)
     
     [self.items sortUsingDescriptors:sortDescArray];
 }
+-(void)update:(CCTime)delta
+{
+    
+}
 @end

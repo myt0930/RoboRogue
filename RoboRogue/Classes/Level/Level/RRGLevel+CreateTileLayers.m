@@ -219,13 +219,13 @@ BOOL sameTypeMapID(MapID mapID1, MapID mapID2)
         setTileSub(16, lowerRight);
     }
 }
-
+#pragma mark - create shadow layers
 -(void)createShadowLayers
 {
-    NSInteger roomCount = [self.roomArray count];
-    for (NSInteger i = 0; i < roomCount; i++) {
+    NSUInteger roomCount = [self.roomArray count];
+    
+    for (NSUInteger i = 0; i < roomCount; i++) {
         CCTiledMapLayer* shadowLayer = self.tiledMap.shadowLayers[i];
-        shadowLayer.visible = NO;
         RRGRoom* room = self.roomArray[i];
         CGRect rect = room.roomRect;
         rect = CGRectMake(rect.origin.x - 1,

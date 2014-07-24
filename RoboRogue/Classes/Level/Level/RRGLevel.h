@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, MapLayerState)
 typedef NS_ENUM(NSUInteger, ZOrder)
 {
     ZOrderTiledMap,
+    ZOrderShadowInPath,
     ZOrderLabelLayer,
     ZOrderButtonLayer,
     ZOrderYajirusi,
@@ -83,8 +84,11 @@ typedef NS_ENUM(NSUInteger, ZOrder)
 //layers
 @property (nonatomic) CCNode* objectLayer;
 @property (nonatomic) CCNode* characterLayer;
+@property (nonatomic, weak) CCNode* currentShadowLayer;
 
 @property (nonatomic) RRGTiledMap* tiledMap;
+@property (nonatomic) CCTiledMap* shadowInPath;
+
 @property (nonatomic) RRGLabelLayer* labelLayer;
 @property (nonatomic) RRGButtonLayer* buttonLayer;
 @property (nonatomic) CCNode* yajirusi;

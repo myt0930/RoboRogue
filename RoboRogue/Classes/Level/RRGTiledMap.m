@@ -36,8 +36,8 @@ static NSString* const kSkyLayer = @"skyLayer";
         //shadow layer
         _shadowLayers = [NSMutableArray arrayWithCapacity:10];
         
-        for (NSInteger i = 0; i < 10; i++) {
-            CCTiledMapLayer* shadowLayer = [self layerNamed:[NSString stringWithFormat:@"shadowLayer%zd",i]];
+        for (NSUInteger i = 0; i < 10; i++) {
+            CCTiledMapLayer* shadowLayer = [self layerNamed:[NSString stringWithFormat:@"shadowLayer%tu",i]];
             [_shadowLayers addObject:shadowLayer];
             shadowLayer.opacity = .5f;
             shadowLayer.visible = NO;

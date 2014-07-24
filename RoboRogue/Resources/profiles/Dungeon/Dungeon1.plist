@@ -11,8 +11,8 @@
 	<key>initialItems</key>
 	<array>
 		<string>PotionOfHealing</string>
-		<string>StaffOfProgress</string>
-		<string>StaffOfProgress</string>
+		<string>StaffOfSwitching</string>
+		<string>StaffOfBlowback</string>
 		<string>StaffOfProgress</string>
 		<string>StaffOfProgress</string>
 		<string>StaffOfProgress</string>
@@ -37,7 +37,7 @@
 		<key>random</key>
 		<true/>
 		<key>shadow</key>
-		<false/>
+		<true/>
 		<key>spawnEnemy</key>
 		<true/>
 		<key>baseMapID</key>

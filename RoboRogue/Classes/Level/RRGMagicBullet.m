@@ -311,5 +311,8 @@
     [self.level addParticleWithName:kParticleSmoke
                         atTileCoord:ownerTileCoord
                               sound:YES];
+    
+    [self.owner dropAtTileCoord:objectTileCoord];
+    [object dropAtTileCoord:ownerTileCoord];
 }
 @end

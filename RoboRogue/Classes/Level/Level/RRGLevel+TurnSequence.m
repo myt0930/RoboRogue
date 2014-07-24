@@ -84,7 +84,6 @@
                 [character addAction];
             }
         }
-        CCLOG(@"charatersForTurnSequence removeObjectAtIndex:0");
         [self.charactersForTurnSequence removeObjectAtIndex:0];
         [self addActionPhase];
     } else {

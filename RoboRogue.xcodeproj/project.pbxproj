@@ -382,6 +382,7 @@
 		8C14DC2D194C802500AADB4A /* RRGSavedDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C14DC2C194C802500AADB4A /* RRGSavedDataHandler.m */; };
 		8C14DC30194D2C4400AADB4A /* RRGLabelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C14DC2F194D2C4400AADB4A /* RRGLabelLayer.m */; };
 		8C1F7E3A196ED13C006E3475 /* RRGModalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F7E39196ED13C006E3475 /* RRGModalLayer.m */; };
+		8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456931980C74700748F59 /* shadowInPath.tmx */; };
 		8C94E7F7196B969500A14C82 /* RRGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E7F6196B969500A14C82 /* RRGGameScene.m */; };
 		8C961AE61956837200D9B8E5 /* RRGLevel+AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AE51956837200D9B8E5 /* RRGLevel+AddObject.m */; };
 		8C961AEC1956E06000D9B8E5 /* RRGLevel+MapID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AEB1956E06000D9B8E5 /* RRGLevel+MapID.m */; };
@@ -1031,6 +1032,7 @@
 		8C14DC2F194D2C4400AADB4A /* RRGLabelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGLabelLayer.m; sourceTree = "<group>"; };
 		8C1F7E38196ED13C006E3475 /* RRGModalLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGModalLayer.h; path = ../RRGModalLayer.h; sourceTree = "<group>"; };
 		8C1F7E39196ED13C006E3475 /* RRGModalLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGModalLayer.m; path = ../RRGModalLayer.m; sourceTree = "<group>"; };
+		8C4456931980C74700748F59 /* shadowInPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shadowInPath.tmx; sourceTree = "<group>"; };
 		8C94E7F5196B969500A14C82 /* RRGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGGameScene.h; path = Classes/RRGGameScene.h; sourceTree = "<group>"; };
 		8C94E7F6196B969500A14C82 /* RRGGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGGameScene.m; path = Classes/RRGGameScene.m; sourceTree = "<group>"; };
 		8C961AE41956837200D9B8E5 /* RRGLevel+AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRGLevel+AddObject.h"; sourceTree = "<group>"; };
@@ -2192,6 +2194,7 @@
 			children = (
 				8C14DAE3194C737200AADB4A /* ground.png */,
 				8C14DAE4194C737200AADB4A /* shadow.png */,
+				8C4456931980C74700748F59 /* shadowInPath.tmx */,
 				8C14DAE5194C737200AADB4A /* tilemap.tmx */,
 				8C14DAE6194C737200AADB4A /* tilemapAtRandom.tmx */,
 				8C14DAE7194C737200AADB4A /* tilemapNotRandom.tmx */,
@@ -2577,6 +2580,7 @@
 				8C14DB5F194C737200AADB4A /* PygmyTrap.plist in Resources */,
 				8C14DAF4194C737200AADB4A /* Icon-76.png in Resources */,
 				8C14DB31194C737200AADB4A /* MirrorKing.plist in Resources */,
+				8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */,
 				8C14DB22194C737200AADB4A /* explosion.caf in Resources */,
 				8C14DB77194C737200AADB4A /* wall.png in Resources */,
 				8C14DB26194C737200AADB4A /* stairs.caf in Resources */,
