@@ -7,7 +7,7 @@
 	<key>displayFloorNum</key>
 	<true/>
 	<key>displayMapLayer</key>
-	<false/>
+	<true/>
 	<key>initialItems</key>
 	<array>
 		<string>PotionOfHealing</string>

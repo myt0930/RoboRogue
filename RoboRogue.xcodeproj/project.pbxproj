@@ -384,6 +384,8 @@
 		8C1F7E3A196ED13C006E3475 /* RRGModalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F7E39196ED13C006E3475 /* RRGModalLayer.m */; };
 		8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456931980C74700748F59 /* shadowInPath.tmx */; };
 		8C445697198130AF00748F59 /* RRGShadowInPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C445696198130AF00748F59 /* RRGShadowInPathLayer.m */; };
+		8C44569B1981E28E00748F59 /* mapLayer.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456991981E28E00748F59 /* mapLayer.tmx */; };
+		8C44569C1981E28E00748F59 /* mapLayerTiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C44569A1981E28E00748F59 /* mapLayerTiles.png */; };
 		8C94E7F7196B969500A14C82 /* RRGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E7F6196B969500A14C82 /* RRGGameScene.m */; };
 		8C961AE61956837200D9B8E5 /* RRGLevel+AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AE51956837200D9B8E5 /* RRGLevel+AddObject.m */; };
 		8C961AEC1956E06000D9B8E5 /* RRGLevel+MapID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C961AEB1956E06000D9B8E5 /* RRGLevel+MapID.m */; };
@@ -945,8 +947,8 @@
 		8C14DB92194C758C00AADB4A /* RRGButtonLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGButtonLayer.m; sourceTree = "<group>"; };
 		8C14DB93194C758C00AADB4A /* RRGItemWindowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGItemWindowLayer.h; sourceTree = "<group>"; };
 		8C14DB94194C758C00AADB4A /* RRGItemWindowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGItemWindowLayer.m; sourceTree = "<group>"; };
-		8C14DB95194C758C00AADB4A /* RRGLevelMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGLevelMapLayer.h; sourceTree = "<group>"; };
-		8C14DB96194C758C00AADB4A /* RRGLevelMapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGLevelMapLayer.m; sourceTree = "<group>"; };
+		8C14DB95194C758C00AADB4A /* RRGLevelMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RRGLevelMapLayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		8C14DB96194C758C00AADB4A /* RRGLevelMapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RRGLevelMapLayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8C14DB97194C758C00AADB4A /* RRGMagicBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGMagicBullet.h; path = ../Level/RRGMagicBullet.h; sourceTree = "<group>"; };
 		8C14DB98194C758C00AADB4A /* RRGMagicBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGMagicBullet.m; path = ../Level/RRGMagicBullet.m; sourceTree = "<group>"; };
 		8C14DB99194C758C00AADB4A /* RRGMessageWindowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGMessageWindowLayer.h; sourceTree = "<group>"; };
@@ -1036,6 +1038,8 @@
 		8C4456931980C74700748F59 /* shadowInPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shadowInPath.tmx; sourceTree = "<group>"; };
 		8C445695198130AF00748F59 /* RRGShadowInPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGShadowInPathLayer.h; sourceTree = "<group>"; };
 		8C445696198130AF00748F59 /* RRGShadowInPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGShadowInPathLayer.m; sourceTree = "<group>"; };
+		8C4456991981E28E00748F59 /* mapLayer.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapLayer.tmx; sourceTree = "<group>"; };
+		8C44569A1981E28E00748F59 /* mapLayerTiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapLayerTiles.png; sourceTree = "<group>"; };
 		8C94E7F5196B969500A14C82 /* RRGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RRGGameScene.h; path = Classes/RRGGameScene.h; sourceTree = "<group>"; };
 		8C94E7F6196B969500A14C82 /* RRGGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RRGGameScene.m; path = Classes/RRGGameScene.m; sourceTree = "<group>"; };
 		8C961AE41956837200D9B8E5 /* RRGLevel+AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRGLevel+AddObject.h"; sourceTree = "<group>"; };
@@ -2195,6 +2199,7 @@
 		8C14DAE2194C737200AADB4A /* tilemaps */ = {
 			isa = PBXGroup;
 			children = (
+				8C4456981981E28E00748F59 /* mapLayer */,
 				8C14DAE3194C737200AADB4A /* ground.png */,
 				8C14DAE4194C737200AADB4A /* shadow.png */,
 				8C4456931980C74700748F59 /* shadowInPath.tmx */,
@@ -2415,6 +2420,15 @@
 			path = Classes/UI;
 			sourceTree = "<group>";
 		};
+		8C4456981981E28E00748F59 /* mapLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C4456991981E28E00748F59 /* mapLayer.tmx */,
+				8C44569A1981E28E00748F59 /* mapLayerTiles.png */,
+			);
+			path = mapLayer;
+			sourceTree = "<group>";
+		};
 		8C94E7F4196B967E00A14C82 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -2546,6 +2560,7 @@
 				8C14DB03194C737200AADB4A /* cursed.caf in Resources */,
 				8C14DB59194C737200AADB4A /* SwordOfGlass.plist in Resources */,
 				8C14DB2A194C737200AADB4A /* Explosion.plist in Resources */,
+				8C44569C1981E28E00748F59 /* mapLayerTiles.png in Resources */,
 				8C14DB7C194C757C00AADB4A /* iTunesArtwork@2x.png in Resources */,
 				8C14D92E194C730F00AADB4A /* LICENSE_cocos2d.txt in Resources */,
 				8C14DB08194C737200AADB4A /* levelDown.caf in Resources */,
@@ -2635,6 +2650,7 @@
 				8C14DB0D194C737200AADB4A /* pickUpItem.caf in Resources */,
 				8C14DAF7194C737200AADB4A /* Icon-Small-50.png in Resources */,
 				8C14DB73194C737200AADB4A /* tilemap.tmx in Resources */,
+				8C44569B1981E28E00748F59 /* mapLayer.tmx in Resources */,
 				8C14DB24194C737200AADB4A /* rotate.caf in Resources */,
 				8C14DB6D194C737200AADB4A /* sprites3@2x.plist in Resources */,
 				8C14DB54194C737200AADB4A /* StaffOfRegress.plist in Resources */,

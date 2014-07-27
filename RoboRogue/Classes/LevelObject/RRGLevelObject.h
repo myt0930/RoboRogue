@@ -41,6 +41,10 @@ typedef NS_ENUM(NSInteger, ZOrderInObject)
  * for save
  */
 
+@property (nonatomic, readonly) BOOL inView;
+@property (nonatomic, readonly) BOOL inPlayerView;
+@property (nonatomic, readonly) BOOL inPlayerViewForMapping;
+
 +(instancetype)levelObjectWithLevel:(RRGLevel*)level
                                name:(NSString*)name
                            atRandom:(BOOL)atRandom;
@@ -50,8 +54,6 @@ typedef NS_ENUM(NSInteger, ZOrderInObject)
 -(void)setDefaultAttributes;
 -(void)setRandomAttributes;
 -(NSString*)spriteFolderName;
-
--(BOOL)inView;
 
 -(BOOL)atGateOutOfRoom:(RRGRoom*)room;
 -(BOOL)atGateInOfRoom:(RRGRoom*)room;

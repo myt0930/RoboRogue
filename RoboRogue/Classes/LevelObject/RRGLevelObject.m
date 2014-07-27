@@ -16,6 +16,7 @@
 #import "RRGTiledMap.h"
 #import "RRGAction.h"
 #import "RRGItem.h"
+#import "RRGLevelMapLayer.h"
 
 #import "RRGLevel.h"
 #import "RRGLevel+MapID.h"
@@ -69,7 +70,7 @@ static NSString* const kLevel = @"level";
         [self addChild:_objectSprite z:ZOrderInObjectObject];
         
         [self setDefaultAttributes];
-        [self updateSprites];
+        //[self updateSprites];
     }
     return self;
 }
@@ -85,6 +86,23 @@ static NSString* const kLevel = @"level";
 {
     return [sharedProfileCache profileForKey:[self className]];
 }
+-(void)setTileCoord:(CGPoint)tileCoord
+{
+    _tileCoord = tileCoord;
+    
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kSetTileCoord
+                                    object:self
+                                    userInfo:@{kTileCoord: [NSValue valueWithCGPoint:tileCoord]}];
+    RRGAction* action = [RRGAction
+                         actionWithTarget:self
+                         action:[CCActionCallBlock actionWithBlock:^{
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+        CCLOG(@"%@ posted notification", self.className);
+    }]
+                         forSpawn:YES];
+    [self.level addAction:action];
+}
 
 #pragma mark - reference
 -(RRGTiledMap*)tiledMap
@@ -94,6 +112,19 @@ static NSString* const kLevel = @"level";
 -(RRGPlayer*)player
 {
     return self.level.player;
+}
+#pragma mark - in view
+-(BOOL)inView
+{
+    return [self.level inView:_tileCoord];
+}
+-(BOOL)inPlayerView
+{
+    return CGRectContainsPoint(self.player.playerViewRect, _tileCoord);
+}
+-(BOOL)inPlayerViewForMapping
+{
+    return CGRectContainsPoint(self.player.playerViewRectForMapping, _tileCoord);
 }
 #pragma mark - room and roomNum
 -(NSInteger)roomNum
@@ -107,14 +138,6 @@ static NSString* const kLevel = @"level";
 -(BOOL)inRoom
 {
     return [self.level inRoomAtTileCoord:_tileCoord];
-}
--(BOOL)inView
-{
-    return [self.level inView:self.tileCoord];
-}
--(BOOL)inPlayerView
-{
-    return CGRectContainsPoint([self.player playerViewRect], _tileCoord);
 }
 -(BOOL)atGateOutOfRoom:(RRGRoom *)room
 {

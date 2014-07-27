@@ -65,7 +65,7 @@
                     floorNum = @"3rd";
                     break;
                 default:
-                    floorNum = [NSString stringWithFormat:@"%tuth",floorNum];
+                    floorNum = [NSString stringWithFormat:@"%tuth",self.level.floorNum];
                     break;
             }
             message = [message stringByAppendingString:

@@ -299,6 +299,15 @@ static NSUInteger const MessageCapacity = 30;
                                           (_contentSize.height - layerSize.height) * .5f);
         [self addChild:_shadowInPathLayer z:ZOrderShadowInPath];
     }
+    
+    //mapLayer
+    BOOL displayMapLayer = [_profile[kProfileDisplayMapLayer] boolValue];
+    if (displayMapLayer) {
+        _mapLayer = [RRGLevelMapLayer layerWithSize:_contentSize
+                                              level:self];
+        [self addChild:_mapLayer z:ZOrderMapLayer];
+        CCLOG(@"add mapLayer");
+    }
 }
 -(void)p_addLayers
 {
@@ -324,19 +333,14 @@ static NSUInteger const MessageCapacity = 30;
     _messageWindowLayer = [RRGMessageWindowLayer layerWithWindowRect:messageWindowRect];
     [self addChild:_messageWindowLayer z:ZOrderMessageWindow];
     
-    //mapLayer
-    if (displayMapLayer) {
-        _mapLayer = [RRGLevelMapLayer layerWithMapSize:_mapSize
-                                                 level:self];
-        [self addChild:_mapLayer z:ZOrderMapLayer];
-    }
-    
     //modalLayer
     _modalLayer = [RRGModalLayer layerWithViewSize:_contentSize
                                              level:self];
     [self addChild:_modalLayer z:ZOrderModalLayer];
     
+#if DEBUG
     [self p_addDebugLabels];
+#endif
 }
 -(void)p_setUpLevelAtRandom
 {
@@ -550,7 +554,7 @@ NSString* stateString(LevelState state)
     if (state == LevelStateShowingItemWindow) {
         _itemWindowLayer = [RRGItemWindowLayer
                             layerWithSize:CGSizeMake(_contentSize.width,
-                                                     _contentSize.height - 50)
+                                                     _contentSize.height - 30)
                             level:self];
         [self addChild:_itemWindowLayer z:ZOrderItemWindowLayer];
     }

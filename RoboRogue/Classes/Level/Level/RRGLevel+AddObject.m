@@ -22,6 +22,7 @@
 #import "RRGPlayer.h"
 #import "RRGEnemy.h"
 #import "RRGWarpPoint.h"
+#import "RRGLevelMapLayer.h"
 
 typedef NS_ENUM(NSUInteger, RRGRandomTileCoordTarget)
 {
@@ -120,9 +121,16 @@ static NSString* const kRare = @"Rare";
     character.tileCoord = tileCoord;
     character.position = [self.tiledMap centerTilePointForTileCoord:tileCoord];
     
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kAddObject
+                                    object:self
+                                    userInfo:@{kLevelObject : character,
+                                               kTileCoord : [NSValue valueWithCGPoint:tileCoord]}];
+    
     __weak RRGLevel* weakSelf = self;
     [self addAction:[CCActionCallBlock actionWithBlock:^{
         [weakSelf.characterLayer addChild:character];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
     }]];
     
     if (self.levelState == LevelStateTurnInProgress) {
@@ -139,9 +147,16 @@ static NSString* const kRare = @"Rare";
     object.tileCoord = tileCoord;
     object.position = [self.tiledMap centerTilePointForTileCoord:tileCoord];
     
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kAddObject
+                                    object:self
+                                    userInfo:@{kLevelObject : object,
+                                               kTileCoord : [NSValue valueWithCGPoint:tileCoord]}];
+    
     __weak RRGLevel* weakSelf = self;
     [self addAction:[CCActionCallBlock actionWithBlock:^{
         [weakSelf.objectLayer addChild:object];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
     }]];
 }
 #pragma mark - remove object
@@ -153,6 +168,14 @@ static NSString* const kRare = @"Rare";
     }
     [self addAction:[RRGAction actionWithTarget:character
                                          action:[CCActionRemove action]]];
+    
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kRemove
+                                    object:character
+                                    userInfo:nil];
+    [self addAction:[CCActionCallBlock actionWithBlock:^{
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+    }]];
 }
 -(void)removeObject:(RRGLevelObject*)object
 {
@@ -162,6 +185,14 @@ static NSString* const kRare = @"Rare";
     }
     [self addAction:[RRGAction actionWithTarget:object
                                          action:[CCActionRemove action]]];
+    
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kRemove
+                                    object:object
+                                    userInfo:nil];
+    [self addAction:[CCActionCallBlock actionWithBlock:^{
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+    }]];
 }
 #pragma mark - random tileCoord
 -(CGPoint)randomTileCoordForCharacterExceptRoomNums:(NSArray*)roomNums

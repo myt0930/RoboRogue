@@ -146,6 +146,11 @@ static NSString* const kProfileNamesOfMagicBullets = @"namesOfMagicBullets";
 {
     return [super initWithLevel:level numberOfMagicBullets:0];
 }
+-(void)setRandomAttributes
+{
+    [super setRandomAttributes];
+    self.numberOfMagicBullets = 0;
+}
 @end
 
 @implementation StaffOfBlowback

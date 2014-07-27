@@ -85,7 +85,7 @@ static const NSInteger ProbabilityItemHit = 90;
     BOOL bounce = NO;
     RRGCharacter* characterHit = NO;
     
-    for (NSInteger i = 0; i < maxTiles; i++) {
+    for (NSUInteger i = 0; i < maxTiles; i++) {
         end = ccpAdd(end, direction);
         if ([self.level inView:end]) {
             inView = YES;

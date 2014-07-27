@@ -29,6 +29,7 @@ RRGLabelLayer;
  */
 @property (nonatomic, readonly, weak) RRGLabelLayer* labelLayer;
 @property (nonatomic, readonly) CGRect playerViewRect;
+@property (nonatomic, readonly) CGRect playerViewRectForMapping;
 
 @property (nonatomic, weak) RRGCharacter* killer;
 

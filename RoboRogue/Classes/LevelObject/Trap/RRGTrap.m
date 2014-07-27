@@ -164,7 +164,7 @@ static NSString* const kProfileActionOnce = @"actionOnce";
     BOOL bounce = NO;
     BOOL hit = NO;
     
-    for (NSInteger i = 0; i < maxTiles; i++) {
+    for (NSUInteger i = 0; i < maxTiles; i++) {
         end = ccpAdd(end, direction);
         if ([self.level inView:end]) {
             inView = YES;

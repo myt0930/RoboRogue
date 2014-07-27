@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="80" height="80" tilewidth="25" tileheight="25">
- <properties>
-  <property name="iPadScaleFactor" value="2.0"/>
- </properties>
  <tileset firstgid="1" name="ground" tilewidth="25" tileheight="25">
   <image source="ground.png" width="50" height="50"/>
  </tileset>

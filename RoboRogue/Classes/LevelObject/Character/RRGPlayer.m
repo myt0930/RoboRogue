@@ -67,6 +67,14 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
 {
     return YES;
 }
+-(BOOL)inPlayerView
+{
+    return YES;
+}
+-(BOOL)inPlayerViewForMapping
+{
+    return YES;
+}
 #pragma mark - clear attributes
 
 #pragma mark - attributes
@@ -146,6 +154,14 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
 -(CGRect)playerViewRect
 {
     return CGRectUnion([super viewRect], [self.level viewRect]);
+}
+-(CGRect)playerViewRectForMapping
+{
+    if (self.level.shadow) {
+        return self.viewRect;
+    } else {
+        return self.playerViewRect;
+    }
 }
 #pragma mark - setter
 -(void)setHP:(NSUInteger)HP
