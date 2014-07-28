@@ -221,7 +221,6 @@ static NSString* const kNumberOfMagicBullets = @"numberOfMagicBullets";
         case LevelStateChangeDirection:
         case LevelStateShowingItemWindow:
         {
-            [self.level updateLevelState:LevelStateNormal];
             MapLayerState newState = self.level.mapLayerState + 1;
             if (newState > MapLayerStateHideMap) {
                 newState = MapLayerStateShowMap;
@@ -272,12 +271,12 @@ static NSString* const kNumberOfMagicBullets = @"numberOfMagicBullets";
     switch (state) {
         case MapLayerStateShowOnlyMap:
         {
-            self.buttonNodeExceptMapButton.visible = NO;
+            _buttonNodeExceptMapButton.visible = NO;
             break;
         }
         default:
         {
-            self.buttonNodeExceptMapButton.visible = YES;
+            _buttonNodeExceptMapButton.visible = YES;
             break;
         }
     }

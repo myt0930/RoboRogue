@@ -547,8 +547,7 @@ NSString* stateString(LevelState state)
 }
 -(void)updateLevelState:(LevelState)state
 {
-    CCLOG(@"%s", __PRETTY_FUNCTION__);
-    CCLOG(@"levelState = %@", stateString(state));
+    CCLOG(@"new LevelState = %@", stateString(state));
     
     _levelState = state;
     
@@ -607,6 +606,34 @@ NSString* stateString(LevelState state)
     [self updateLevelState:LevelStateNormal];
     
     [_buttonLayer updateMapLayerState:state];
+    
+    //tiled map
+    switch (state) {
+        case MapLayerStateShowOnlyMap:
+        {
+            _tiledMap.visible = NO;
+            break;
+        }
+        default:
+        {
+            _tiledMap.visible = YES;
+            break;
+        }
+    }
+    
+    //map layer
+    switch (state) {
+        case MapLayerStateHideMap:
+        {
+            _mapLayer.visible = NO;
+            break;
+        }
+        default:
+        {
+            _mapLayer.visible = YES;
+            break;
+        }
+    }
 }
 -(void)addMessage:(NSString *)message
 {

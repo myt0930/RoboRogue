@@ -9,6 +9,9 @@
 #import "RRGShadowInPathLayer.h"
 #import "CCTiledMapLayer.h"
 
+static NSString* const kFileName = @"shadowInPath.tmx";
+static NSString* const kShadowLayer = @"shadowLayer";
+
 @interface RRGShadowInPathLayer ()
 @property (nonatomic) CCTiledMapLayer* shadowLayer;
 @property (nonatomic) NSUInteger shadowGID;
@@ -21,9 +24,9 @@
 }
 -(instancetype)init
 {
-    self = [super initWithFile:@"shadowInPath.tmx"];
+    self = [super initWithFile:kFileName];
     if (self) {
-        _shadowLayer = [self layerNamed:@"shadowLayer"];
+        _shadowLayer = [self layerNamed:kShadowLayer];
         _shadowLayer.opacity = .5f;
         _visible = NO;
         _shadowGID = [_shadowLayer tileGIDAt:CGPointZero];

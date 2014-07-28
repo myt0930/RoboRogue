@@ -195,7 +195,7 @@ static NSString* const kLevel = @"level";
         [self.level addAction:[RRGAction
                                actionWithTarget:self.objectSprite
                                action:[self.tiledMap
-                                       actionMoveByWithVelocity:VelocityJump
+                                       actionMoveByWithVelocity:VelocityJump * .5f
                                        direction:North
                                        tiles:10]]];
     }
@@ -212,7 +212,7 @@ static NSString* const kLevel = @"level";
         [self.level addAction:[RRGAction
                                actionWithTarget:self.objectSprite
                                action:[self.tiledMap
-                                       actionMoveByWithVelocity:VelocityJump
+                                       actionMoveByWithVelocity:VelocityJump * .5f
                                        direction:South
                                        tiles:10]]];
     }

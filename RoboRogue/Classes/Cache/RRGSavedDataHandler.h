@@ -10,7 +10,7 @@
 
 #define DelayAnimation 0.1f
 #define VelocityWalk 0.2f * [RRGSavedDataHandler sharedInstance].gameSpeed
-#define VelocityJump 0.06f * [RRGSavedDataHandler sharedInstance].gameSpeed
+#define VelocityJump 0.05f * [RRGSavedDataHandler sharedInstance].gameSpeed
 #define VelocityMagicBullet 0.1f * [RRGSavedDataHandler sharedInstance].gameSpeed
 #define DurationAttack 0.2f * [RRGSavedDataHandler sharedInstance].gameSpeed
 #define DurationBlink 0.1f * [RRGSavedDataHandler sharedInstance].gameSpeed

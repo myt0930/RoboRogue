@@ -236,7 +236,7 @@ static NSString* const kProfileActionOnce = @"actionOnce";
 {
     [self.level addParticleWithName:kParticleSmoke
                         atTileCoord:self.tileCoord
-                              sound:YES];
+                              sound:NO];
     [self.level removeObject:self];
 }
 @end
