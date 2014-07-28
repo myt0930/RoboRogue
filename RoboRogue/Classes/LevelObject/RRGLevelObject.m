@@ -98,7 +98,7 @@ static NSString* const kLevel = @"level";
                          actionWithTarget:self
                          action:[CCActionCallBlock actionWithBlock:^{
         [[NSNotificationCenter defaultCenter] postNotification:notification];
-        CCLOG(@"%@ posted notification", self.className);
+        //CCLOG(@"%@ posted notification", self.className);
     }]
                          forSpawn:YES];
     [self.level addAction:action];

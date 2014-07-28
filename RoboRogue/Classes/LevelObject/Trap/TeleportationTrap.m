@@ -20,7 +20,7 @@
     
     __weak TeleportationTrap* weakSelf = self;
     CCActionCallBlock* block = [CCActionCallBlock actionWithBlock:^{
-        [weakSelf addChild:particle];
+        [weakSelf.objectSprite addChild:particle];
     }];
     
     [self.level addAction:[RRGAction actionWithTarget:self

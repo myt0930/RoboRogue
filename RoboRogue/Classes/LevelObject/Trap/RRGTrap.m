@@ -14,6 +14,7 @@
 #import "RRGCharacter.h"
 #import "RRGFunctions.h"
 #import "RRGTiledMap.h"
+#import "RRGLevelMapLayer.h"
 
 #import "RRGLevel+TurnSequence.h"
 #import "RRGLevel+Particle.h"
@@ -60,9 +61,17 @@ static NSString* const kProfileActionOnce = @"actionOnce";
 {
     _found = found;
     
+    NSNotification* notification = [NSNotification
+                                    notificationWithName:kFound
+                                    object:self
+                                    userInfo:nil];
+    
     __weak RRGTrap* weakSelf = self;
+    
     [self.level addAction:[CCActionCallBlock actionWithBlock:^{
-        weakSelf.visible = found;
+        //CCLOG(@"%@ is found", weakSelf);
+        weakSelf.objectSprite.visible = found;
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
     }]];
 }
 #pragma mark - overwrite action

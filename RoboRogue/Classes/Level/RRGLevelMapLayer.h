@@ -11,13 +11,14 @@
 extern NSString* const kAddObject;
 extern NSString* const kSetTileCoord;
 extern NSString* const kRemove;
+extern NSString* const kFound;
 
 extern NSString* const kLevelObject;
 extern NSString* const kTileCoord;
 
 @class RRGLevel, RRGLevelObject;
 
-@interface RRGLevelMapLayer : CCNode
+@interface RRGLevelMapLayer : CCNode <NSCoding>
 +(instancetype)layerWithSize:(CGSize)size
                        level:(RRGLevel*)level;
 -(void)setTilesInRect:(CGRect)rect;

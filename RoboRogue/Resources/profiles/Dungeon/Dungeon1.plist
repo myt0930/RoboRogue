@@ -57,7 +57,7 @@
 		<key>itemCount</key>
 		<integer>2</integer>
 		<key>trapCount</key>
-		<integer>0</integer>
+		<integer>20</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -105,6 +105,21 @@
 				<string>Katana</string>
 				<string>ShieldOfIron</string>
 				<string>StaffOfDeath</string>
+			</array>
+		</dict>
+		<key>trapNames</key>
+		<dict>
+			<key>Common</key>
+			<array>
+				<string>BlowbackTrap</string>
+			</array>
+			<key>Uncommon</key>
+			<array>
+				<string>TeleportationTrap</string>
+			</array>
+			<key>Rare</key>
+			<array>
+				<string>TeleportationTrapUnbreakable</string>
 			</array>
 		</dict>
 	</dict>

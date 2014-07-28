@@ -276,9 +276,7 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
     CGPoint front = ccpAdd(self.tileCoord, direction);
     RRGTrap* trap = [self.level trapAtTileCoord:front];
     if (trap) {
-        [self.level addAction:[CCActionCallBlock actionWithBlock:^{
-            trap.found = YES;
-        }]];
+        trap.found = YES;
     }
 }
 -(void)didAttackToCharacter:(RRGCharacter *)character

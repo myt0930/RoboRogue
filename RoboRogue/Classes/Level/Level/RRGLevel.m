@@ -66,8 +66,10 @@ static NSUInteger const MessageCapacity = 30;
 #pragma mark - NSCoding
 -(instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [self init];
+    self = [super init];
     if (self) {
+        [self createArrays];
+        
         decodeObject(_profile);
         decodeCGSize(_mapSize);
         decodeBool(_random);
@@ -77,6 +79,7 @@ static NSUInteger const MessageCapacity = 30;
         decodeObject(_dungeonName);
         decodeInteger(_floorNum);
         decodeBool(_displayFloorNum);
+        decodeBool(_displayMapLayer);
         
         decodeInteger(_turnCount);
         
@@ -94,6 +97,12 @@ static NSUInteger const MessageCapacity = 30;
         decodeObject(_player);
         
         [self p_addTiledMap];
+        
+        //map layer
+        if (_displayMapLayer) {
+            decodeObject(_mapLayer);
+            [self addChild:_mapLayer z:ZOrderMapLayer];;
+        }
         
         if (_random) {
             [self createTileLayers];
@@ -141,6 +150,7 @@ static NSUInteger const MessageCapacity = 30;
     encodeObject(_dungeonName);
     encodeInteger(_floorNum);
     encodeBool(_displayFloorNum);
+    encodeBool(_displayMapLayer);
     
     encodeInteger(_turnCount);
     
@@ -156,6 +166,8 @@ static NSUInteger const MessageCapacity = 30;
     encodeObject(_trapNames);
     
     encodeObject(_player);
+    
+    encodeObject(_mapLayer);
 }
 #pragma mark - constructer
 +(instancetype)levelWithProfile:(NSDictionary*)profile
@@ -165,27 +177,25 @@ static NSUInteger const MessageCapacity = 30;
                                   player:player];
 }
 #pragma mark - initializer
--(instancetype)init
+-(void)createArrays
 {
-    self = [super init];
-    if (self) {
-        CGSize viewSize = [[CCDirector sharedDirector] viewSize];
-        _contentSize = viewSize;
-        
-        _seqArray = [NSMutableArray array];
-        _spawnArray = [NSMutableArray array];
-        _actionArray = [NSMutableArray array];
-        _charactersForTurnSequence = [NSMutableArray array];
-        
-        _messageHistory = [NSMutableArray arrayWithCapacity:MessageCapacity];
-    }
-    return self;
+    CGSize viewSize = [[CCDirector sharedDirector] viewSize];
+    _contentSize = viewSize;
+    
+    _seqArray = [NSMutableArray array];
+    _spawnArray = [NSMutableArray array];
+    _actionArray = [NSMutableArray array];
+    _charactersForTurnSequence = [NSMutableArray array];
+    
+    _messageHistory = [NSMutableArray arrayWithCapacity:MessageCapacity];
 }
 -(instancetype)initWithProfile:(NSDictionary*)profile
                         player:(RRGPlayer*)player
 {
-    self = [self init];
+    self = [super init];
     if (self) {
+        [self createArrays];
+        
         self.profile = profile;
         
         NSUInteger mapWidth = [profile[kProfileMapWidth] integerValue];
@@ -199,6 +209,7 @@ static NSUInteger const MessageCapacity = 30;
         _dungeonName = [profile[kProfileDungeonName] copy];
         _floorNum = [profile[kProfileFloorNum] integerValue];
         _displayFloorNum = [profile[kProfileDisplayFloorNum] boolValue];
+        _displayMapLayer = [profile[kProfileDisplayMapLayer] boolValue];
         
         _turnCount = 0;
         
@@ -212,7 +223,15 @@ static NSUInteger const MessageCapacity = 30;
         _player = player;
         [_player clearAttributesForNewLevel:self];
         
+        //tiled map
         [self p_addTiledMap];
+        
+        //mapLayer
+        if (_displayMapLayer) {
+            _mapLayer = [RRGLevelMapLayer layerWithSize:_contentSize
+                                                  level:self];
+            [self addChild:_mapLayer z:ZOrderMapLayer];
+        }
         
         if (_random) {
             [self p_setUpLevelAtRandom];
@@ -299,15 +318,6 @@ static NSUInteger const MessageCapacity = 30;
                                           (_contentSize.height - layerSize.height) * .5f);
         [self addChild:_shadowInPathLayer z:ZOrderShadowInPath];
     }
-    
-    //mapLayer
-    BOOL displayMapLayer = [_profile[kProfileDisplayMapLayer] boolValue];
-    if (displayMapLayer) {
-        _mapLayer = [RRGLevelMapLayer layerWithSize:_contentSize
-                                              level:self];
-        [self addChild:_mapLayer z:ZOrderMapLayer];
-        CCLOG(@"add mapLayer");
-    }
 }
 -(void)p_addLayers
 {
@@ -319,10 +329,9 @@ static NSUInteger const MessageCapacity = 30;
     [self addChild:_labelLayer z:ZOrderLabelLayer];
     
     //buttonLayer
-    BOOL displayMapLayer = [_profile[kProfileDisplayMapLayer] boolValue];
     _buttonLayer = [RRGButtonLayer layerWithSize:_contentSize
                                            level:self
-                                 displayMapLayer:displayMapLayer];
+                                 displayMapLayer:_displayMapLayer];
     [self addChild:_buttonLayer z:ZOrderButtonLayer];
     
     //message window

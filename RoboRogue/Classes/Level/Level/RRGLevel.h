@@ -59,6 +59,7 @@ typedef NS_ENUM(NSUInteger, ZOrder)
 @property (nonatomic, copy) NSString* dungeonName;
 @property (nonatomic) NSUInteger floorNum;
 @property (nonatomic) BOOL displayFloorNum;
+@property (nonatomic) BOOL displayMapLayer;
 
 @property (nonatomic) NSUInteger turnCount;
 

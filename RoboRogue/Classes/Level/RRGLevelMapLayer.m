@@ -26,9 +26,15 @@ static const NSUInteger tileSize = 8;
 NSString* const kAddObject = @"addObject";
 NSString* const kSetTileCoord = @"setTileCoord";
 NSString* const kRemove = @"remove";
+NSString* const kFound = @"found";
 
 NSString* const kLevelObject = @"levelObject";
 NSString* const kTileCoord = @"tileCoord";
+
+//NSCoding key
+static NSString* const kContentSize = @"contentSize";
+static NSString* const kLevel = @"level";
+static NSString* const kMapArray = @"mapArray";
 
 @interface RRGLevelMapLayer ()
 @property (nonatomic, weak) RRGLevel* level;
@@ -45,6 +51,7 @@ NSString* const kTileCoord = @"tileCoord";
 @end
 
 @implementation RRGLevelMapLayer
+#pragma constructer and initializer
 +(instancetype)layerWithSize:(CGSize)size
                        level:(RRGLevel *)level
 {
@@ -112,7 +119,7 @@ NSString* const kTileCoord = @"tileCoord";
 }
 -(void)getPostAddObject:(NSNotification*)notification
 {
-    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    //CCLOG(@"%s", __PRETTY_FUNCTION__);
     
     RRGLevelObject* levelObject = notification.userInfo[kLevelObject];
     CGPoint tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
@@ -125,6 +132,54 @@ NSString* const kTileCoord = @"tileCoord";
         [_characterLayer addChild:mapObject];
     } else {
         [_objectLayer addChild:mapObject];
+    }
+}
+#pragma mark - NSCoding
+-(instancetype)initWithCoder:(NSCoder *)coder
+{
+    CGSize contentSize = [coder decodeCGSizeForKey:kContentSize];
+    RRGLevel* level = [coder decodeObjectForKey:kLevel];
+    
+    self = [self initWithSize:contentSize level:level];
+    if (self) {
+        NSArray* mapArray = [coder decodeObjectForKey:kMapArray];
+        [self setTilesForMapArray:mapArray];
+    }
+    return self;
+}
+-(void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeCGSize:_contentSize forKey:kContentSize];
+    [coder encodeObject:self.level forKey:kLevel];
+    
+    NSArray* mapArray = [self mapArray];
+    [coder encodeObject:mapArray forKey:kMapArray];
+}
+-(NSArray*)mapArray
+{
+    NSUInteger mapWidth = _tiledMap.mapSize.width;
+    NSUInteger mapHeight = _tiledMap.mapSize.height;
+    
+    NSMutableArray* mapArray = [NSMutableArray arrayWithCapacity:mapWidth];
+    for (NSUInteger x = 0; x < mapWidth; x++) {
+        NSMutableArray* array = [NSMutableArray arrayWithCapacity:mapHeight];
+        for (NSUInteger y = 0; y < mapHeight; y++) {
+            [array addObject:@([_tileLayer tileGIDAt:ccp(x,y)])];
+        }
+        [mapArray addObject:array];
+    }
+    return mapArray;
+}
+-(void)setTilesForMapArray:(NSArray*)mapArray
+{
+    NSUInteger mapWidth = _tiledMap.mapSize.width;
+    NSUInteger mapHeight = _tiledMap.mapSize.height;
+    
+    for (NSUInteger x = 0; x < mapWidth; x++) {
+        for (NSUInteger y = 0; y < mapHeight; y++) {
+            uint32_t tileGID = (uint32_t)[mapArray[x][y] integerValue];
+            [_tileLayer setTileGID:tileGID at:ccp(x,y)];
+        }
     }
 }
 @end
@@ -144,7 +199,7 @@ NSString* const kTileCoord = @"tileCoord";
     } else if ([levelObject isKindOfClass:[DownStairs class]]) {
         c = [DownStairsOnMap class];
     } else if ([levelObject isKindOfClass:[RRGTrap class]]) {
-        c = [RRGTrap class];
+        c = [RRGTrapOnMap class];
     }
     
     NSAssert(c != nil, @"Invalid levelObject : %@", levelObject);
@@ -191,7 +246,7 @@ NSString* const kTileCoord = @"tileCoord";
 }
 -(void)getPostSetTileCoord:(NSNotification*)notification
 {
-    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    //CCLOG(@"%s", __PRETTY_FUNCTION__);
     self.tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
 }
 -(void)getPostRemove:(NSNotification*)notification
@@ -304,6 +359,12 @@ NSString* const kTileCoord = @"tileCoord";
                         radius:.5f
                          color:[CCColor whiteColor]];
         [self addChild:node2];
+        
+        NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(getPostFound:)
+                   name:kFound
+                 object:levelObject];
     }
     return self;
 }
@@ -311,6 +372,10 @@ NSString* const kTileCoord = @"tileCoord";
 {
     RRGTrap* trap = (RRGTrap*)self.levelObject;
     _visible = [self.mapLayer tileExistAtTileCoord:self.tileCoord] && trap.found;
+}
+-(void)getPostFound:(NSNotification*)notification
+{
+    [self update];
 }
 @end
 
