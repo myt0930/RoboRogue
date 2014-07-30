@@ -63,4 +63,8 @@
 {
     [_cache setObject:action forKey:key];
 }
+-(void)purge
+{
+    [_cache removeAllObjects];
+}
 @end

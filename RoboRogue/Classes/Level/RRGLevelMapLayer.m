@@ -46,8 +46,12 @@ static NSString* const kMapArray = @"mapArray";
 
 @property (nonatomic) NSUInteger tileGID1;
 
+@property (nonatomic) dispatch_queue_t syncQueue;
+
 -(CGPoint)tilePointForTileCoord:(CGPoint)tileCoord;
--(BOOL)tileExistAtTileCoord:(CGPoint)tileCoord;;
+-(BOOL)tileExistAtTileCoord:(CGPoint)tileCoord;
+
+-(void)setTilesInRect:(CGRect)rect;
 @end
 
 @implementation RRGLevelMapLayer
@@ -73,6 +77,9 @@ static NSString* const kMapArray = @"mapArray";
         _tileLayer = [_tiledMap layerNamed:kTileLayer];
         _tileGID1 = [_tileLayer tileGIDAt:CGPointZero];
         
+        _syncQueue = dispatch_queue_create("info.mygames888.roborogue.mapLayer",
+                                           NULL);
+        
         [_tileLayer removeTileAt:CGPointZero];
         _tileLayer.opacity = .3f;
         
@@ -91,6 +98,7 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)dealloc
 {
+    dispatch_release(_syncQueue);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 -(CGPoint)tilePointForTileCoord:(CGPoint)tileCoord
@@ -120,19 +128,20 @@ static NSString* const kMapArray = @"mapArray";
 -(void)getPostAddObject:(NSNotification*)notification
 {
     //CCLOG(@"%s", __PRETTY_FUNCTION__);
-    
-    RRGLevelObject* levelObject = notification.userInfo[kLevelObject];
-    CGPoint tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
-    
-    RRGObjectOnMap* mapObject;
-    mapObject = [RRGObjectOnMap objectWithMapLayer:self
-                                     levelObject:levelObject];
-    mapObject.tileCoord = tileCoord;
-    if ([levelObject isKindOfClass:[RRGCharacter class]]) {
-        [_characterLayer addChild:mapObject];
-    } else {
-        [_objectLayer addChild:mapObject];
-    }
+    dispatch_sync(_syncQueue, ^{
+        RRGLevelObject* levelObject = notification.userInfo[kLevelObject];
+        CGPoint tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
+        
+        RRGObjectOnMap* mapObject;
+        mapObject = [RRGObjectOnMap objectWithMapLayer:self
+                                           levelObject:levelObject];
+        mapObject.tileCoord = tileCoord;
+        if ([levelObject isKindOfClass:[RRGCharacter class]]) {
+            [_characterLayer addChild:mapObject];
+        } else {
+            [_objectLayer addChild:mapObject];
+        }
+    });
 }
 #pragma mark - NSCoding
 -(instancetype)initWithCoder:(NSCoder *)coder
@@ -185,6 +194,20 @@ static NSString* const kMapArray = @"mapArray";
 @end
 
 #pragma mark map object
+@interface RRGObjectOnMap ()
+@property (nonatomic, weak) RRGLevelMapLayer* mapLayer;
+@property (nonatomic, weak) RRGLevelObject* levelObject;
+@property (nonatomic, weak, readonly) RRGLevel* level;
+
+@property (nonatomic, readonly) dispatch_queue_t syncQueue;
+
+-(instancetype)initWithMapLayer:(RRGLevelMapLayer*)mapLayer
+                    levelObject:(RRGLevelObject*)levelObject;
+
+-(void)getPostSetTileCoord:(NSNotification*)notification;
+-(void)update;
+@end
+
 @implementation RRGObjectOnMap
 +(instancetype)objectWithMapLayer:(RRGLevelMapLayer*)mapLayer
                       levelObject:(RRGLevelObject*)levelObject
@@ -233,28 +256,38 @@ static NSString* const kMapArray = @"mapArray";
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+-(dispatch_queue_t)syncQueue
+{
+    return _mapLayer.syncQueue;
+}
 -(RRGLevel*)level
 {
     return self.mapLayer.level;
 }
 -(void)setTileCoord:(CGPoint)tileCoord
 {
+    //CCLOG(@"%s", __PRETTY_FUNCTION__);
     _tileCoord = tileCoord;
     self.position = [_mapLayer tilePointForTileCoord:tileCoord];
     
     [self update];
 }
+-(void)update
+{}
+#pragma mark - get post
 -(void)getPostSetTileCoord:(NSNotification*)notification
 {
     //CCLOG(@"%s", __PRETTY_FUNCTION__);
-    self.tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
+    dispatch_async(self.syncQueue, ^{
+        self.tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
+    });
 }
 -(void)getPostRemove:(NSNotification*)notification
 {
-    [self removeFromParentAndCleanup:YES];
+    dispatch_async(self.syncQueue, ^{
+        [self removeFromParentAndCleanup:YES];
+    });
 }
--(void)update
-{}
 @end
 
 @implementation RRGPlayerOnMap
@@ -375,7 +408,9 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)getPostFound:(NSNotification*)notification
 {
-    [self update];
+    dispatch_async(self.syncQueue, ^{
+        [self update];
+    });
 }
 @end
 

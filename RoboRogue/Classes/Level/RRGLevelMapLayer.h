@@ -21,23 +21,13 @@ extern NSString* const kTileCoord;
 @interface RRGLevelMapLayer : CCNode <NSCoding>
 +(instancetype)layerWithSize:(CGSize)size
                        level:(RRGLevel*)level;
--(void)setTilesInRect:(CGRect)rect;
 @end
 
 @interface RRGObjectOnMap : CCNode
-@property (nonatomic, weak) RRGLevelMapLayer* mapLayer;
-@property (nonatomic, weak) RRGLevelObject* levelObject;
-@property (nonatomic, weak, readonly) RRGLevel* level;
-
 @property (nonatomic) CGPoint tileCoord;
 
 +(instancetype)objectWithMapLayer:(RRGLevelMapLayer*)mapLayer
                       levelObject:(RRGLevelObject*)levelObject;
--(instancetype)initWithMapLayer:(RRGLevelMapLayer*)mapLayer
-                    levelObject:(RRGLevelObject*)levelObject;
-
--(void)getPostSetTileCoord:(NSNotification*)notification;
--(void)update;
 @end
 
 @interface RRGPlayerOnMap : RRGObjectOnMap

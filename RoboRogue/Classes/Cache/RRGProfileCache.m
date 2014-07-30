@@ -54,4 +54,8 @@
     }
     return profile;
 }
+-(void)purge
+{
+    [_cache removeAllObjects];
+}
 @end

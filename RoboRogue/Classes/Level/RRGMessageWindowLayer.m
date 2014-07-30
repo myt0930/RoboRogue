@@ -18,6 +18,9 @@
 @end
 
 @implementation RRGMessageWindowLayer
+{
+    dispatch_queue_t _syncQueue;
+}
 +(instancetype)layerWithWindowRect:(CGRect)windowRect
 {
     return [[self alloc] initWithWindowRect:windowRect];
@@ -34,23 +37,29 @@
         [self addChild:_window];
         
         _showingTime = 0;
+        
+        _syncQueue = dispatch_queue_create("info.mygames888.roborogue.messageWindowLayer",
+                                           NULL);
     }
     return self;
 }
 -(void)dealloc
 {
     CCLOG(@"%s", __PRETTY_FUNCTION__);
+    dispatch_release(_syncQueue);
 }
 
 -(void)addMessage:(NSString*)message
 {
     CCLOG(@"%@", message);
-    [_window addMessage:message];
-    
-    if (_window.visible == NO) {
-        _window.visible = YES;
-        [self showMessages];
-    }
+    dispatch_async(_syncQueue, ^{
+        [_window addMessage:message];
+        
+        if (_window.visible == NO) {
+            _window.visible = YES;
+            [self showMessages];
+        }
+    });
 }
 -(void)showMessages
 {
@@ -85,9 +94,11 @@
 
 -(void)hide
 {
-    [self stopAllActions];
-    _showingTime = 0;
-    [_window removeAllContents];
-    _window.visible = NO;
+    dispatch_async(_syncQueue, ^{
+        [self stopAllActions];
+        _showingTime = 0;
+        [_window removeAllContents];
+        _window.visible = NO;
+    });
 }
 @end

@@ -12,4 +12,5 @@
 @interface RRGProfileCache : NSObject
 +(RRGProfileCache*)sharedInstance;
 -(NSDictionary*)profileForKey:(NSString*)key;
+-(void)purge;
 @end

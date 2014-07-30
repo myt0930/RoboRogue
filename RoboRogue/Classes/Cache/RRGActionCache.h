@@ -18,4 +18,5 @@
 -(CCAction*)actionForKey:(NSString*)key;
 -(void)setAction:(CCAction*)action
           forKey:(NSString*)key;
+-(void)purge;
 @end

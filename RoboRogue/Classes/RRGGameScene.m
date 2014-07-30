@@ -16,6 +16,9 @@
 #import "RRGButtonBehavior.h"
 #import "RRGFunctions.h"
 
+//#import "RRGProfileCache.h"
+//#import "RRGActionCache.h"
+
 static NSString* const kProfileDungeonName = @"dungeonName";
 static NSString* const kProfileFloorNum = @"floorNum";
 
@@ -149,6 +152,9 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
 }
 -(void)goToInitialDungeon
 {
+    //[sharedProfileCache purge];
+    //[sharedActionCache purge];
+    
     [self goToDungeon:kInitialDungeonName
              floorNum:1
                player:nil
