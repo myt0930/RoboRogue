@@ -114,4 +114,10 @@ const NSInteger RoomMapIDNotRoom = -11;
         return ([shadowLayer tileGIDAt:tileCoord] == self.tiledMap.shadowGID)?YES:NO;
     }
 }
+
+-(BOOL)validTileCoord:(CGPoint)tileCoord
+{
+    return (tileCoord.x >= 0 && tileCoord.x <= self.mapSize.width - 1 &&
+            tileCoord.y >= 0 && tileCoord.y <= self.mapSize.height - 1)?YES:NO;
+}
 @end

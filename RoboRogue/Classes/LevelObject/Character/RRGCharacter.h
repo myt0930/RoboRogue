@@ -88,6 +88,9 @@ extern NSString* const kStatePinch;
 
 @property (nonatomic) BOOL isDead;
 
+@property (nonatomic, readonly) BOOL hasLamplight;
+@property (nonatomic, readonly) BOOL magicTunnel;
+
 -(void)addAction;
 -(void)actionNormal;
 -(void)actionConfusion;

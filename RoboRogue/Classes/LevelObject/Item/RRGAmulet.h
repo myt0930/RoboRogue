@@ -9,5 +9,10 @@
 #import "RRGItem.h"
 
 @interface RRGAmulet : RRGItemEquipment <NSCoding>
+@end
 
+@interface AmuletOfLamplight : RRGAmulet <NSCoding>
+@end
+
+@interface AmuletOfMagicTunnel : RRGAmulet <NSCoding>
 @end

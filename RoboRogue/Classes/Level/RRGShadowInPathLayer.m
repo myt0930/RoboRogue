@@ -10,26 +10,37 @@
 #import "CCTiledMapLayer.h"
 
 static NSString* const kFileName = @"shadowInPath.tmx";
-static NSString* const kShadowLayer = @"shadowLayer";
+static NSString* const kShadowLayer1 = @"shadowLayer1";
+static NSString* const kShadowLayer2 = @"shadowLayer2";
 
 @interface RRGShadowInPathLayer ()
-@property (nonatomic) CCTiledMapLayer* shadowLayer;
+@property (nonatomic) CCTiledMapLayer* shadowLayer1;
+@property (nonatomic) CCTiledMapLayer* shadowLayer2;
+@property (nonatomic, readonly) CCTiledMapLayer* currentShadowLayer;
 @property (nonatomic) NSUInteger shadowGID;
 @end
 
 @implementation RRGShadowInPathLayer
-+(instancetype)layer
++(instancetype)layerWithLamplight:(BOOL)lamplight
 {
-    return [[self alloc] init];
+    return [[self alloc] initWithLamplight:lamplight];
 }
--(instancetype)init
+-(instancetype)initWithLamplight:(BOOL)lamplight
 {
     self = [super initWithFile:kFileName];
     if (self) {
-        _shadowLayer = [self layerNamed:kShadowLayer];
-        _shadowLayer.opacity = .5f;
+        _shadowLayer1 = [self layerNamed:kShadowLayer1];
+        _shadowLayer1.opacity = .5f;
+        _shadowLayer1.visible = NO;
+        
+        _shadowLayer2 = [self layerNamed:kShadowLayer2];
+        _shadowLayer2.opacity = .5f;
+        _shadowLayer2.visible = NO;
+        
+        self.playerHasLamplight = lamplight;
+        
         _visible = NO;
-        _shadowGID = [_shadowLayer tileGIDAt:CGPointZero];
+        _shadowGID = [_shadowLayer1 tileGIDAt:CGPointZero];
     }
     return self;
 }
@@ -55,6 +66,26 @@ static NSString* const kShadowLayer = @"shadowLayer";
     CGPoint tileCoord = [self tileCoordForTilePoint:tilePoint];
     tileCoord = ccp(MAX(0, MIN(_mapSize.width - 1, tileCoord.x)),
                     MAX(0, MIN(_mapSize.height - 1, tileCoord.y)));
-    return ([_shadowLayer tileGIDAt:tileCoord] == _shadowGID)?YES:NO;
+    return ([self.currentShadowLayer tileGIDAt:tileCoord] == _shadowGID)?YES:NO;
+}
+-(void)setPlayerHasLamplight:(BOOL)playerHasLamplight
+{
+    _playerHasLamplight = playerHasLamplight;
+    
+    if (_playerHasLamplight) {
+        _shadowLayer2.visible = YES;
+        _shadowLayer1.visible = NO;
+    } else {
+        _shadowLayer1.visible = YES;
+        _shadowLayer2.visible = NO;
+    }
+}
+-(CCTiledMapLayer*)currentShadowLayer
+{
+    if (_playerHasLamplight) {
+        return _shadowLayer2;
+    } else {
+        return _shadowLayer1;
+    }
 }
 @end

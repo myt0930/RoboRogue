@@ -6,9 +6,14 @@
  <tileset firstgid="1" name="shadow" tilewidth="25" tileheight="25">
   <image source="shadow.png" width="100" height="100"/>
  </tileset>
- <layer name="shadowLayer" width="22" height="16">
+ <layer name="shadowLayer1" width="22" height="16">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NjYGBgG8XDDjMCMRMDAjADMQsVzGVlwAQcVDAXFxis5nJiMZOHCubyAjEfkpn8QCxABXNH8eDEAFVEAH2ABQAA
+  </data>
+ </layer>
+ <layer name="shadowLayer2" width="22" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NjYGBgG8U4MSMQMzHgBsxAzEKGuax4zIQBDjLMJRaMmjsyzOUkwkweMszlBWI+PGbyA7EAGeaONAwAmmgjeIAFAAA=
   </data>
  </layer>
 </map>

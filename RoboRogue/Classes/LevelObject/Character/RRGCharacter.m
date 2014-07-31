@@ -103,6 +103,7 @@ NSString* const kStatePinch = @"pinch";
         decodeCGPoint(_direction);
         decodeCGPoint(_exitGateOut);
         decodeInteger(_inSameRoomCount);
+        
         decodeObject(_status);
         
         [self updateSprites];
@@ -126,6 +127,7 @@ NSString* const kStatePinch = @"pinch";
     encodeCGPoint(_direction);
     encodeCGPoint(_exitGateOut);
     encodeInteger(_inSameRoomCount);
+    
     encodeObject(_status);
 }
 -(instancetype)initWithLevel:(RRGLevel *)level
@@ -226,6 +228,14 @@ NSString* const kStatePinch = @"pinch";
     NSInteger y = (NSInteger)position.y;
     self.zOrder = 3000 - y;
 }
+-(BOOL)hasLamplight
+{
+    return NO;
+}
+-(BOOL)magicTunnel
+{
+    return NO;
+}
 -(CGRect)viewRect
 {
     if ([self inRoom]) {
@@ -235,10 +245,11 @@ NSString* const kStatePinch = @"pinch";
                           roomRect.size.width + 2,
                           roomRect.size.height + 2);
     } else {
-        return CGRectMake(self.tileCoord.x - 1,
-                          self.tileCoord.y - 1,
-                          3,
-                          3);
+        NSUInteger sightDistance = (self.hasLamplight)?2:1;
+        return CGRectMake(self.tileCoord.x - sightDistance,
+                          self.tileCoord.y - sightDistance,
+                          1 + sightDistance * 2,
+                          1 + sightDistance * 2);
     }
 }
 -(RRGCharacter*)closestCharacter

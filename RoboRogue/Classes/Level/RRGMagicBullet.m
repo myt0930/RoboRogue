@@ -7,11 +7,6 @@
 //
 
 #import "RRGMagicBullet.h"
-#import "RRGLevel.h"
-#import "RRGLevel+AddObject.h"
-#import "RRGLevel+MapID.h"
-#import "RRGLevel+TurnSequence.h"
-#import "RRGLevel+Particle.h"
 #import "RRGCategories.h"
 #import "RRGFunctions.h"
 #import "RRGSavedDataHandler.h"
@@ -22,10 +17,18 @@
 #import "Tamara.h"
 #import "RRGTrap.h"
 
+#import "RRGLevel.h"
+#import "RRGLevel+AddObject.h"
+#import "RRGLevel+MapID.h"
+#import "RRGLevel+TurnSequence.h"
+#import "RRGLevel+Particle.h"
+
 @interface RRGMagicBullet ()
 @property (nonatomic, weak) RRGLevel* level;
 @property (nonatomic, readonly, weak) RRGTiledMap* tiledMap;
 @property (nonatomic) BOOL collideWithObject;
+@property (nonatomic, readonly) BOOL magicTunnel;
+
 -(instancetype)initWithLevel:(RRGLevel*)level
                        owner:(RRGCharacter*)owner;
 -(void)magicActionCollidedWithWallWithEndTileCoord:(CGPoint)endTileCoord;
@@ -77,10 +80,18 @@
     
     while (YES) {
         endTileCoord = ccpAdd(endTileCoord, direction);
+        
+        if (![self.level validTileCoord:endTileCoord]) {
+            endTileCoord = ccpSub(endTileCoord, direction);
+            break;
+        }
+        
         if ([self.level inView:endTileCoord]) {
             inView = YES;
         }
-        if ([self.level wallAtTileCoord:endTileCoord]) {
+        
+        if (!self.magicTunnel &&
+            [self.level wallAtTileCoord:endTileCoord]) {
             endTileCoord = ccpSub(endTileCoord, direction);
             collidedWithWall = YES;
             break;
@@ -126,6 +137,10 @@
 }
 -(void)magicActionToCharacter:(RRGCharacter*)character
 {}
+-(BOOL)magicTunnel
+{
+    return self.owner.magicTunnel;
+}
 @end
 
 #pragma mark - collide with Character
@@ -307,10 +322,10 @@
                            action:[self.tiledMap actionPlaceToTileCoord:objectTileCoord]]];
     [self.level addParticleWithName:kParticleSmoke
                         atTileCoord:objectTileCoord
-                              sound:YES];
+                              sound:NO];
     [self.level addParticleWithName:kParticleSmoke
                         atTileCoord:ownerTileCoord
-                              sound:YES];
+                              sound:NO];
     
     [self.owner dropAtTileCoord:objectTileCoord];
     [object dropAtTileCoord:ownerTileCoord];

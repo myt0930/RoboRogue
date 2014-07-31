@@ -13,7 +13,7 @@ extern NSString* const kChangePlayerMaxHP;
 extern NSString* const kChangePlayerLevel;
 
 @class RRGItem, RRGStaff, RRGSword, RRGShield, RRGRing, RRGItemEquipment, RRGItemUseOnce,
-RRGLabelLayer;
+RRGLabelLayer, RRGAmulet;
 
 @interface RRGPlayer : RRGCharacter <NSCoding>
 
@@ -23,6 +23,7 @@ RRGLabelLayer;
 @property (nonatomic) NSMutableArray* items;
 @property (nonatomic) RRGSword* swordEquipped;
 @property (nonatomic) RRGShield* shieldEquipped;
+@property (nonatomic) RRGAmulet* amuletEquipped;
 @property (nonatomic) RRGStaff* staffEquipped;
 /*
  * for save

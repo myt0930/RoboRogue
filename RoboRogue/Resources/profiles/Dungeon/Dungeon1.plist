@@ -10,6 +10,9 @@
 	<true/>
 	<key>initialItems</key>
 	<array>
+		<string>Katana</string>
+		<string>AmuletOfMagicTunnel</string>
+		<string>AmuletOfLamplight</string>
 		<string>PotionOfHealing</string>
 		<string>StaffOfSwitching</string>
 		<string>StaffOfBlowback</string>
@@ -22,9 +25,6 @@
 		<string>StaffOfProgress</string>
 		<string>StaffOfProgress</string>
 		<string>StaffOfProgress</string>
-		<string>StaffOfProgress</string>
-		<string>StaffOfProgress</string>
-		<string>Katana</string>
 	</array>
 	<key>floor1</key>
 	<dict>

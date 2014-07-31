@@ -41,4 +41,6 @@ extern const NSInteger RoomMapIDNotRoom;
 -(BOOL)skyAtTileCoord:(CGPoint)tileCoord;
 
 -(BOOL)shadowAtTilePoint:(CGPoint)tilePoint;
+
+-(BOOL)validTileCoord:(CGPoint)tileCoord;
 @end

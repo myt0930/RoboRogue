@@ -19,6 +19,7 @@
 #import "RRGActionCache.h"
 #import "RRGAction.h"
 #import "RRGButtonLayer.h"
+#import "RRGAmulet.h"
 
 #import "RRGLevel.h"
 #import "RRGLevel+AddObject.h"
@@ -41,6 +42,7 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
         decodeObject(_items);
         decodeObject(_swordEquipped);
         decodeObject(_shieldEquipped);
+        decodeObject(_amuletEquipped);
         decodeObject(_staffEquipped);
         [self updateSprites];
     }
@@ -52,6 +54,7 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
     encodeObject(_items);
     encodeObject(_swordEquipped);
     encodeObject(_shieldEquipped);
+    encodeObject(_amuletEquipped);
     encodeObject(_staffEquipped);
 }
 #pragma mark - reference
@@ -151,9 +154,17 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
         }
     }
 }
+-(BOOL)hasLamplight
+{
+    return ([self.amuletEquipped isKindOfClass:[AmuletOfLamplight class]])?YES:NO;
+}
+-(BOOL)magicTunnel
+{
+    return ([self.amuletEquipped isKindOfClass:[AmuletOfMagicTunnel class]])?YES:NO;
+}
 -(CGRect)playerViewRect
 {
-    return CGRectUnion([super viewRect], [self.level viewRect]);
+    return CGRectUnion(self.viewRect, [self.level viewRect]);
 }
 -(CGRect)playerViewRectForMapping
 {

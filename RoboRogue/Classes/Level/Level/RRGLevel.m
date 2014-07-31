@@ -275,6 +275,10 @@ static NSUInteger const MessageCapacity = 30;
         CCNode* nextShadowLayer = (roomNum >= 0)?
         self.tiledMap.shadowLayers[roomNum]:_shadowInPathLayer;
         
+        if (_player.hasLamplight != _shadowInPathLayer.playerHasLamplight) {
+            _shadowInPathLayer.playerHasLamplight = _player.hasLamplight;
+        }
+        
         if (nextShadowLayer != _currentShadowLayer) {
             _currentShadowLayer.visible = NO;
             _currentShadowLayer = nextShadowLayer;
@@ -312,7 +316,7 @@ static NSUInteger const MessageCapacity = 30;
     [_tiledMap addChild:_characterLayer z:ZOrderInTiledMapCharacterLayer];
     
     if (_shadow) {
-        _shadowInPathLayer = [RRGShadowInPathLayer layer];
+        _shadowInPathLayer = [RRGShadowInPathLayer layerWithLamplight:self.player.hasLamplight];
         CGSize layerSize = _shadowInPathLayer.contentSize;
         _shadowInPathLayer.position = ccp((_contentSize.width - layerSize.width) * .5f,
                                           (_contentSize.height - layerSize.height) * .5f);

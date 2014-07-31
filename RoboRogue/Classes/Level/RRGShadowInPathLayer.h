@@ -9,7 +9,8 @@
 #import "CCTiledMap.h"
 
 @interface RRGShadowInPathLayer : CCTiledMap
-+(instancetype)layer;
+@property (nonatomic) BOOL playerHasLamplight;
++(instancetype)layerWithLamplight:(BOOL)lamplight;
 
 -(CGPoint)tileCoordForTilePoint:(CGPoint)tilePoint;
 -(CGPoint)tilePointForTileCoord:(CGPoint)tileCoord;

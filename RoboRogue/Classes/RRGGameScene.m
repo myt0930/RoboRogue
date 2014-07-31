@@ -133,10 +133,11 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
     CCActionCallBlock* block = [CCActionCallBlock actionWithBlock:^{
         [weakSelf.level removeFromParentAndCleanup:YES];
         CCLOG(@"will create new level");
-        weakSelf.level = [RRGLevel levelWithProfile:levelProfile player:player];
+        RRGLevel* newLevel = [RRGLevel levelWithProfile:levelProfile player:player];
         CCLOG(@"did create new level");
-        [weakSelf addChild:weakSelf.level z:ZOrderInGameSceneLevel];
-        weakSelf.level.userInteractionEnabled = YES;
+        [weakSelf addChild:newLevel z:ZOrderInGameSceneLevel];
+        newLevel.userInteractionEnabled = YES;
+        weakSelf.level = newLevel;
     }];
     CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:1.0f];
     CCActionRemove* remove = [CCActionRemove action];

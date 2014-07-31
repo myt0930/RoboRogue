@@ -30,7 +30,7 @@
                 <key>scale</key>
                 <double>0.5</double>
                 <key>extension</key>
-                <string>@2x</string>
+                <string>-hd</string>
                 <key>spriteFilter</key>
                 <string></string>
                 <key>acceptFractionalValues</key>
