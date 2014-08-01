@@ -78,7 +78,8 @@ static NSString* const kLevel = @"level";
 -(void)setDefaultAttributes
 {
     self.displayName = (self.profile[kProfileDisplayName])?
-    self.profile[kProfileDisplayName]:self.className;
+    self.profile[kProfileDisplayName]:
+    [self.className stringByReplacingOccurrencesOfString:@"_" withString:@" "];
 }
 -(void)setRandomAttributes
 {}

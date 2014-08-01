@@ -21,8 +21,8 @@
     [super setDefaultAttributes];
     self.canFly = YES;
     [self setLevelNamesArray:@[@"Mystikoi",
-                               @"SeaMystikoi",
-                               @"PearlMystikoi"]];
+                               @"Sea_Mystikoi",
+                               @"Pearl_Mystikoi"]];
 }
 -(BOOL)useSkill
 {
@@ -70,7 +70,7 @@
 }
 @end
 
-@implementation SeaMystikoi
+@implementation Sea_Mystikoi
 -(CGRect)useSkillRect
 {
     return CGRectMake(self.tileCoord.x - 2,
@@ -80,7 +80,7 @@
 }
 @end
 
-@implementation PearlMystikoi
+@implementation Pearl_Mystikoi
 -(CGRect)useSkillRect
 {
     if ([self inRoom] && self.room) {

@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>AlarmTrap/0001.png</key>
+            <key>Alarm_Trap/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1858,1972},{70,92}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{100,100}</string>
             </dict>
-            <key>AngryRufus/attack/east/0002.png</key>
+            <key>Angry_Rufus/attack/east/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1012},{94,106}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>AngryRufus/attack/east/0003.png</key>
+            <key>Angry_Rufus/attack/east/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1012},{94,106}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>AngryRufus/attack/north/0001.png</key>
+            <key>Angry_Rufus/attack/north/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1774,752},{82,116}}</string>
@@ -56,7 +56,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>AngryRufus/attack/northeast/0001.png</key>
+            <key>Angry_Rufus/attack/northeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1382,692},{60,118}}</string>
@@ -69,7 +69,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>AngryRufus/attack/west/0002.png</key>
+            <key>Angry_Rufus/attack/west/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1120},{94,106}}</string>
@@ -82,7 +82,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>AngryRufus/attack/west/0003.png</key>
+            <key>Angry_Rufus/attack/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1120},{94,106}}</string>
@@ -836,7 +836,7 @@
                 <key>sourceSize</key>
                 <string>{300,300}</string>
             </dict>
-            <key>GoldTamara/walk/southeast/0004.png</key>
+            <key>Gold_Tamara/walk/southeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1484},{61,83}}</string>
@@ -849,7 +849,7 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
-            <key>GoldTamara/walk/southwest/0002.png</key>
+            <key>Gold_Tamara/walk/southwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1547},{61,83}}</string>
@@ -1083,7 +1083,7 @@
                 <key>sourceSize</key>
                 <string>{300,300}</string>
             </dict>
-            <key>MadRufus/attack/east/0002.png</key>
+            <key>Mad_Rufus/attack/east/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1228},{94,106}}</string>
@@ -1096,7 +1096,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/attack/east/0003.png</key>
+            <key>Mad_Rufus/attack/east/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1228},{94,106}}</string>
@@ -1109,7 +1109,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/attack/north/0001.png</key>
+            <key>Mad_Rufus/attack/north/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1774,870},{82,116}}</string>
@@ -1122,7 +1122,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/attack/northeast/0001.png</key>
+            <key>Mad_Rufus/attack/northeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1393,1557},{60,118}}</string>
@@ -1135,7 +1135,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/attack/west/0002.png</key>
+            <key>Mad_Rufus/attack/west/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1336},{94,106}}</string>
@@ -1148,7 +1148,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/attack/west/0003.png</key>
+            <key>Mad_Rufus/attack/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1336},{94,106}}</string>
@@ -1161,7 +1161,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/walk/northeast/0002.png</key>
+            <key>Mad_Rufus/walk/northeast/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1393,1797},{60,116}}</string>
@@ -1174,7 +1174,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MadRufus/walk/northeast/0004.png</key>
+            <key>Mad_Rufus/walk/northeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1393,1797},{60,116}}</string>
@@ -1187,7 +1187,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>MirrorKing/attack/east/0001.png</key>
+            <key>Mirror_King/attack/east/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{674,1596},{64,148}}</string>
@@ -1200,7 +1200,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/north/0001.png</key>
+            <key>Mirror_King/attack/north/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{534,472},{78,142}}</string>
@@ -1213,7 +1213,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/north/0002.png</key>
+            <key>Mirror_King/attack/north/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{2,1970},{76,138}}</string>
@@ -1226,7 +1226,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/northeast/0001.png</key>
+            <key>Mirror_King/attack/northeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{722,1296},{68,148}}</string>
@@ -1239,7 +1239,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/northeast/0002.png</key>
+            <key>Mirror_King/attack/northeast/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{724,1446},{64,148}}</string>
@@ -1252,7 +1252,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/northwest/0001.png</key>
+            <key>Mirror_King/attack/northwest/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{670,1762},{68,148}}</string>
@@ -1265,7 +1265,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/northwest/0002.png</key>
+            <key>Mirror_King/attack/northwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{597,1082},{62,148}}</string>
@@ -1278,7 +1278,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/southeast/0001.png</key>
+            <key>Mirror_King/attack/southeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{632,1146},{74,148}}</string>
@@ -1291,7 +1291,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/southeast/0002.png</key>
+            <key>Mirror_King/attack/southeast/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{316,476},{74,156}}</string>
@@ -1304,7 +1304,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/southwest/0001.png</key>
+            <key>Mirror_King/attack/southwest/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{646,1296},{74,148}}</string>
@@ -1317,7 +1317,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/southwest/0002.png</key>
+            <key>Mirror_King/attack/southwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{360,318},{74,156}}</string>
@@ -1330,7 +1330,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/attack/west/0001.png</key>
+            <key>Mirror_King/attack/west/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{740,1596},{64,148}}</string>
@@ -1343,7 +1343,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/east/0001.png</key>
+            <key>Mirror_King/walk/east/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{538,1614},{64,152}}</string>
@@ -1356,7 +1356,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/east/0002.png</key>
+            <key>Mirror_King/walk/east/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{498,940},{64,150}}</string>
@@ -1369,7 +1369,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/east/0003.png</key>
+            <key>Mirror_King/walk/east/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{538,1614},{64,152}}</string>
@@ -1382,7 +1382,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/east/0004.png</key>
+            <key>Mirror_King/walk/east/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{516,1458},{64,154}}</string>
@@ -1395,7 +1395,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northeast/0002.png</key>
+            <key>Mirror_King/walk/northeast/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{796,1895},{64,146}}</string>
@@ -1408,7 +1408,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northeast/0004.png</key>
+            <key>Mirror_King/walk/northeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{430,940},{66,150}}</string>
@@ -1421,7 +1421,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northwest/0001.png</key>
+            <key>Mirror_King/walk/northwest/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{566,1146},{64,150}}</string>
@@ -1434,7 +1434,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northwest/0002.png</key>
+            <key>Mirror_King/walk/northwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{464,788},{66,150}}</string>
@@ -1447,7 +1447,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northwest/0003.png</key>
+            <key>Mirror_King/walk/northwest/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{566,1146},{64,150}}</string>
@@ -1460,7 +1460,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/northwest/0004.png</key>
+            <key>Mirror_King/walk/northwest/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{862,1895},{64,146}}</string>
@@ -1473,7 +1473,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/south/0001.png</key>
+            <key>Mirror_King/walk/south/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{262,1966},{80,148}}</string>
@@ -1486,7 +1486,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/south/0003.png</key>
+            <key>Mirror_King/walk/south/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{262,1966},{80,148}}</string>
@@ -1499,7 +1499,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southeast/0001.png</key>
+            <key>Mirror_King/walk/southeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{436,318},{68,152}}</string>
@@ -1512,7 +1512,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southeast/0002.png</key>
+            <key>Mirror_King/walk/southeast/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{708,1146},{74,148}}</string>
@@ -1525,7 +1525,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southeast/0003.png</key>
+            <key>Mirror_King/walk/southeast/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{436,318},{68,152}}</string>
@@ -1538,7 +1538,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southeast/0004.png</key>
+            <key>Mirror_King/walk/southeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{394,788},{68,150}}</string>
@@ -1551,7 +1551,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southwest/0001.png</key>
+            <key>Mirror_King/walk/southwest/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{464,472},{68,152}}</string>
@@ -1564,7 +1564,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southwest/0002.png</key>
+            <key>Mirror_King/walk/southwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{604,1610},{68,150}}</string>
@@ -1577,7 +1577,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southwest/0003.png</key>
+            <key>Mirror_King/walk/southwest/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{464,472},{68,152}}</string>
@@ -1590,7 +1590,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/southwest/0004.png</key>
+            <key>Mirror_King/walk/southwest/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{648,1446},{74,148}}</string>
@@ -1603,7 +1603,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/west/0001.png</key>
+            <key>Mirror_King/walk/west/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{582,1456},{64,152}}</string>
@@ -1616,7 +1616,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/west/0003.png</key>
+            <key>Mirror_King/walk/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{582,1456},{64,152}}</string>
@@ -1629,7 +1629,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorKing/walk/west/0004.png</key>
+            <key>Mirror_King/walk/west/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{484,626},{64,150}}</string>
@@ -1642,7 +1642,7 @@
                 <key>sourceSize</key>
                 <string>{250,250}</string>
             </dict>
-            <key>MirrorMan/attack/west/0002.png</key>
+            <key>Mirror_Man/attack/west/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1050,708},{44,100}}</string>
@@ -1655,7 +1655,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>MirrorMan/walk/west/0001.png</key>
+            <key>Mirror_Man/walk/west/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1837,369},{40,98}}</string>
@@ -1668,7 +1668,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>MirrorMan/walk/west/0003.png</key>
+            <key>Mirror_Man/walk/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1837,369},{40,98}}</string>
@@ -1707,7 +1707,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>PearlMystikoi/asleep/0001.png</key>
+            <key>Pearl_Mystikoi/asleep/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{602,441},{94,27}}</string>
@@ -1720,7 +1720,7 @@
                 <key>sourceSize</key>
                 <string>{150,55}</string>
             </dict>
-            <key>PearlMystikoi/attack/northeast/0003.png</key>
+            <key>Pearl_Mystikoi/attack/northeast/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{973,1708},{90,36}}</string>
@@ -1733,7 +1733,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>PearlMystikoi/attack/northwest/0003.png</key>
+            <key>Pearl_Mystikoi/attack/northwest/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{882,715},{82,38}}</string>
@@ -1746,7 +1746,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>PearlMystikoi/attack/south/0003.png</key>
+            <key>Pearl_Mystikoi/attack/south/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1502,690},{118,62}}</string>
@@ -4099,7 +4099,7 @@
                 <key>sourceSize</key>
                 <string>{235,235}</string>
             </dict>
-            <key>PurpleWorm/asleep/0001.png</key>
+            <key>Purple_Worm/asleep/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1152,701},{91,51}}</string>
@@ -4112,7 +4112,7 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
-            <key>PurpleWorm/attack/east/0003.png</key>
+            <key>Purple_Worm/attack/east/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{552,1302},{152,92}}</string>
@@ -4125,7 +4125,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/east/0004.png</key>
+            <key>Purple_Worm/attack/east/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{480,1302},{154,70}}</string>
@@ -4138,7 +4138,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/north/0002.png</key>
+            <key>Purple_Worm/attack/north/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1786,413},{40,134}}</string>
@@ -4151,7 +4151,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/northeast/0001.png</key>
+            <key>Purple_Worm/attack/northeast/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1559,1146},{96,118}}</string>
@@ -4164,7 +4164,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/northeast/0004.png</key>
+            <key>Purple_Worm/attack/northeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{412,1952},{118,94}}</string>
@@ -4177,7 +4177,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/northwest/0004.png</key>
+            <key>Purple_Worm/attack/northwest/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,2},{118,94}}</string>
@@ -4190,7 +4190,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/southeast/0003.png</key>
+            <key>Purple_Worm/attack/southeast/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,236},{110,94}}</string>
@@ -4203,7 +4203,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/southeast/0004.png</key>
+            <key>Purple_Worm/attack/southeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,348},{110,94}}</string>
@@ -4216,7 +4216,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/southwest/0003.png</key>
+            <key>Purple_Worm/attack/southwest/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,460},{110,94}}</string>
@@ -4229,7 +4229,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/southwest/0004.png</key>
+            <key>Purple_Worm/attack/southwest/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,122},{112,94}}</string>
@@ -4242,7 +4242,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/west/0003.png</key>
+            <key>Purple_Worm/attack/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{390,634},{152,92}}</string>
@@ -4255,7 +4255,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/attack/west/0004.png</key>
+            <key>Purple_Worm/attack/west/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{392,476},{152,70}}</string>
@@ -4268,7 +4268,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/east/0003.png</key>
+            <key>Purple_Worm/walk/east/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1455,1420},{128,102}}</string>
@@ -4281,7 +4281,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/east/0007.png</key>
+            <key>Purple_Worm/walk/east/0007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1455,1680},{126,102}}</string>
@@ -4294,7 +4294,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0002.png</key>
+            <key>Purple_Worm/walk/north/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1214,2},{40,136}}</string>
@@ -4307,7 +4307,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0003.png</key>
+            <key>Purple_Worm/walk/north/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{593,2},{40,144}}</string>
@@ -4320,7 +4320,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0004.png</key>
+            <key>Purple_Worm/walk/north/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1214,2},{40,136}}</string>
@@ -4333,7 +4333,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0006.png</key>
+            <key>Purple_Worm/walk/north/0006.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1795,275},{40,134}}</string>
@@ -4346,7 +4346,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0007.png</key>
+            <key>Purple_Worm/walk/north/0007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{635,2},{40,144}}</string>
@@ -4359,7 +4359,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/north/0008.png</key>
+            <key>Purple_Worm/walk/north/0008.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1795,275},{40,134}}</string>
@@ -4372,7 +4372,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/southwest/0001.png</key>
+            <key>Purple_Worm/walk/southwest/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1948},{86,98}}</string>
@@ -4385,7 +4385,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/southwest/0005.png</key>
+            <key>Purple_Worm/walk/southwest/0005.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1952,1948},{86,98}}</string>
@@ -4398,7 +4398,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/west/0003.png</key>
+            <key>Purple_Worm/walk/west/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1455,1808},{126,102}}</string>
@@ -4411,7 +4411,7 @@
                 <key>sourceSize</key>
                 <string>{200,200}</string>
             </dict>
-            <key>PurpleWorm/walk/west/0007.png</key>
+            <key>Purple_Worm/walk/west/0007.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1455,1550},{128,102}}</string>
@@ -4697,7 +4697,7 @@
                 <key>sourceSize</key>
                 <string>{190,190}</string>
             </dict>
-            <key>SeaMystikoi/asleep/0001.png</key>
+            <key>Sea_Mystikoi/asleep/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{698,437},{94,27}}</string>
@@ -4710,7 +4710,7 @@
                 <key>sourceSize</key>
                 <string>{150,55}</string>
             </dict>
-            <key>SeaMystikoi/attack/north/0001.png</key>
+            <key>Sea_Mystikoi/attack/north/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1210,1694},{104,50}}</string>
@@ -4723,7 +4723,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>SeaMystikoi/attack/northwest/0003.png</key>
+            <key>Sea_Mystikoi/attack/northwest/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{966,715},{82,38}}</string>
@@ -4736,7 +4736,7 @@
                 <key>sourceSize</key>
                 <string>{150,150}</string>
             </dict>
-            <key>SeaMystikoi/attack/south/0003.png</key>
+            <key>Sea_Mystikoi/attack/south/0003.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1157,1883},{118,62}}</string>
@@ -5360,7 +5360,7 @@
                 <key>sourceSize</key>
                 <string>{220,220}</string>
             </dict>
-            <key>SilverTamara/walk/southeast/0004.png</key>
+            <key>Silver_Tamara/walk/southeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1610},{61,83}}</string>
@@ -5373,7 +5373,7 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
-            <key>SilverTamara/walk/southwest/0002.png</key>
+            <key>Silver_Tamara/walk/southwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1673},{61,83}}</string>
@@ -5386,7 +5386,7 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
-            <key>SpikeTrap/0001.png</key>
+            <key>Spike_Trap/0001.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1559,1830},{92,96}}</string>
@@ -5399,7 +5399,7 @@
                 <key>sourceSize</key>
                 <string>{100,100}</string>
             </dict>
-            <key>SteelTamara/walk/southeast/0004.png</key>
+            <key>Steel_Tamara/walk/southeast/0004.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1736},{61,83}}</string>
@@ -5412,7 +5412,7 @@
                 <key>sourceSize</key>
                 <string>{125,125}</string>
             </dict>
-            <key>SteelTamara/walk/southwest/0002.png</key>
+            <key>Steel_Tamara/walk/southwest/0002.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1773,1799},{61,83}}</string>
@@ -6254,7 +6254,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b31c0b8aee26930155ec4687b4d0f24e:2e6c3c90b4dd5989cef9b0efb9621714:e8dc2751bf043b6ade923908422c81f1$</string>
+            <string>$TexturePacker:SmartUpdate:7d1629c25403274dc3e42619dd96fdb6:fa835487c5094d422a3503736be438e5:e8dc2751bf043b6ade923908422c81f1$</string>
             <key>textureFileName</key>
             <string>sprites2-hd.pvr.ccz</string>
         </dict>

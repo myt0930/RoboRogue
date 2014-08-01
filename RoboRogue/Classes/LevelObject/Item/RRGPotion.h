@@ -10,25 +10,25 @@
 
 @interface RRGPotion : RRGItemUseOnce <NSCoding>
 @end
-@interface PotionOfHealingBase : RRGPotion <NSCoding>
+@interface Potion_of_HealingBase : RRGPotion <NSCoding>
 @end
-@interface PotionOfHealing : PotionOfHealingBase <NSCoding>
+@interface Potion_of_Healing : Potion_of_HealingBase <NSCoding>
 @end
-@interface PotionOfExtraHealing : PotionOfHealingBase <NSCoding>
+@interface Potion_of_Extra_Healing : Potion_of_HealingBase <NSCoding>
 @end
-@interface PotionOfFullHealing : PotionOfHealingBase <NSCoding>
+@interface Potion_of_Full_Healing : Potion_of_HealingBase <NSCoding>
 @end
-@interface HolyWater : RRGPotion <NSCoding>
+@interface Holy_Water : RRGPotion <NSCoding>
 @end
-@interface PotionOfPoison : RRGPotion <NSCoding>
+@interface Potion_of_Poison : RRGPotion <NSCoding>
 @end
-@interface PotionOfConfusion : RRGPotion <NSCoding>
+@interface Potion_of_Confusion : RRGPotion <NSCoding>
 @end
-@interface PotionOfSleeping : RRGPotion <NSCoding>
+@interface Potion_of_Sleeping : RRGPotion <NSCoding>
 @end
-@interface PotionOfParalysis : RRGPotion <NSCoding>
+@interface Potion_of_Paralysis : RRGPotion <NSCoding>
 @end
-@interface PotionOfSpeed : RRGPotion <NSCoding>
+@interface Potion_of_Speed : RRGPotion <NSCoding>
 @end
-@interface RottenPotion : RRGPotion <NSCoding>
+@interface Rotten_Potion : RRGPotion <NSCoding>
 @end

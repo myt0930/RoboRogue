@@ -11,9 +11,9 @@
 @interface RRGSword : RRGSwordOrShield <NSCoding>
 -(void)didAttackToCharacter:(RRGCharacter*)target;
 @end
-@interface WoodenSword : RRGSword <NSCoding>
+@interface Wooden_Sword : RRGSword <NSCoding>
 @end
-@interface SwordOfGlass : RRGSword <NSCoding>
+@interface Sword_of_Glass : RRGSword <NSCoding>
 @end
 @interface Katana : RRGSword <NSCoding>
 @end

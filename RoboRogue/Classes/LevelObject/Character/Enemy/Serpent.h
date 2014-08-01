@@ -12,5 +12,5 @@
 @end
 @interface Viper : Serpent <NSCoding>
 @end
-@interface PurpleWorm : Serpent <NSCoding>
+@interface Purple_Worm : Serpent <NSCoding>
 @end

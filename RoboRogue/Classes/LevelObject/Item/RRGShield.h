@@ -12,9 +12,9 @@
 -(void)didBeDealtDamage:(NSInteger)damage
             byCharacter:(RRGCharacter*)character;
 @end
-@interface WoodenShield : RRGShield
+@interface Wooden_Shield : RRGShield
 @end
-@interface ShieldOfGlass : RRGShield
+@interface Shield_of_Glass : RRGShield
 @end
-@interface ShieldOfIron : RRGShield <NSCoding>
+@interface Shield_of_Iron : RRGShield <NSCoding>
 @end

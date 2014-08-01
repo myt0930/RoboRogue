@@ -15,7 +15,7 @@
 #import "RRGLevel+AddObject.h"
 #import "RRGLevel+TurnSequence.h"
 
-static const NSInteger ProbabilityDropItem = 100;
+static const NSInteger ProbabilityDropItem = 3;
 
 static NSString* const kProfilePNapping = @"pNapping";
 static NSString* const kProfilePDropItem = @"pDropItem";

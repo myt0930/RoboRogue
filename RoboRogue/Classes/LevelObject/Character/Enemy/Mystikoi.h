@@ -10,7 +10,7 @@
 
 @interface Mystikoi : RRGEnemy <NSCoding>
 @end
-@interface SeaMystikoi : Mystikoi <NSCoding>
+@interface Sea_Mystikoi : Mystikoi <NSCoding>
 @end
-@interface PearlMystikoi : Mystikoi <NSCoding>
+@interface Pearl_Mystikoi : Mystikoi <NSCoding>
 @end

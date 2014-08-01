@@ -27,7 +27,7 @@
 {
     [super setDefaultAttributes];
     
-    NSString* staffName = [NSString stringWithFormat:@"StaffOf%@", [self className]];
+    NSString* staffName = [NSString stringWithFormat:@"Staff_of_%@", self.displayName];
     self.staff = [RRGStaff levelObjectWithLevel:self.level
                                            name:staffName
                                        atRandom:YES];

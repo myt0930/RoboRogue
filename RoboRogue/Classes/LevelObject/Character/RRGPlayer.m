@@ -156,11 +156,11 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
 }
 -(BOOL)hasLamplight
 {
-    return ([self.amuletEquipped isKindOfClass:[AmuletOfLamplight class]])?YES:NO;
+    return ([self.amuletEquipped isKindOfClass:[Amulet_of_Lamplight class]])?YES:NO;
 }
 -(BOOL)magicTunnel
 {
-    return ([self.amuletEquipped isKindOfClass:[AmuletOfMagicTunnel class]])?YES:NO;
+    return ([self.amuletEquipped isKindOfClass:[Amulet_of_Magic_Tunnel class]])?YES:NO;
 }
 -(CGRect)playerViewRect
 {

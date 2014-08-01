@@ -1181,31 +1181,30 @@ static NSInteger const maxCharacterLevel = 99;
         self.actionCount--;
     }
 }
--(void)rotate:(NSInteger)times
+-(void)rotate:(NSUInteger)times
 {
-    NSMutableArray* array = [NSMutableArray array];
-    CGPoint direction = South;
-    do {
-        NSString* name = [NSString stringWithFormat:@"%@/walk/%@/0001.png",
-                          [self spriteFolderName],
-                          directionString(direction)];
-        [array addObject:name];
-        direction = rotatedDirection(direction, 1);
-    } while (!CGPointEqualToPoint(direction, South));
-    
     CGFloat delay = DelayAnimation / 4;
     NSString* key = [NSString stringWithFormat:@"%@/rotate/%f",
                      [self spriteFolderName],
                      delay];
     
     CCActionAnimate* animate = (CCActionAnimate*)[sharedActionCache actionForKey:key];
-    if (animate) {
+    if (animate == nil) {
+        NSMutableArray* array = [NSMutableArray array];
+        CGPoint direction = South;
+        do {
+            NSString* name = [NSString stringWithFormat:@"%@/walk/%@/0001.png",
+                              [self spriteFolderName],
+                              directionString(direction)];
+            [array addObject:name];
+            direction = rotatedDirection(direction, 1);
+        } while (!CGPointEqualToPoint(direction, South));
+        
         animate = [CCActionAnimate animateWithSpriteFrameNames:array
                                                          delay:delay];
         [sharedActionCache setAction:[animate copy] forKey:key];
     }
-    CCAction* repeat = (times == 1)?animate:[CCActionRepeat actionWithAction:animate
-                                                                       times:times];
+    CCAction* repeat = [CCActionRepeat actionWithAction:animate times:times];
     CCActionSequence* animationSeq = [CCActionSequence actions:
                                       [CCActionCallFunc
                                        actionWithTarget:self.objectSprite
@@ -1532,10 +1531,12 @@ typedef NS_ENUM(NSInteger, RRGEffectUpOrDown)
 };
 -(void)upOrDownEffect:(RRGEffectUpOrDown)upOrDown
 {
-    NSString* str = (upOrDown == RRGEffectDown)?@"down":@"up";
+    NSString* path = @"upOrDownEffect/";
+    NSString* upOrDownStr = (upOrDown == RRGEffectDown)?@"down":@"up";
+    path = [path stringByAppendingString:upOrDownStr];
     CCSprite* sprite = [CCSprite spriteWithImageNamed:
                         [NSString stringWithFormat:@"%@.png",
-                         str]];
+                         path]];
     sprite.scale = self.objectSprite.contentSize.width / sprite.contentSize.width;
     //CCLOG(@"scale = %f", sprite.scale);
     sprite.opacity = .5f;
@@ -1544,7 +1545,7 @@ typedef NS_ENUM(NSInteger, RRGEffectUpOrDown)
     
     [self.level addAction:[CCActionSoundEffect actionWithSoundFile:
                            [NSString stringWithFormat:@"%@.caf",
-                            str]]];
+                            upOrDownStr]]];
     
     __weak CCClippingNode* weakClippingNode = _clippingNode;
     [self.level addAction:[CCActionCallBlock

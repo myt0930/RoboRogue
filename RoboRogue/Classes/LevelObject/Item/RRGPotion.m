@@ -27,12 +27,12 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@interface PotionOfHealingBase ()
+@interface Potion_of_HealingBase ()
 //profile
 @property (nonatomic) NSUInteger healingPoints;
 @property (nonatomic) NSUInteger raisingMaxHPPoints;
 @end
-@implementation PotionOfHealingBase
+@implementation Potion_of_HealingBase
 -(void)setDefaultAttributes
 {
     [super setDefaultAttributes];
@@ -68,16 +68,16 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfHealing
+@implementation Potion_of_Healing
 @end
 
-@implementation PotionOfExtraHealing
+@implementation Potion_of_Extra_Healing
 @end
 
-@implementation PotionOfFullHealing
+@implementation Potion_of_Full_Healing
 @end
 
-@implementation HolyWater
+@implementation Holy_Water
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -89,7 +89,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfPoison
+@implementation Potion_of_Poison
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -98,7 +98,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfConfusion
+@implementation Potion_of_Confusion
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -106,7 +106,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfSleeping
+@implementation Potion_of_Sleeping
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -114,7 +114,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfParalysis
+@implementation Potion_of_Paralysis
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -122,7 +122,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation PotionOfSpeed
+@implementation Potion_of_Speed
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {
@@ -131,7 +131,7 @@ static NSString* const kProfileRaisingMaxHPPoints = @"raisingMaxHPPoints";
 }
 @end
 
-@implementation RottenPotion
+@implementation Rotten_Potion
 -(void)useToCharacter:(RRGCharacter *)target
           byCharacter:(RRGCharacter *)user
 {

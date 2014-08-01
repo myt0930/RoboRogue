@@ -10,44 +10,44 @@
 
 @interface Tamara : RRGEnemy <NSCoding>
 @end
-@interface SilverTamara : Tamara <NSCoding>
+@interface Silver_Tamara : Tamara <NSCoding>
 @end
-@interface GoldTamara : Tamara <NSCoding>
+@interface Gold_Tamara : Tamara <NSCoding>
 @end
 
 @interface TamaraSubspecies : Tamara <NSCoding>
 @end
 
-@interface SteelTamara : TamaraSubspecies <NSCoding>
+@interface Steel_Tamara : TamaraSubspecies <NSCoding>
 @end
 
-@interface CrystallineTamara : TamaraSubspecies <NSCoding>
+@interface Crystalline_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BroodTamara : TamaraSubspecies <NSCoding>
+@interface Brood_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface ToxinTamara : TamaraSubspecies <NSCoding>
+@interface Toxin_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface PlagueTamara : TamaraSubspecies <NSCoding>
+@interface Plague_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface MesmericTamara : TamaraSubspecies <NSCoding>
+@interface Mesmeric_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BombTamara : TamaraSubspecies <NSCoding>
+@interface Bomb_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface DementiaTamara : TamaraSubspecies <NSCoding>
+@interface Dementia_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface ShiftingTamara : TamaraSubspecies <NSCoding>
+@interface Shifting_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BigTamara : TamaraSubspecies <NSCoding>
+@interface Big_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BigBombTamara : TamaraSubspecies <NSCoding>
+@interface Big_Bomb_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BigSilverTamara : TamaraSubspecies <NSCoding>
+@interface Big_Silver_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BigGoldTamara : TamaraSubspecies <NSCoding>
+@interface Big_Gold_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface BigCrystallineTamara : TamaraSubspecies <NSCoding>
+@interface Big_Crystalline_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface DevilTamara : TamaraSubspecies <NSCoding>
+@interface Devil_Tamara : TamaraSubspecies <NSCoding>
 @end
-@interface KingTamara : TamaraSubspecies <NSCoding>
+@interface King_Tamara : TamaraSubspecies <NSCoding>
 @end

@@ -163,7 +163,7 @@ static const NSInteger ProbabilityItemHit = 90;
     [self unequippedByPlayer:player soundAndMessage:YES];
 }
 -(void)unequippedByPlayer:(RRGPlayer *)player
-     soundAndMessage:(BOOL)soundAndMessage
+          soundAndMessage:(BOOL)soundAndMessage
 {}
 @end
 

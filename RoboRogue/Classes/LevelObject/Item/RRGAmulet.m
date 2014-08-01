@@ -85,8 +85,8 @@
 {}
 @end
 
-@implementation AmuletOfLamplight
+@implementation Amulet_of_Lamplight
 @end
 
-@implementation AmuletOfMagicTunnel
+@implementation Amulet_of_Magic_Tunnel
 @end

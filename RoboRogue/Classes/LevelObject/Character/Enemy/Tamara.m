@@ -15,13 +15,13 @@
     [super setDefaultAttributes];
     self.isTamara = YES;
     [self setLevelNamesArray:@[@"Tamara",
-                               @"SilverTamara",
-                               @"GoldTamara"]];
+                               @"Silver_Tamara",
+                               @"Gold_Tamara"]];
 }
 @end
-@implementation SilverTamara
+@implementation Silver_Tamara
 @end
-@implementation GoldTamara
+@implementation Gold_Tamara
 @end
 
 #pragma mark - subspecies
@@ -34,35 +34,35 @@
 }
 @end
 
-@implementation SteelTamara
+@implementation Steel_Tamara
 @end
-@implementation CrystallineTamara
+@implementation Crystalline_Tamara
 @end
-@implementation BroodTamara
+@implementation Brood_Tamara
 @end
-@implementation ToxinTamara
+@implementation Toxin_Tamara
 @end
-@implementation PlagueTamara
+@implementation Plague_Tamara
 @end
-@implementation MesmericTamara
+@implementation Mesmeric_Tamara
 @end
-@implementation BombTamara
+@implementation Bomb_Tamara
 @end
-@implementation DementiaTamara
+@implementation Dementia_Tamara
 @end
-@implementation ShiftingTamara
+@implementation Shifting_Tamara
 @end
-@implementation BigTamara
+@implementation Big_Tamara
 @end
-@implementation BigBombTamara
+@implementation Big_Bomb_Tamara
 @end
-@implementation BigSilverTamara
+@implementation Big_Silver_Tamara
 @end
-@implementation BigGoldTamara
+@implementation Big_Gold_Tamara
 @end
-@implementation BigCrystallineTamara
+@implementation Big_Crystalline_Tamara
 @end
-@implementation DevilTamara
+@implementation Devil_Tamara
 @end
-@implementation KingTamara
+@implementation King_Tamara
 @end

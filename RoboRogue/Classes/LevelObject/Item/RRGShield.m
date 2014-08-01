@@ -77,10 +77,10 @@
 {}
 @end
 
-@implementation WoodenShield
+@implementation Wooden_Shield
 @end
 
-@implementation ShieldOfGlass
+@implementation Shield_of_Glass
 -(void)didBeDealtDamage:(NSInteger)damage
             byCharacter:(RRGCharacter *)character
 {
@@ -96,5 +96,5 @@
 }
 @end
 
-@implementation ShieldOfIron
+@implementation Shield_of_Iron
 @end

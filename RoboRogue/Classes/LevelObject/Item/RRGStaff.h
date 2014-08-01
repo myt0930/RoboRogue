@@ -27,36 +27,39 @@
 -(void)wavedByCharacter:(RRGCharacter*)character;
 @end
 
-@interface StaffOfSloth : RRGStaff
+@interface Staff_of_Sloth : RRGStaff
 @end
 
-@interface StaffOfDeath : RRGStaff
+@interface Staff_of_Death : RRGStaff
 @end
 
-@interface StaffOfBlowback : RRGStaff
+@interface Staff_of_Blowback : RRGStaff
 @end
 
-@interface StaffOfSwitching : RRGStaff
+@interface Staff_of_Switching : RRGStaff
 @end
 
-@interface StaffOfJumping : RRGStaff
+@interface Staff_of_Jumping : RRGStaff
 @end
 
-@interface StaffOfPulling : RRGStaff
+@interface Staff_of_Pulling : RRGStaff
 @end
 
-@interface StaffOfProgress : RRGStaff
+@interface Staff_of_Teleportation : RRGStaff
 @end
 
-@interface StaffOfRegress : RRGStaff
+@interface Staff_of_Progress : RRGStaff
 @end
 
-@interface StaffOfTamara : RRGStaff
+@interface Staff_of_Regress : RRGStaff
 @end
 
-@interface StaffOfLich : RRGStaff
+@interface Staff_of_Tamara : RRGStaff
 @end
-@interface StaffOfDemilich : RRGStaff
+
+@interface Staff_of_Lich : RRGStaff
 @end
-@interface StaffOfArchlich : RRGStaff
+@interface Staff_of_Demilich : RRGStaff
+@end
+@interface Staff_of_Archlich : RRGStaff
 @end

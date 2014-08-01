@@ -13,13 +13,13 @@
 {
     [super setDefaultAttributes];
     [self setLevelNamesArray:@[@"Rufus",
-                               @"AngryRufus",
-                               @"MadRufus"]];
+                               @"Angry_Rufus",
+                               @"Mad_Rufus"]];
 }
 @end
 
-@implementation AngryRufus
+@implementation Angry_Rufus
 @end
 
-@implementation MadRufus
+@implementation Mad_Rufus
 @end

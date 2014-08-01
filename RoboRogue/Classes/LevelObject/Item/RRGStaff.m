@@ -138,10 +138,10 @@ static NSString* const kProfileNamesOfMagicBullets = @"namesOfMagicBullets";
 }
 @end
 
-@implementation StaffOfSloth
+@implementation Staff_of_Sloth
 @end
 
-@implementation StaffOfDeath
+@implementation Staff_of_Death
 -(instancetype)initWithLevel:(RRGLevel *)level
 {
     return [super initWithLevel:level numberOfMagicBullets:0];
@@ -153,30 +153,33 @@ static NSString* const kProfileNamesOfMagicBullets = @"namesOfMagicBullets";
 }
 @end
 
-@implementation StaffOfBlowback
+@implementation Staff_of_Blowback
 @end
 
-@implementation StaffOfSwitching
+@implementation Staff_of_Switching
 @end
 
-@implementation StaffOfJumping
+@implementation Staff_of_Jumping
 @end
 
-@implementation StaffOfPulling
+@implementation Staff_of_Pulling
 @end
 
-@implementation StaffOfProgress
+@implementation Staff_of_Teleportation
 @end
 
-@implementation StaffOfRegress
+@implementation Staff_of_Progress
 @end
 
-@implementation StaffOfTamara
+@implementation Staff_of_Regress
 @end
 
-@implementation StaffOfLich
+@implementation Staff_of_Tamara
 @end
-@implementation StaffOfDemilich
+
+@implementation Staff_of_Lich
 @end
-@implementation StaffOfArchlich
+@implementation Staff_of_Demilich
+@end
+@implementation Staff_of_Archlich
 @end

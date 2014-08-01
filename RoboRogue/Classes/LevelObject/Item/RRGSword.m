@@ -76,10 +76,10 @@
 {}
 @end
 
-@implementation WoodenSword
+@implementation Wooden_Sword
 @end
 
-@implementation SwordOfGlass
+@implementation Sword_of_Glass
 -(void)didAttackToCharacter:(RRGCharacter *)target
 {
     if (calculateProbability(10)) {

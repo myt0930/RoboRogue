@@ -11,8 +11,8 @@
 @interface Rufus : RRGEnemy <NSCoding>
 @end
 
-@interface AngryRufus : Rufus <NSCoding>
+@interface Angry_Rufus : Rufus <NSCoding>
 @end
 
-@interface MadRufus : Rufus <NSCoding>
+@interface Mad_Rufus : Rufus <NSCoding>
 @end

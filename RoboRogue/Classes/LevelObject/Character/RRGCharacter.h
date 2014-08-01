@@ -147,7 +147,7 @@ extern NSString* const kStatePinch;
 -(void)killedByCharacter:(RRGCharacter*)character;
 -(void)killCharacter:(RRGCharacter*)character;
 
--(void)rotate:(NSInteger)times;
+-(void)rotate:(NSUInteger)times;
 
 //change
 -(void)changeHP:(NSInteger)changeHP

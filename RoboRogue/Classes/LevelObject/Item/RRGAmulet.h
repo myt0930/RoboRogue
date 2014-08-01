@@ -11,8 +11,8 @@
 @interface RRGAmulet : RRGItemEquipment <NSCoding>
 @end
 
-@interface AmuletOfLamplight : RRGAmulet <NSCoding>
+@interface Amulet_of_Lamplight : RRGAmulet <NSCoding>
 @end
 
-@interface AmuletOfMagicTunnel : RRGAmulet <NSCoding>
+@interface Amulet_of_Magic_Tunnel : RRGAmulet <NSCoding>
 @end

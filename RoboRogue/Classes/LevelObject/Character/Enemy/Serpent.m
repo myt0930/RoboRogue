@@ -28,7 +28,7 @@
     self.isDragon = YES;
     [self setLevelNamesArray:@[@"Serpent",
                                @"Viper",
-                               @"PurpleWorm"]];
+                               @"Purple_Worm"]];
 }
 -(void)afterAttackEffect:(RRGCharacter *)target
 {
@@ -48,7 +48,7 @@
 }
 @end
 
-@implementation PurpleWorm
+@implementation Purple_Worm
 -(void)setDefaultAttributes
 {
     [super setDefaultAttributes];
