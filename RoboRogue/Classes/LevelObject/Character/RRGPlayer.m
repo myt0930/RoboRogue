@@ -103,6 +103,14 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
 {
     return 1.0f;
 }
+-(NSUInteger)strength
+{
+    if ([self.amuletEquipped isKindOfClass:[Amulet_of_Strength class]]) {
+        return [super strength] + 5;
+    } else {
+        return [super strength];
+    }
+}
 -(NSInteger)offenseValue
 {
     if ([self haveState:kStatePygmy]) {

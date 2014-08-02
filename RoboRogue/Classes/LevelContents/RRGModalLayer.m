@@ -196,15 +196,17 @@ static NSString* const kGotoPrefix = @"Goto:";
                                  nil];
         [self runAction:seq];
     } else if ([action isKindOfClass:[CCActionFiniteTime class]]) {
-        CCLOG(@"run CCAction");
+        CCLOG(@"run CCAction %@", NSStringFromClass([action class]));
         //CCAction
         CCActionFiniteTime* ccAction = (CCActionFiniteTime*)action;
-        CCActionSequence* seq = [CCActionSequence actions:ccAction,
+        CCActionSequence* seq = [CCActionSequence actions:
+                                 ccAction,
                                  [CCActionCallFunc actionWithTarget:self
                                                            selector:@selector(runAction)],
                                  nil];
         [self runAction:seq];
     } else if ([action isKindOfClass:[NSNumber class]]) {
+        CCLOG(@"hide");
         //hide
         NSNumber* number = (NSNumber*)action;
         LevelState levelState = [number integerValue];

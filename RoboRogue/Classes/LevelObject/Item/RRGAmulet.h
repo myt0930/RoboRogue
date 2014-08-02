@@ -16,3 +16,6 @@
 
 @interface Amulet_of_Magic_Tunnel : RRGAmulet <NSCoding>
 @end
+
+@interface Amulet_of_Strength : RRGAmulet <NSCoding>
+@end

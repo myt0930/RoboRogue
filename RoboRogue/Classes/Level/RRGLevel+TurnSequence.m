@@ -73,10 +73,9 @@
     if ([self.charactersForTurnSequence count] > 0 && !self.player.isDead) {
         RRGCharacter* character = self.charactersForTurnSequence[0];
         if (character != self.player) {
-            //CCLOG(@"player speed = %f", self.player.speed);
             character.actionCount += character.speed / self.player.speed;
-            /*CCLOG(@"%@.speed = %f, player.speed = %f, actionCount = %f",
-                  character, character.speed, self.player.speed, character.actionCount);*/
+            CCLOG(@"%@.speed = %f, player.speed = %f, actionCount = %f",
+                  character, character.speed, self.player.speed, character.actionCount);
             while (!character.isDead &&
                    !self.player.isDead &&
                    character.actionCount >= 1) {

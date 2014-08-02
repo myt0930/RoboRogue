@@ -11,6 +11,7 @@
 	<key>initialItems</key>
 	<array>
 		<string>Potion_of_Healing</string>
+		<string>Staff_of_Progress</string>
 	</array>
 	<key>floor1</key>
 	<dict>
@@ -93,6 +94,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -151,7 +153,7 @@
 		<key>itemCount</key>
 		<integer>2</integer>
 		<key>trapCount</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -201,6 +203,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -257,12 +260,13 @@
 		<key>itemCount</key>
 		<integer>2</integer>
 		<key>trapCount</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
 			<array>
 				<string>Mystikoi</string>
+				<string>Serpent</string>
 			</array>
 			<key>Uncommon</key>
 			<array>
@@ -307,6 +311,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -366,7 +371,7 @@
 		<key>itemCount</key>
 		<integer>2</integer>
 		<key>trapCount</key>
-		<integer>4</integer>
+		<integer>3</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -377,11 +382,11 @@
 			</array>
 			<key>Uncommon</key>
 			<array>
-				<string>Hansya_Man</string>
+				<string>Rufus</string>
 			</array>
 			<key>Rare</key>
 			<array>
-				<string>Hansya_Man</string>
+				<string>Serpent</string>
 			</array>
 		</dict>
 		<key>itemNames</key>
@@ -418,6 +423,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -477,7 +483,7 @@
 		<key>itemCount</key>
 		<integer>2</integer>
 		<key>trapCount</key>
-		<integer>4</integer>
+		<integer>3</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -530,6 +536,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -589,13 +596,14 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>6</integer>
+		<integer>4</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
 			<array>
 				<string>Lich</string>
 				<string>Hansya_Man</string>
+				<string>Serpent</string>
 			</array>
 			<key>Uncommon</key>
 			<array>
@@ -640,6 +648,7 @@
 				<string>Staff_of_Death</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -698,13 +707,14 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>6</integer>
+		<integer>4</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
 			<array>
 				<string>Lich</string>
 				<string>Steel_Tamara</string>
+				<string>Sea_Mystikoi</string>
 			</array>
 			<key>Uncommon</key>
 			<array>
@@ -752,6 +762,7 @@
 				<string>Staff_of_Tamara</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -810,7 +821,7 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>8</integer>
+		<integer>5</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -865,6 +876,7 @@
 				<string>Staff_of_Tamara</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -923,7 +935,7 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>8</integer>
+		<integer>5</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -940,7 +952,7 @@
 			</array>
 			<key>Rare</key>
 			<array>
-				<string>Steel_Tamara</string>
+				<string>Silver_Tamara</string>
 			</array>
 		</dict>
 		<key>itemNames</key>
@@ -978,6 +990,7 @@
 				<string>Staff_of_Tamara</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -1036,19 +1049,19 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>8</integer>
+		<integer>5</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
 			<array>
 				<string>Angry_Rufus</string>
 				<string>Silver_Tamara</string>
+				<string>Mirror_Man</string>
 			</array>
 			<key>Uncommon</key>
 			<array>
 				<string>Angry_Rufus</string>
 				<string>Silver_Tamara</string>
-				<string>Mirror_Man</string>
 			</array>
 			<key>Rare</key>
 			<array>
@@ -1090,6 +1103,7 @@
 				<string>Staff_of_Tamara</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>
@@ -1148,7 +1162,7 @@
 		<key>itemCount</key>
 		<integer>3</integer>
 		<key>trapCount</key>
-		<integer>10</integer>
+		<integer>5</integer>
 		<key>enemyNames</key>
 		<dict>
 			<key>Common</key>
@@ -1201,6 +1215,7 @@
 				<string>Staff_of_Tamara</string>
 				<string>Amulet_of_Lamplight</string>
 				<string>Amulet_of_Magic_Tunnel</string>
+				<string>Amulet_of_Strength</string>
 				<string>Shield_of_Iron</string>
 				<string>Katana</string>
 			</array>

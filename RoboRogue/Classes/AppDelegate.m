@@ -22,8 +22,10 @@
 	// There are a number of simple options you can change.
 	// If you want more flexibility, you can configure Cocos2D yourself instead of calling setupCocos2dWithOptions:.
 	[self setupCocos2dWithOptions:@{
+#if DEBUG
 		// Show the FPS and draw call label.
 		CCSetupShowDebugStats: @(YES),
+#endif
 		
 		// More examples of options you might want to fiddle with:
 		// (See CCAppDelegate.h for more information)

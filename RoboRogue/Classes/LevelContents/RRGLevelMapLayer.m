@@ -46,7 +46,7 @@ static NSString* const kMapArray = @"mapArray";
 
 @property (nonatomic) NSUInteger tileGID1;
 
-@property (nonatomic) dispatch_queue_t syncQueue;
+//@property (nonatomic) dispatch_queue_t syncQueue;
 
 -(CGPoint)tilePointForTileCoord:(CGPoint)tileCoord;
 -(BOOL)tileExistAtTileCoord:(CGPoint)tileCoord;
@@ -77,8 +77,7 @@ static NSString* const kMapArray = @"mapArray";
         _tileLayer = [_tiledMap layerNamed:kTileLayer];
         _tileGID1 = [_tileLayer tileGIDAt:CGPointZero];
         
-        _syncQueue = dispatch_queue_create("info.mygames888.roborogue.mapLayer",
-                                           NULL);
+        //_syncQueue = dispatch_queue_create("info.mygames888.roborogue.mapLayer", NULL);
         
         [_tileLayer removeTileAt:CGPointZero];
         _tileLayer.opacity = .3f;
@@ -98,7 +97,7 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)dealloc
 {
-    dispatch_release(_syncQueue);
+    //dispatch_release(_syncQueue);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 -(CGPoint)tilePointForTileCoord:(CGPoint)tileCoord
@@ -128,7 +127,7 @@ static NSString* const kMapArray = @"mapArray";
 -(void)getPostAddObject:(NSNotification*)notification
 {
     //CCLOG(@"%s", __PRETTY_FUNCTION__);
-    dispatch_sync(_syncQueue, ^{
+    //dispatch_sync(_syncQueue, ^{
         RRGLevelObject* levelObject = notification.userInfo[kLevelObject];
         CGPoint tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
         
@@ -141,7 +140,7 @@ static NSString* const kMapArray = @"mapArray";
         } else {
             [_objectLayer addChild:mapObject];
         }
-    });
+    //});
 }
 #pragma mark - NSCoding
 -(instancetype)initWithCoder:(NSCoder *)coder
@@ -199,7 +198,7 @@ static NSString* const kMapArray = @"mapArray";
 @property (nonatomic, weak) RRGLevelObject* levelObject;
 @property (nonatomic, weak, readonly) RRGLevel* level;
 
-@property (nonatomic, readonly) dispatch_queue_t syncQueue;
+//@property (nonatomic, readonly) dispatch_queue_t syncQueue;
 
 -(instancetype)initWithMapLayer:(RRGLevelMapLayer*)mapLayer
                     levelObject:(RRGLevelObject*)levelObject;
@@ -256,10 +255,12 @@ static NSString* const kMapArray = @"mapArray";
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+/*
 -(dispatch_queue_t)syncQueue
 {
     return _mapLayer.syncQueue;
 }
+ */
 -(RRGLevel*)level
 {
     return self.mapLayer.level;
@@ -278,15 +279,15 @@ static NSString* const kMapArray = @"mapArray";
 -(void)getPostSetTileCoord:(NSNotification*)notification
 {
     //CCLOG(@"%s", __PRETTY_FUNCTION__);
-    dispatch_async(self.syncQueue, ^{
+    //dispatch_async(self.syncQueue, ^{
         self.tileCoord = [notification.userInfo[kTileCoord] CGPointValue];
-    });
+    //});
 }
 -(void)getPostRemove:(NSNotification*)notification
 {
-    dispatch_async(self.syncQueue, ^{
+    //dispatch_async(self.syncQueue, ^{
         [self removeFromParentAndCleanup:YES];
-    });
+    //});
 }
 @end
 
@@ -410,9 +411,9 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)getPostFound:(NSNotification*)notification
 {
-    dispatch_async(self.syncQueue, ^{
+    //dispatch_async(self.syncQueue, ^{
         [self update];
-    });
+    //});
 }
 @end
 

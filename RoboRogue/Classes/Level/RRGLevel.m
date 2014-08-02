@@ -424,11 +424,10 @@ static NSUInteger const MessageCapacity = 30;
     //test
     /*
     RRGTrap* test = [RRGTrap levelObjectWithLevel:self
-                                             name:@"Rotating_Plate"
+                                             name:@"Sloth_Trap"
                                          atRandom:YES];
     [self addObject:test atTileCoord:playerTileCoord];
     */
-    
     //add traps
     NSInteger trapCount = [_profile[kProfileTrapCount] integerValue];
     for (NSInteger i = 0; i < trapCount; i++) {

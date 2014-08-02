@@ -1484,7 +1484,7 @@ static const NSInteger kTurnCountPoison = 20;
     NSInteger val = 0;
     
     if (changeSpeed != 0) {
-        [self changeSpeed:2 ^ changeSpeed];
+        [self changeSpeed:pow(2, changeSpeed)];
         val += changeSpeed;
         CCLOG(@"val = %zd", val);
     }

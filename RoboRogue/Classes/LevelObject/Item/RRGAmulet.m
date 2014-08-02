@@ -90,3 +90,6 @@
 
 @implementation Amulet_of_Magic_Tunnel
 @end
+
+@implementation Amulet_of_Strength
+@end

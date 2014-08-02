@@ -10,9 +10,9 @@
 		<integer>3</integer>
 	</dict>
 	<key>maxHP</key>
-	<integer>15</integer>
+	<integer>10</integer>
 	<key>strength</key>
-	<integer>7</integer>
+	<integer>6</integer>
 	<key>defense</key>
 	<integer>4</integer>
 	<key>defaultSpeed</key>

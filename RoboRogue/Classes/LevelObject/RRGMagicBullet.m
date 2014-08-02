@@ -71,6 +71,11 @@
 -(void)shootToDirection:(CGPoint)direction
           fromTileCoord:(CGPoint)tileCoord
 {
+    __weak RRGMagicBullet* weakSelf = self;
+    [self.level addAction:[CCActionCallBlock actionWithBlock:^{
+        weakSelf.visible = YES;
+    }]];
+    
     self.direction = direction;
     RRGLevelObject* target = nil;
     BOOL collidedWithWall = NO;
@@ -119,13 +124,19 @@
         [self.level addAction:[RRGAction actionWithTarget:self
                                                    action:move]];
     }
-    [self.level addAction:[RRGAction actionWithTarget:self
-                                               action:[CCActionRemove action]]];
+    
+    [self.level addAction:[CCActionCallBlock actionWithBlock:^{
+        weakSelf.visible = NO;
+    }]];
+    
     if (collidedWithWall) {
         [self magicActionCollidedWithWallWithEndTileCoord:endTileCoord];
     } else if (target) {
         [target willHitByMagicBullet:self];
     }
+    
+    [self.level addAction:[RRGAction actionWithTarget:self
+                                               action:[CCActionRemove action]]];
 }
 -(void)magicActionCollidedWithWallWithEndTileCoord:(CGPoint)endTileCoord
 {}
@@ -217,14 +228,14 @@
 @implementation BulletOfProgress
 -(void)magicActionToCharacter:(RRGCharacter *)character
 {
-    [character changeCharacterLevel:+1];
+    [character changeExperienceAndCharacterLevel:+1];
 }
 @end
 
 @implementation BulletOfRegress
 -(void)magicActionToCharacter:(RRGCharacter *)character
 {
-    [character changeCharacterLevel:-1];
+    [character changeExperienceAndCharacterLevel:-1];
 }
 @end
 
