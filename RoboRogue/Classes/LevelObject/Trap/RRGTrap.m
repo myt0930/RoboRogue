@@ -89,7 +89,7 @@ static NSString* const kProfileActionOnce = @"actionOnce";
     if (frameCount == 1) {
         NSString* spriteName = [NSString stringWithFormat:@"%@/0001.png",
                                 [self spriteFolderName]];
-        CCLOG(@"spriteName = %@", spriteName);
+        //CCLOG(@"spriteName = %@", spriteName);
         CCSpriteFrame* spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache]
                                       spriteFrameByName:spriteName];
         [seqArray addObject:[CCActionCallBlock actionWithBlock:^{
@@ -234,6 +234,8 @@ static NSString* const kProfileActionOnce = @"actionOnce";
 {}
 -(void)corrupt
 {
+    [self.level addAction:[CCActionDelay actionWithDuration:.5f]];
+    
     [self.level addParticleWithName:kParticleSmoke
                         atTileCoord:self.tileCoord
                               sound:NO];

@@ -53,6 +53,7 @@
 {
     CCLOG(@"%@", message);
     //dispatch_async(_syncQueue, ^{
+        _showingTime = 0;
         [_window addMessage:message];
         
         if (_window.visible == NO) {

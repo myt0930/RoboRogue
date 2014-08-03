@@ -73,9 +73,9 @@ typedef NS_ENUM(NSUInteger, ZOrder)
 @property (nonatomic) NSMutableArray* roomArray;
 
 //names
-@property (nonatomic, copy) NSDictionary* enemyNames;
-@property (nonatomic, copy) NSDictionary* itemNames;
-@property (nonatomic, copy) NSDictionary* trapNames;
+@property (nonatomic, copy) NSArray* enemyNames;
+@property (nonatomic, copy) NSArray* itemNames;
+@property (nonatomic, copy) NSArray* trapNames;
 
 @property (nonatomic) RRGPlayer* player;
 /*

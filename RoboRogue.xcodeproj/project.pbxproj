@@ -274,7 +274,7 @@
 		8C14DB41194C737200AADB4A /* Silver_Tamara.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAA194C737200AADB4A /* Silver_Tamara.plist */; };
 		8C14DB42194C737200AADB4A /* Steel_Tamara.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAB194C737200AADB4A /* Steel_Tamara.plist */; };
 		8C14DB43194C737200AADB4A /* Tamara.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAC194C737200AADB4A /* Tamara.plist */; };
-		8C14DB44194C737200AADB4A /* Dungeon1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAE194C737200AADB4A /* Dungeon1.plist */; };
+		8C14DB44194C737200AADB4A /* TestDungeon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAE194C737200AADB4A /* TestDungeon.plist */; };
 		8C14DB45194C737200AADB4A /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAAF194C737200AADB4A /* test.plist */; };
 		8C14DB46194C737200AADB4A /* Potion_of_Extra_Healing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAB2194C737200AADB4A /* Potion_of_Extra_Healing.plist */; };
 		8C14DB47194C737200AADB4A /* Potion_of_Full_Healing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C14DAB3194C737200AADB4A /* Potion_of_Full_Healing.plist */; };
@@ -353,7 +353,7 @@
 		8C61C8E6198A7BEA0010186A /* RRGLevel+TurnSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8DF198A7BEA0010186A /* RRGLevel+TurnSequence.m */; };
 		8C61C8E7198A7BEA0010186A /* RRGLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8E1198A7BEA0010186A /* RRGLevel.m */; };
 		8C61C8F9198A7BF40010186A /* RRGButtonLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8EA198A7BF40010186A /* RRGButtonLayer.m */; };
-		8C61C8FA198A7BF40010186A /* RRGGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8EC198A7BF40010186A /* RRGGameOverLayer.m */; };
+		8C61C8FA198A7BF40010186A /* RRGGameOverOrGoalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8EC198A7BF40010186A /* RRGGameOverOrGoalLayer.m */; };
 		8C61C8FB198A7BF40010186A /* RRGItemWindowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8EE198A7BF40010186A /* RRGItemWindowLayer.m */; };
 		8C61C8FC198A7BF40010186A /* RRGLabelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8F0198A7BF40010186A /* RRGLabelLayer.m */; };
 		8C61C8FD198A7BF40010186A /* RRGLevelMapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8F2198A7BF40010186A /* RRGLevelMapLayer.m */; };
@@ -875,7 +875,7 @@
 		8C14DAAA194C737200AADB4A /* Silver_Tamara.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Silver_Tamara.plist; sourceTree = "<group>"; };
 		8C14DAAB194C737200AADB4A /* Steel_Tamara.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Steel_Tamara.plist; sourceTree = "<group>"; };
 		8C14DAAC194C737200AADB4A /* Tamara.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tamara.plist; sourceTree = "<group>"; };
-		8C14DAAE194C737200AADB4A /* Dungeon1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dungeon1.plist; sourceTree = "<group>"; };
+		8C14DAAE194C737200AADB4A /* TestDungeon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestDungeon.plist; sourceTree = "<group>"; };
 		8C14DAAF194C737200AADB4A /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
 		8C14DAB2194C737200AADB4A /* Potion_of_Extra_Healing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Potion_of_Extra_Healing.plist; sourceTree = "<group>"; };
 		8C14DAB3194C737200AADB4A /* Potion_of_Full_Healing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Potion_of_Full_Healing.plist; sourceTree = "<group>"; };
@@ -975,8 +975,8 @@
 		8C61C8E1198A7BEA0010186A /* RRGLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGLevel.m; sourceTree = "<group>"; };
 		8C61C8E9198A7BF40010186A /* RRGButtonLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGButtonLayer.h; sourceTree = "<group>"; };
 		8C61C8EA198A7BF40010186A /* RRGButtonLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGButtonLayer.m; sourceTree = "<group>"; };
-		8C61C8EB198A7BF40010186A /* RRGGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGGameOverLayer.h; sourceTree = "<group>"; };
-		8C61C8EC198A7BF40010186A /* RRGGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGGameOverLayer.m; sourceTree = "<group>"; };
+		8C61C8EB198A7BF40010186A /* RRGGameOverOrGoalLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGGameOverOrGoalLayer.h; sourceTree = "<group>"; };
+		8C61C8EC198A7BF40010186A /* RRGGameOverOrGoalLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGGameOverOrGoalLayer.m; sourceTree = "<group>"; };
 		8C61C8ED198A7BF40010186A /* RRGItemWindowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGItemWindowLayer.h; sourceTree = "<group>"; };
 		8C61C8EE198A7BF40010186A /* RRGItemWindowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGItemWindowLayer.m; sourceTree = "<group>"; };
 		8C61C8EF198A7BF40010186A /* RRGLabelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGLabelLayer.h; sourceTree = "<group>"; };
@@ -2099,7 +2099,7 @@
 		8C14DAAD194C737200AADB4A /* Dungeon */ = {
 			isa = PBXGroup;
 			children = (
-				8C14DAAE194C737200AADB4A /* Dungeon1.plist */,
+				8C14DAAE194C737200AADB4A /* TestDungeon.plist */,
 				8C14DAAF194C737200AADB4A /* test.plist */,
 			);
 			path = Dungeon;
@@ -2323,8 +2323,8 @@
 			children = (
 				8C61C8E9198A7BF40010186A /* RRGButtonLayer.h */,
 				8C61C8EA198A7BF40010186A /* RRGButtonLayer.m */,
-				8C61C8EB198A7BF40010186A /* RRGGameOverLayer.h */,
-				8C61C8EC198A7BF40010186A /* RRGGameOverLayer.m */,
+				8C61C8EB198A7BF40010186A /* RRGGameOverOrGoalLayer.h */,
+				8C61C8EC198A7BF40010186A /* RRGGameOverOrGoalLayer.m */,
 				8C61C8ED198A7BF40010186A /* RRGItemWindowLayer.h */,
 				8C61C8EE198A7BF40010186A /* RRGItemWindowLayer.m */,
 				8C61C8EF198A7BF40010186A /* RRGLabelLayer.h */,
@@ -2641,7 +2641,7 @@
 				8C14DB74194C737200AADB4A /* tilemapAtRandom.tmx in Resources */,
 				8C14DB38194C737200AADB4A /* Sea_Mystikoi.plist in Resources */,
 				8C14DB4C194C737200AADB4A /* Staff_of_Archlich.plist in Resources */,
-				8C14DB44194C737200AADB4A /* Dungeon1.plist in Resources */,
+				8C14DB44194C737200AADB4A /* TestDungeon.plist in Resources */,
 				8C14DB41194C737200AADB4A /* Silver_Tamara.plist in Resources */,
 				8C14DB2B194C737200AADB4A /* MagicBullet.plist in Resources */,
 				8C14DB52194C737200AADB4A /* Staff_of_Progress.plist in Resources */,
@@ -2739,7 +2739,7 @@
 				8C14D95C194C730F00AADB4A /* ALDevice.m in Sources */,
 				8C61C8E4198A7BEA0010186A /* RRGLevel+MapID.m in Sources */,
 				8C14D922194C730F00AADB4A /* NSThread+performBlock.m in Sources */,
-				8C61C8FA198A7BF40010186A /* RRGGameOverLayer.m in Sources */,
+				8C61C8FA198A7BF40010186A /* RRGGameOverOrGoalLayer.m in Sources */,
 				8C61C8E5198A7BEA0010186A /* RRGLevel+Particle.m in Sources */,
 				8C14D8BF194C730E00AADB4A /* CCSpriteBatchNode.m in Sources */,
 				8C14D80F194C730E00AADB4A /* CCEffectBrightness.m in Sources */,

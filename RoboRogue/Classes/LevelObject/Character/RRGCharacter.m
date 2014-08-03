@@ -1177,9 +1177,10 @@ static NSInteger const maxCharacterLevel = 99;
         removeCount++;
         [self removeState:kStateParalyzed];
     }
+    /*
     if (removeCount > 0) {
         self.actionCount--;
-    }
+    }*/
 }
 -(void)rotate:(NSUInteger)times
 {
@@ -1467,8 +1468,8 @@ static const NSInteger kTurnCountPoison = 20;
 -(void)setStatePoison:(NSInteger)poison
 {
     NSInteger poisonVal = self.poisonVal + poison;
-    NSMutableArray* poisonState = [@{kPoisonVal: @(poisonVal),
-                                     kTurnCount: @(kTurnCountPoison)} mutableCopy];
+    NSMutableDictionary* poisonState = [@{kPoisonVal: @(poisonVal),
+                                          kTurnCount: @(kTurnCountPoison)} mutableCopy];
     self.status[kStatePoison] = poisonState;
     
     [self.level addMessage:[NSString stringWithFormat:@"%@ got poison.", self.displayName]];

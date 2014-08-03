@@ -10,11 +10,20 @@
 #import "AppDelegate.h"
 #import "RRGGameScene.h"
 
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
+}
+
 @implementation AppDelegate
 
 // 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#if DEBUG
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+#endif
 	// This is the only app delegate method you need to implement when inheriting from CCAppDelegate.
 	// This method is a good place to add one time setup code that only runs when your app is first launched.
 	
@@ -77,12 +86,12 @@
 
 -(void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [sharedGameScene saveLevel];
+    //[sharedGameScene saveLevel];
     [super applicationDidEnterBackground:application];
 }
 -(void)applicationWillTerminate:(UIApplication *)application
 {
-    [sharedGameScene saveLevel];
+    //[sharedGameScene saveLevel];
     [super applicationWillTerminate:application];
 }
 @end

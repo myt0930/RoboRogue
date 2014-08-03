@@ -8,6 +8,7 @@
 
 #import "RRGButton.h"
 #import "CCControlSubclass.h"
+#import "RRGItem.h"
 
 #import "cocos2d.h"
 #import <objc/runtime.h>
@@ -18,13 +19,12 @@
 {
     NSInteger _height;
     NSInteger _fontSize;
-    CCLabelTTF* _labelE;
 }
 
-+(id)buttonWithWidth:(NSInteger)width
-                icon:(CCSprite*)icon
-               title:(NSString*)title
-          labelColor:(CCColor*)labelColor
++(instancetype)buttonWithWidth:(CGFloat)width
+                          icon:(CCSprite*)icon
+                         title:(NSString*)title
+                    labelColor:(CCColor*)labelColor
 {
     return [[self alloc] initWithWidth:width
                                   icon:icon
@@ -32,9 +32,9 @@
                             labelColor:labelColor];
 }
 
-+(id)buttonWithWidth:(NSInteger)width
-                icon:(CCSprite*)icon
-               title:(NSString*)title
++(instancetype)buttonWithWidth:(CGFloat)width
+                          icon:(CCSprite*)icon
+                         title:(NSString*)title
 {
     return [[self alloc] initWithWidth:width
                                   icon:icon
@@ -42,10 +42,10 @@
                             labelColor:nil];
 }
 
--(id)initWithWidth:(NSInteger)width
-              icon:(CCSprite*)icon
-             title:(NSString*)title
-        labelColor:(CCColor*)labelColor
+-(instancetype)initWithWidth:(CGFloat)width
+                        icon:(CCSprite*)icon
+                       title:(NSString*)title
+                  labelColor:(CCColor*)labelColor
 {
     self = [super init];
     if (!self) return NULL;
@@ -98,20 +98,6 @@
     [self stateChanged];
     
     return self;
-}
--(void)setEquipped:(BOOL)equipped
-{
-    _equipped = equipped;
-    [_labelE removeFromParentAndCleanup:YES];
-    if (equipped) {
-        _labelE = [CCLabelTTF labelWithString:@"E"
-                                     fontName:@"Helvetica"
-                                     fontSize:10];
-        _labelE.anchorPoint = ccp(0,1);
-        _labelE.positionType = CCPositionTypeNormalized;
-        _labelE.position = ccp(0,1);
-        [self addChild:_labelE z:2];
-    }
 }
 /*
 - (void) layout
@@ -522,4 +508,75 @@
     return NULL;
 }
 */
+@end
+
+@interface RRGItemButton ()
+@property (nonatomic) BOOL equipped;
+@property (nonatomic) RRGItemCursedOrBlessed cursedOrBlessed;
+@property (nonatomic) CCLabelTTF* labelE;
+@property (nonatomic) CCSprite* cursedOrBlessedSprite;
+@end
+
+@implementation RRGItemButton
++(instancetype)buttonWithItem:(RRGItem *)item
+                        width:(CGFloat)width
+{
+    return [[self alloc] initWithItem:item width:width];
+}
+-(instancetype)initWithItem:(RRGItem*)item
+                      width:(CGFloat)width
+{
+    NSAssert(item != nil, @"item is nil");
+    
+    CCSprite* icon = [CCSprite spriteWithImageNamed:
+                      [NSString stringWithFormat:@"%@/icon.png",
+                       [item spriteFolderName]]];
+    
+    self = [super initWithWidth:width
+                           icon:icon
+                          title:item.displayName
+                     labelColor:[CCColor whiteColor]];
+    if (self) {
+        if ([item isKindOfClass:[RRGItemEquipment class]]) {
+            RRGItemEquipment* equipment = (RRGItemEquipment*)item;
+            if (equipment.equipped) {
+                self.equipped = YES;
+            }
+        }
+        self.cursedOrBlessed = item.cursedOrBlessed;
+    }
+    return self;
+}
+-(void)setEquipped:(BOOL)equipped
+{
+    _equipped = equipped;
+    [_labelE removeFromParent];
+    if (equipped) {
+        _labelE = [CCLabelTTF labelWithString:@"E"
+                                     fontName:@"Helvetica"
+                                     fontSize:10];
+        _labelE.anchorPoint = ccp(0,1);
+        _labelE.positionType = CCPositionTypeNormalized;
+        _labelE.position = ccp(0,1);
+        [self.icon addChild:_labelE];
+    }
+}
+-(void)setCursedOrBlessed:(RRGItemCursedOrBlessed)cursedOrBlessed
+{
+    _cursedOrBlessed = cursedOrBlessed;
+    [_cursedOrBlessedSprite removeFromParent];
+    switch (cursedOrBlessed) {
+        case RRGItemCursed:
+        {
+            _cursedOrBlessedSprite = [CCSprite spriteWithImageNamed:@"cursed.png"];
+            _cursedOrBlessedSprite.anchorPoint = ccp(0,0);
+            _cursedOrBlessedSprite.positionType = CCPositionTypeNormalized;
+            _cursedOrBlessedSprite.position = ccp(0,0);
+            [self.icon addChild:_cursedOrBlessedSprite];
+            break;
+        }
+        default:
+            break;
+    }
+}
 @end

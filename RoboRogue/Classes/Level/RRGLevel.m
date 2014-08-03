@@ -27,7 +27,7 @@
 #import "RRGFunctions.h"
 #import "RRGModalLayer.h"
 #import "RRGWarpPoint.h"
-#import "RRGGameOverLayer.h"
+#import "RRGGameOverOrGoalLayer.h"
 #import "RRGShadowInPathLayer.h"
 
 static NSString* const kProfileTMXFileName = @"tmxFileName";
@@ -54,6 +54,8 @@ static NSString* const kProfileInitialItems = @"initialItems";
 static NSUInteger const MessageCapacity = 30;
 
 @interface RRGLevel ()
+@property (nonatomic) NSUInteger hiddenCommand;
+
 -(NSMutableArray*)p_blankMapWithSize:(CGSize)size;
 -(void)p_addTiledMap;
 -(void)p_addLayers;
@@ -220,8 +222,14 @@ static NSUInteger const MessageCapacity = 30;
         self.itemNames = profile[kProfileItemNames];
         self.trapNames = profile[kProfileTrapNames];
         
-        _player = player;
-        [_player clearAttributesForNewLevel:self];
+        if (player) {
+            _player = player;
+            [_player clearAttributesForNewLevel:self];
+        } else {
+            _player = [RRGPlayer levelObjectWithLevel:self
+                                                 name:@"RRGPlayer"
+                                             atRandom:NO];
+        }
         
         //tiled map
         [self p_addTiledMap];
@@ -374,13 +382,7 @@ static NSUInteger const MessageCapacity = 30;
     CGPoint playerTileCoord = [self
                                randomTileCoordForCharacterExceptRoomNums:@[@(shopRoomNum)]
                                offScreen:NO];
-    CCLOG(@"playerTileCoord = %@", NSStringFromCGPoint(playerTileCoord));
     
-    if (_player == nil) {
-        _player = [RRGPlayer levelObjectWithLevel:self
-                                             name:@"RRGPlayer"
-                                         atRandom:NO];
-    }
     [self addCharacter:_player atTileCoord:playerTileCoord];
     
     NSInteger playerRoomNum = _player.roomNum;
@@ -392,6 +394,7 @@ static NSUInteger const MessageCapacity = 30;
         stairTileCoord = [self randomTileCoordForObjectExceptRoomNums:nil
                                                             offScreen:NO];
     }
+    
     Down_Stairs* downStairs = [Down_Stairs levelObjectWithLevel:self
                                                          name:@"Down_Stairs"
                                                      atRandom:NO];
@@ -428,6 +431,7 @@ static NSUInteger const MessageCapacity = 30;
                                          atRandom:YES];
     [self addObject:test atTileCoord:playerTileCoord];
     */
+    
     //add traps
     NSInteger trapCount = [_profile[kProfileTrapCount] integerValue];
     for (NSInteger i = 0; i < trapCount; i++) {
@@ -560,6 +564,7 @@ NSString* stateString(LevelState state)
 {
     CCLOG(@"new LevelState = %@", stateString(state));
     
+    _hiddenCommand = 0;
     _levelState = state;
     
     //label layer
@@ -603,12 +608,8 @@ NSString* stateString(LevelState state)
     if (state == LevelStateGameOver) {
         CCLOG(@"game over");
         self.userInteractionEnabled = NO;
-        RRGGameOverLayer* gameOver = [RRGGameOverLayer layerWithViewSize:_contentSize
-                                                                   level:self];
+        RRGGameOverLayer* gameOver = [RRGGameOverLayer layerWithLevel:self];
         [self addChild:gameOver z:ZOrderGameOverLayer];
-        CCLOG(@"added game over");
-        [gameOver scrollWindow];
-        CCLOG(@"scroll window");
     }
 }
 -(void)updateMapLayerState:(MapLayerState)state
@@ -663,10 +664,11 @@ NSString* stateString(LevelState state)
 }
 -(CGRect)viewRect
 {
-    return CGRectMake(MAX(self.player.tileCoord.x - 6, 0),
-                      MAX(self.player.tileCoord.y - 5, 0),
-                      13,
-                      11);
+    return CGRectIntersection(CGRectMake(self.player.tileCoord.x - 6,
+                                         self.player.tileCoord.y - 5,
+                                         13,
+                                         11),
+                              CGRectMake(0, 0, _mapSize.width, _mapSize.height));
 }
 -(NSArray*)characters
 {
@@ -747,6 +749,8 @@ NSString* stateString(LevelState state)
             if (!CGPointEqualToPoint(direction, CGPointZero)) {
                 CCLOG(@"%@", directionString(direction));
                 [self.player changeDirection:direction];
+                //hidden command
+                [self checkHiddenCommand:direction];
             }
             break;
         }
@@ -770,5 +774,97 @@ NSString* stateString(LevelState state)
 -(void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
 {
     self.touching = NO;
+}
+-(void)checkHiddenCommand:(CGPoint)direction
+{
+    switch (_hiddenCommand) {
+        case 0:
+        {
+            if (CGPointEqualToPoint(direction, South)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 1:
+        {
+            if (CGPointEqualToPoint(direction, North)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 2:
+        {
+            if (CGPointEqualToPoint(direction, South)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 3:
+        {
+            if (CGPointEqualToPoint(direction, North)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 4:
+        {
+            if (CGPointEqualToPoint(direction, West)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 5:
+        {
+            if (CGPointEqualToPoint(direction, East)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 6:
+        {
+            if (CGPointEqualToPoint(direction, West)) {
+                _hiddenCommand++;
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        case 7:
+        {
+            if (CGPointEqualToPoint(direction, East)) {
+                _hiddenCommand = 0;
+                [[OALSimpleAudio sharedInstance] playEffect:@"cursed.caf"];
+                RRGItem* katana = [RRGItem levelObjectWithLevel:self
+                                                           name:@"Katana +99 cursed"
+                                                       atRandom:NO];
+                [_player getItem:katana];
+                RRGItem* shield = [RRGItem levelObjectWithLevel:self
+                                                           name:@"Shield_of_Iron +99 cursed"
+                                                       atRandom:NO];
+                [_player getItem:shield];
+                RRGItem* amulet = [RRGItem levelObjectWithLevel:self
+                                                           name:@"Amulet_of_Lamplight cursed"
+                                                       atRandom:NO];
+                [_player getItem:amulet];
+            } else {
+                _hiddenCommand = 0;
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 @end

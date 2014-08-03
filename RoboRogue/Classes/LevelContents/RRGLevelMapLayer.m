@@ -71,7 +71,7 @@ static NSString* const kMapArray = @"mapArray";
         self.level = level;
         
         _tiledMap = [CCTiledMap tiledMapWithFile:kTMXFileName];
-        _tiledMap.position = ccp(0, _contentSize.height - 30 - _tiledMap.contentSize.height);
+        _tiledMap.position = ccp(0, _contentSize.height - _tiledMap.contentSize.height);
         [self addChild:_tiledMap];
         
         _tileLayer = [_tiledMap layerNamed:kTileLayer];
@@ -80,7 +80,7 @@ static NSString* const kMapArray = @"mapArray";
         //_syncQueue = dispatch_queue_create("info.mygames888.roborogue.mapLayer", NULL);
         
         [_tileLayer removeTileAt:CGPointZero];
-        _tileLayer.opacity = .3f;
+        _tileLayer.opacity = .2f;
         
         _objectLayer = [CCNode node];
         [_tiledMap addChild:_objectLayer];
@@ -97,6 +97,8 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)dealloc
 {
+    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    
     //dispatch_release(_syncQueue);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -253,6 +255,7 @@ static NSString* const kMapArray = @"mapArray";
 }
 -(void)dealloc
 {
+    CCLOG(@"%s", __PRETTY_FUNCTION__);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 /*
@@ -311,10 +314,7 @@ static NSString* const kMapArray = @"mapArray";
 -(void)update
 {
     RRGPlayer* player = (RRGPlayer*)self.levelObject;
-    CGRect rect = player.viewRect;
-    if (!self.level.shadow) {
-        rect = CGRectUnion(rect, self.level.viewRect);
-    }
+    CGRect rect = player.playerViewRectForMapping;
     
     [self.mapLayer setTilesInRect:rect];
     
@@ -424,11 +424,14 @@ static NSString* const kMapArray = @"mapArray";
     self = [super initWithMapLayer:mapLayer
                        levelObject:levelObject];
     if (self) {
+        CGFloat borderWidth = .5f;
+        
         CGPoint verts[] =
         {ccp(0,0),
-            ccp(tileSize - 1,0),
-            ccp(tileSize-1,tileSize-1),
-            ccp(0,tileSize-1)};
+        ccp(tileSize - borderWidth, 0),
+        ccp(tileSize - borderWidth, tileSize - borderWidth),
+        ccp(0, tileSize - borderWidth)};
+        
         CCDrawNode* drawNode = [CCDrawNode node];
         [drawNode drawPolyWithVerts:verts
                               count:4

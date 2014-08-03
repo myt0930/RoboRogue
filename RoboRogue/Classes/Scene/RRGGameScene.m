@@ -15,23 +15,23 @@
 #import "cocos2d-ui.h"
 #import "RRGButtonBehavior.h"
 #import "RRGFunctions.h"
+#import "RRGGameOverOrGoalLayer.h"
 
-//#import "RRGProfileCache.h"
-//#import "RRGActionCache.h"
-
-static NSString* const kProfileDungeonName = @"dungeonName";
 static NSString* const kProfileFloorNum = @"floorNum";
 
+static NSString* const kProfileDungeonName = @"dungeonName";
+static NSString* const kProfileGoal = @"goal";
 static NSString* const kProfileDisplayFloorNum = @"displayFloorNum";
 static NSString* const kProfileDisplayMapLayer = @"displayMapLayer";
 static NSString* const kProfileInitialItems = @"initialItems";
 
-static NSString* const kInitialDungeonName = @"Dungeon1";
+static NSString* const kInitialDungeonName = @"TestDungeon";
 
 typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
 {
     ZOrderInGameSceneLevel = 0,
     ZOrderInGameSceneBlack,
+    ZOrderInGameSceneGoalLayer,
 };
 
 @implementation RRGGameScene
@@ -44,7 +44,8 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
     });
     return sharedSingleton;
 }
--(instancetype)init {
+-(instancetype)init
+{
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
@@ -53,112 +54,171 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
     self = [super init];
 
     if (self) {
-        self.level = sharedSavedDataHandler.level;
-        if (self.level == nil) {
+        _level = sharedSavedDataHandler.level;
+        if (_level == nil) {
             CCLOG(@"start with initial level");
-            NSDictionary* levelProfile = [self levelProfileWithDungeonName:kInitialDungeonName floorNum:1];
-            self.level = [RRGLevel levelWithProfile:levelProfile player:nil];
+            _dungeonProfile = [sharedProfileCache profileForKey:kInitialDungeonName];
+            NSDictionary* levelProfile = [self levelProfileWithFloorNum:1];
+            _level = [RRGLevel levelWithProfile:levelProfile player:nil];
         }
-        [self addChild:self.level z:ZOrderInGameSceneLevel];
-        self.level.userInteractionEnabled = YES;
+        [self addChild:_level z:ZOrderInGameSceneLevel];
+        _level.userInteractionEnabled = YES;
     }
     return self;
 }
--(NSDictionary*)levelProfileWithDungeonName:(NSString*)dungeonName
-                                   floorNum:(NSUInteger)floorNum
+#pragma mark - dungeon readonly properties
+-(NSUInteger)goal
 {
-    NSDictionary* dungeonProfile = [sharedProfileCache profileForKey:dungeonName];
-    
+    return [_dungeonProfile[kProfileGoal] integerValue];
+}
+-(NSString*)dungeonName
+{
+    return _dungeonProfile[kProfileDungeonName];
+}
+-(BOOL)displayFloorNum
+{
+    return [_dungeonProfile[kProfileDisplayFloorNum] boolValue];
+}
+-(BOOL)displayMapLayer
+{
+    return [_dungeonProfile[kProfileDisplayMapLayer] boolValue];
+}
+-(NSArray*)initialItems
+{
+    return _dungeonProfile[kProfileInitialItems];
+}
+
+#pragma mark - levelProfile
+-(NSDictionary*)levelProfileWithFloorNum:(NSUInteger)floorNum
+{
     NSMutableDictionary* levelProfile = nil;
     
     for (NSUInteger i = floorNum; i >= 1; i--) {
         NSString* key = [NSString stringWithFormat:@"floor%tu", i];
-        if (dungeonProfile[key]) {
-            levelProfile = [NSMutableDictionary dictionaryWithDictionary:dungeonProfile[key]];
+        if (_dungeonProfile[key]) {
+            levelProfile = [NSMutableDictionary dictionaryWithDictionary:_dungeonProfile[key]];
             break;
         }
     }
     
     NSAssert(levelProfile != nil, @"Can not find levelProfile");
     
-    [levelProfile setObject:dungeonName forKey:kProfileDungeonName];
+    [levelProfile setObject:self.dungeonName forKey:kProfileDungeonName];
     [levelProfile setObject:@(floorNum) forKey:kProfileFloorNum];
-    BOOL displayFloorNum = [dungeonProfile[kProfileDisplayFloorNum] boolValue];
-    [levelProfile setObject:@(displayFloorNum) forKey:kProfileDisplayFloorNum];
-    BOOL displayMapLayer = [dungeonProfile[kProfileDisplayMapLayer] boolValue];
-    [levelProfile setObject:@(displayMapLayer) forKey:kProfileDisplayMapLayer];
+    [levelProfile setObject:@(self.displayFloorNum) forKey:kProfileDisplayFloorNum];
+    [levelProfile setObject:@(self.displayMapLayer) forKey:kProfileDisplayMapLayer];
     
-    if (floorNum == 1 && dungeonProfile[kProfileInitialItems]) {
-        [levelProfile setObject:dungeonProfile[kProfileInitialItems]
-                         forKey:kProfileInitialItems];
+    if (floorNum == 1 && self.initialItems) {
+        [levelProfile setObject:self.initialItems forKey:kProfileInitialItems];
     }
-    
     return levelProfile;
-}
--(void)saveLevel
-{
-    if (self.level.levelState == LevelStateTurnInProgress) {
-        sharedSavedDataHandler.invalidShutDown = YES;
-    } else {
-        sharedSavedDataHandler.invalidShutDown = NO;
-        sharedSavedDataHandler.level = self.level;
-    }
 }
 -(void)goToDungeon:(NSString*)dungeonName
           floorNum:(NSUInteger)floorNum
             player:(RRGPlayer*)player
    playerDirection:(CGPoint)playerDirection
 {
-    CCLOG(@"******************************\n\
+    if (![dungeonName isEqualToString:self.dungeonName]) {
+        _dungeonProfile = [sharedProfileCache profileForKey:dungeonName];
+    }
+    [self goToFloorNum:floorNum
+                player:player
+       playerDirection:playerDirection];
+}
+-(void)goToFloorNum:(NSUInteger)floorNum
+             player:(RRGPlayer*)player
+    playerDirection:(CGPoint)playerDirection
+{
+    CCLOG(@"\n\
+          ******************************\n\
           dungeonName = %@\n\
           floorNum = %tu\n\
           ******************************",
-          dungeonName,
+          self.dungeonName,
           floorNum);
     
-    self.level.userInteractionEnabled = NO;
+    _level.userInteractionEnabled = NO;
+    
+    NSMutableArray* seqArray = [NSMutableArray array];
+    
+    if (_black == nil) {
+        [seqArray addObject:[self fadeIn]];
+    }
+        
+    if (floorNum >= self.goal) {
+        [seqArray addObject:[CCActionCallFunc actionWithTarget:self
+                                                      selector:@selector(goToGoal)]];
+    } else {
+        [seqArray addObject:[CCActionCallBlock actionWithBlock:^{
+            [self showNextLevelWithFloorNum:floorNum
+                                     player:player
+                            playerDirection:playerDirection];
+        }]];
+    }
+    
+    [self runAction:[CCActionSequence actionWithArray:seqArray]];
+}
+-(void)goToGoal
+{
+    RRGGoalLayer* goalLayer = [RRGGoalLayer layerWithLevel:_level];
+    [self addChild:goalLayer z:ZOrderInGameSceneGoalLayer];
+}
+-(void)showNextLevelWithFloorNum:(NSUInteger)floorNum
+                          player:(RRGPlayer*)player
+                 playerDirection:(CGPoint)playerDirection;
+{
+    NSDictionary* levelProfile = [self levelProfileWithFloorNum:floorNum];
+    
     player.direction = playerDirection;
-    NSDictionary* levelProfile = [self levelProfileWithDungeonName:dungeonName
-                                                          floorNum:floorNum];
+    [_level removeFromParent];
+    CCLOG(@"level removeFromParent");
     
-    CCNodeColor* black = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0
-                                                                    green:0
-                                                                     blue:0
-                                                                    alpha:0]];
-    [self addChild:black z:ZOrderInGameSceneBlack];
+    _level = [RRGLevel levelWithProfile:levelProfile player:player];
+    [self addChild:_level z:ZOrderInGameSceneLevel];
     
-    CCActionFadeIn* fadeIn = [CCActionFadeIn actionWithDuration:1.0f];
+    _level.userInteractionEnabled = YES;
     
-    __weak RRGGameScene* weakSelf = self;
-    CCActionCallBlock* block = [CCActionCallBlock actionWithBlock:^{
-        [weakSelf.level removeFromParentAndCleanup:YES];
-        CCLOG(@"will create new level");
-        RRGLevel* newLevel = [RRGLevel levelWithProfile:levelProfile player:player];
-        CCLOG(@"did create new level");
-        [weakSelf addChild:newLevel z:ZOrderInGameSceneLevel];
-        newLevel.userInteractionEnabled = YES;
-        weakSelf.level = newLevel;
-    }];
-    CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:1.0f];
-    CCActionRemove* remove = [CCActionRemove action];
-    
-    CCActionSequence* seq = [CCActionSequence actions:
-                             fadeIn,
-                             block,
-                             fadeOut,
-                             remove,
-                             nil];
-    CCLOG(@"before run action");
-    [black runAction:seq];
+    [self runAction:[self fadeOut]];
 }
 -(void)goToInitialDungeon
 {
-    //[sharedProfileCache purge];
-    //[sharedActionCache purge];
-    
     [self goToDungeon:kInitialDungeonName
              floorNum:1
                player:nil
       playerDirection:South];
+}
+#pragma mark - save level
+-(void)saveLevel
+{
+    if (_level.levelState == LevelStateTurnInProgress) {
+        sharedSavedDataHandler.invalidShutDown = YES;
+    } else {
+        sharedSavedDataHandler.invalidShutDown = NO;
+        sharedSavedDataHandler.level = _level;
+    }
+}
+#pragma mark - fade in and out
+-(RRGAction*)fadeIn
+{
+    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    _black = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0
+                                                        green:0
+                                                         blue:0
+                                                        alpha:0]];
+    [self addChild:_black z:ZOrderInGameSceneBlack];
+    
+    return [RRGAction actionWithTarget:_black
+                                action:[CCActionFadeIn actionWithDuration:1.0f]];
+}
+-(RRGAction*)fadeOut
+{
+    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    CCNodeColor* black = _black;
+    _black = nil;
+    CCActionSequence* seq = [CCActionSequence actions:
+                             [CCActionFadeOut actionWithDuration:1.0f],
+                             [CCActionRemove action],
+                             nil];
+    return [RRGAction actionWithTarget:black action:seq];
 }
 @end

@@ -117,7 +117,7 @@ static const NSUInteger ItemWindowWidth = 280;
     NSArray* items = [self.player.items reverseArray];
     
     for (RRGItem* item in items) {
-        RRGButton* button = [self itemButtonForItem:item];
+        RRGButton* button = [RRGItemButton buttonWithItem:item width:ItemButtonWidth];
         button.togglesSelectedState = YES;
         if (_selectedItem == item) {
             CCLOG(@"selectedItem is this");
@@ -224,24 +224,6 @@ static const NSUInteger ItemWindowWidth = 280;
     }
 }
 #pragma mark - button
--(RRGButton*)itemButtonForItem:(RRGItem*)item
-{
-    CCSprite* icon = [CCSprite spriteWithImageNamed:
-                      [NSString stringWithFormat:@"%@/icon.png",
-                       [item spriteFolderName]]];
-    
-    BOOL equipped = NO;
-    if ([item isKindOfClass:[RRGItemEquipment class]] &&
-        ((RRGItemEquipment*)item).equipped) {
-        equipped = YES;
-    }
-    RRGButton* button = [RRGButton buttonWithWidth:ItemButtonWidth
-                                              icon:icon
-                                             title:item.displayName
-                                        labelColor:[CCColor whiteColor]];
-    button.equipped = equipped;
-    return button;
-}
 -(RRGButton*)menuButtonWithTitle:(NSString*)title
 {
     RRGButton* button = [RRGButton buttonWithWidth:100

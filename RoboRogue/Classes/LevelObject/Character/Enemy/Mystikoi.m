@@ -26,7 +26,7 @@
 }
 -(BOOL)useSkill
 {
-    if ([self canUseSkill] && calculateProbability(50)) {
+    if (calculateProbability(50) && [self canUseSkill]) {
         [self useSkillToDirection:self.direction];
         return YES;
     }
@@ -71,13 +71,6 @@
 @end
 
 @implementation Sea_Mystikoi
--(CGRect)useSkillRect
-{
-    return CGRectMake(self.tileCoord.x - 2,
-                      self.tileCoord.y - 2,
-                      5,
-                      5);
-}
 @end
 
 @implementation Pearl_Mystikoi
@@ -86,10 +79,7 @@
     if ([self inRoom] && self.room) {
         return self.room.roomRect;
     } else {
-        return CGRectMake(self.tileCoord.x - 3,
-                          self.tileCoord.y - 3,
-                          7,
-                          7);
+        return [super useSkillRect];
     }
 }
 @end

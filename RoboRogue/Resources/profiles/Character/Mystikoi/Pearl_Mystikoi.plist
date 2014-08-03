@@ -10,15 +10,15 @@
 		<integer>3</integer>
 	</dict>
 	<key>maxHP</key>
-	<integer>9</integer>
+	<integer>30</integer>
 	<key>strength</key>
-	<integer>4</integer>
+	<integer>15</integer>
 	<key>defense</key>
-	<integer>4</integer>
+	<integer>11</integer>
 	<key>defaultSpeed</key>
 	<integer>1</integer>
 	<key>experience</key>
-	<integer>10</integer>
+	<integer>99</integer>
 	<key>attackSound</key>
 	<string>attackMystikoi.caf</string>
 	<key>shadowSize</key>

@@ -50,7 +50,9 @@ static NSString* const kLevel = @"level";
                                name:(NSString *)name
                            atRandom:(BOOL)atRandom
 {
-    Class c = NSClassFromString(name);
+    NSArray* components = [name componentsSeparatedByString:@" "];
+    NSString* classStr = components[0];
+    Class c = NSClassFromString(classStr);
     RRGLevelObject* obj = [[c alloc] initWithLevel:level];
     if (obj == nil) {
         CCLOG(@"Invalid name : %@", name);
@@ -58,8 +60,11 @@ static NSString* const kLevel = @"level";
     if (atRandom) {
         [obj setRandomAttributes];
     }
+    [obj setAttributesForNameComponents:components];
     return obj;
 }
+-(void)setAttributesForNameComponents:(NSArray*)components
+{}
 -(instancetype)initWithLevel:(RRGLevel *)level
 {
     self = [super init];

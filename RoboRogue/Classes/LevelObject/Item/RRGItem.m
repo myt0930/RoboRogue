@@ -54,6 +54,17 @@ static const NSInteger ProbabilityItemHit = 90;
         _cursedOrBlessed = RRGItemBlessed;
     }
 }
+-(void)setAttributesForNameComponents:(NSArray*)components
+{
+    [super setAttributesForNameComponents:components];
+    for (NSString* str in components) {
+        if ([str isEqualToString:@"cursed"]) {
+            _cursedOrBlessed = RRGItemCursed;
+        } else if ([str isEqualToString:@"blessed"]) {
+            _cursedOrBlessed = RRGItemBlessed;
+        }
+    }
+}
 -(NSString*)itemInfo
 {
     return nil;
@@ -212,6 +223,21 @@ static NSString* const kProfileLimitToEnchant = @"limitToEnchant";
         {
             _enchantment = +2;
             break;
+        }
+    }
+}
+-(void)setAttributesForNameComponents:(NSArray *)components
+{
+    [super setAttributesForNameComponents:components];
+    for (NSString* str in components) {
+        if ([str hasPrefix:@"+"]) {
+            NSString* numStr = [str stringByReplacingOccurrencesOfString:@"+"
+                                                              withString:@""];
+            _enchantment = [numStr integerValue];
+        } else if ([str hasPrefix:@"-"]) {
+            NSString* numStr = [str stringByReplacingOccurrencesOfString:@"-"
+                                                              withString:@""];
+            _enchantment = [numStr integerValue] * -1;
         }
     }
 }

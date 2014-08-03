@@ -9,10 +9,7 @@
 #import "CCControl.h"
 
 //@class CCSprite9Slice;
-@class CCLabelTTF;
-@class CCSpriteFrame;
-@class CCNodeColor;
-@class CCSprite;
+@class CCLabelTTF, CCSpriteFrame, CCNodeColor, CCSprite, RRGItem;
 
 @interface RRGButton : CCControl
 /*
@@ -38,23 +35,26 @@
 //@property (nonatomic,strong) NSString* title;
 @property (nonatomic,assign) BOOL togglesSelectedState;
 
-@property (nonatomic) BOOL equipped;
-
 /// -----------------------------------------------------------------------
 /// @name Creating Buttons
 /// -----------------------------------------------------------------------
 
-+(id)buttonWithWidth:(NSInteger)width
-                icon:(CCSprite*)icon
-               title:(NSString*)title
-          labelColor:(CCColor*)labelColor;
++(instancetype)buttonWithWidth:(CGFloat)width
+                          icon:(CCSprite*)icon
+                         title:(NSString*)title
+                    labelColor:(CCColor*)labelColor;
 
-+(id)buttonWithWidth:(NSInteger)width
-                icon:(CCSprite*)icon
-               title:(NSString*)title;
++(instancetype)buttonWithWidth:(CGFloat)width
+                          icon:(CCSprite*)icon
+                         title:(NSString*)title;
 
--(id)initWithWidth:(NSInteger)width
-              icon:(CCSprite*)icon
-             title:(NSString*)title
-        labelColor:(CCColor*)labelColor;
+-(instancetype)initWithWidth:(CGFloat)width
+                        icon:(CCSprite*)icon
+                       title:(NSString*)title
+                  labelColor:(CCColor*)labelColor;
+@end
+
+@interface RRGItemButton : RRGButton
++(instancetype)buttonWithItem:(RRGItem*)item
+                        width:(CGFloat)width;
 @end

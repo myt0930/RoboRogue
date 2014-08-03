@@ -62,9 +62,12 @@ static NSString* const kRare = @"Rare";
         RRGTrap* trap = (RRGTrap*)obj;
         if (trap.found) {
             return trap;
+        } else {
+            return nil;
         }
+    } else {
+        return obj;
     }
-    return nil;
 }
 -(RRGItem*)itemAtTileCoord:(CGPoint)tileCoord
 {
@@ -284,20 +287,25 @@ static NSString* const kRare = @"Rare";
     }
 }
 #pragma mark - random object
--(NSString*)nameAtRandom:(NSDictionary*)nameDict
+-(NSString*)nameAtRandom:(NSArray*)array
 {
-    if (calculateProbability(60)) {
-        return [nameDict[kCommon] objectAtRandom];
-    } else if (calculateProbability(75)) {
-        return [nameDict[kUncommon] objectAtRandom];
+    if ([array isKindOfClass:[NSDictionary class]]) {
+        NSDictionary* dict = (NSDictionary*)array;
+        if (calculateProbability(60)) {
+            return [dict[kCommon] objectAtRandom];
+        } else if (calculateProbability(75)) {
+            return [dict[kUncommon] objectAtRandom];
+        } else {
+            return [dict[kRare] objectAtRandom];
+        }
     } else {
-        return [nameDict[kRare] objectAtRandom];
+        return [array objectAtRandom];
     }
 }
--(RRGLevelObject*)randomLevelObject:(NSDictionary*)nameDict
+-(RRGLevelObject*)randomLevelObject:(NSArray*)array
                            atRandom:(BOOL)atRandom
 {
-    NSString* name = [self nameAtRandom:nameDict];
+    NSString* name = [self nameAtRandom:array];
     RRGLevelObject* obj = [RRGLevelObject levelObjectWithLevel:self
                                                           name:name
                                                       atRandom:atRandom];

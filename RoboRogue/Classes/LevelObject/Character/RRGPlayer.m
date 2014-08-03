@@ -83,6 +83,7 @@ NSString* const kChangePlayerLevel = @"changePlayerLevel";
 #pragma mark - attributes
 -(void)clearAttributesForNewLevel:(RRGLevel*)level
 {
+    [self removeFromParent];
     self.level = level;
     self.actionCount = 0;
     self.prevRoom = nil;
@@ -411,6 +412,11 @@ NSUInteger experienceForCharacterLevel(NSInteger level)
     RRGItem* itemOnGround = [self.level itemAtTileCoord:self.tileCoord];
     if (itemOnGround) {
         if ([self getItem:itemOnGround] == NO) {
+            [self.level addMessage:
+             [NSString stringWithFormat:
+             @"%@ stepped on %@.",
+             self.displayName,
+             itemOnGround.displayName]];
             [self.level addMessage:
              [NSString stringWithFormat:@"%@ cannot carry anything more.",
               self.displayName]];

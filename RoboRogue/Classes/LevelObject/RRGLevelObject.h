@@ -48,6 +48,7 @@ typedef NS_ENUM(NSInteger, ZOrderInObject)
 +(instancetype)levelObjectWithLevel:(RRGLevel*)level
                                name:(NSString*)name
                            atRandom:(BOOL)atRandom;
+-(void)setAttributesForNameComponents:(NSArray*)components;
 //designated initializer
 -(instancetype)initWithLevel:(RRGLevel*)level;
 

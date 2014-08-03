@@ -15,6 +15,8 @@
 static const NSUInteger RRGWindowMarginAroundContentBox = 20;
 static const NSUInteger MinSize = 60;
 
+static CGFloat const fontSize = 17;
+
 @interface RRGWindow ()
 @property (nonatomic) CCNode* parentNode;
 @property (nonatomic) CCNode* contentNode;
@@ -112,7 +114,7 @@ static const NSUInteger MinSize = 60;
 {
     CCLabelTTF* label = [CCLabelTTF labelWithString:message
                                            fontName:@"Helvetica"
-                                           fontSize:17];
+                                           fontSize:fontSize];
     label.dimensions = CGSizeMake(_contentNode.contentSize.width, 0);
     [self addContent:label];
 }
@@ -120,7 +122,7 @@ static const NSUInteger MinSize = 60;
 {
     CCLabelTTF* label = [CCLabelTTF labelWithString:message
                                            fontName:@"Helvetica"
-                                           fontSize:17];
+                                           fontSize:fontSize];
     label.dimensions = CGSizeMake(_contentNode.contentSize.width, 0);
     [self addContentFor1Page:label];
 }
