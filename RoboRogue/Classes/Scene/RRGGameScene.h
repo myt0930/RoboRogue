@@ -23,6 +23,10 @@
 @property (nonatomic, readonly) BOOL displayMapLayer;
 @property (nonatomic, readonly) NSArray* initialItems;
 
+//dispatch queue
+@property (nonatomic) dispatch_queue_t mapLayerQueue;
+@property (nonatomic) dispatch_queue_t MessageWindowQueue;
+
 +(instancetype)sharedInstance;
 -(void)saveLevel;
 

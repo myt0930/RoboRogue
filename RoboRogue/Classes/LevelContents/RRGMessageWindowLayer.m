@@ -9,6 +9,7 @@
 #import "RRGMessageWindowLayer.h"
 #import "RRGWindow.h"
 #import "RRGAction.h"
+#import "RRGGameScene.h"
 
 @interface RRGMessageWindowLayer ()
 @property (nonatomic) RRGClippingWindow* window;
@@ -18,10 +19,6 @@
 @end
 
 @implementation RRGMessageWindowLayer
-/*
-{
-    dispatch_queue_t _syncQueue;
-}*/
 +(instancetype)layerWithWindowRect:(CGRect)windowRect
 {
     return [[self alloc] initWithWindowRect:windowRect];
@@ -38,21 +35,18 @@
         [self addChild:_window];
         
         _showingTime = 0;
-        
-        //_syncQueue = dispatch_queue_create("info.mygames888.roborogue.messageWindowLayer", NULL);
     }
     return self;
 }
 -(void)dealloc
 {
     CCLOG(@"%s", __PRETTY_FUNCTION__);
-    //dispatch_release(_syncQueue);
 }
 
 -(void)addMessage:(NSString*)message
 {
     CCLOG(@"%@", message);
-    //dispatch_async(_syncQueue, ^{
+    dispatch_async(sharedGameScene.MessageWindowQueue, ^{
         _showingTime = 0;
         [_window addMessage:message];
         
@@ -60,7 +54,7 @@
             _window.visible = YES;
             [self showMessages];
         }
-    //});
+    });
 }
 -(void)showMessages
 {
@@ -95,11 +89,13 @@
 
 -(void)hide
 {
-    //dispatch_async(_syncQueue, ^{
-        [self stopAllActions];
+    dispatch_async(sharedGameScene.MessageWindowQueue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self stopAllActions];
+        });
         _showingTime = 0;
         [_window removeAllContents];
         _window.visible = NO;
-    //});
+    });
 }
 @end

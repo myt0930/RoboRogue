@@ -86,12 +86,12 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 -(void)applicationDidEnterBackground:(UIApplication *)application
 {
-    //[sharedGameScene saveLevel];
+    [sharedGameScene saveLevel];
     [super applicationDidEnterBackground:application];
 }
 -(void)applicationWillTerminate:(UIApplication *)application
 {
-    //[sharedGameScene saveLevel];
+    [sharedGameScene saveLevel];
     [super applicationWillTerminate:application];
 }
 @end

@@ -335,16 +335,8 @@
 		8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456931980C74700748F59 /* shadowInPath.tmx */; };
 		8C44569B1981E28E00748F59 /* mapLayer.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456991981E28E00748F59 /* mapLayer.tmx */; };
 		8C44569C1981E28E00748F59 /* mapLayerTiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C44569A1981E28E00748F59 /* mapLayerTiles.png */; };
-		8C4456A71989124B00748F59 /* sprites1-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C44569D1989124B00748F59 /* sprites1-hd.plist */; };
-		8C4456A81989124B00748F59 /* sprites1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8C44569E1989124B00748F59 /* sprites1-hd.pvr.ccz */; };
 		8C4456A91989124B00748F59 /* sprites1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C44569F1989124B00748F59 /* sprites1.plist */; };
 		8C4456AA1989124B00748F59 /* sprites1.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A01989124B00748F59 /* sprites1.pvr.ccz */; };
-		8C4456AB1989124B00748F59 /* sprites2-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A11989124B00748F59 /* sprites2-hd.plist */; };
-		8C4456AC1989124B00748F59 /* sprites2-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A21989124B00748F59 /* sprites2-hd.pvr.ccz */; };
-		8C4456AD1989124B00748F59 /* sprites3-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A31989124B00748F59 /* sprites3-hd.plist */; };
-		8C4456AE1989124B00748F59 /* sprites3-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A41989124B00748F59 /* sprites3-hd.pvr.ccz */; };
-		8C4456AF1989124B00748F59 /* sprites4-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A51989124B00748F59 /* sprites4-hd.plist */; };
-		8C4456B01989124B00748F59 /* sprites4-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8C4456A61989124B00748F59 /* sprites4-hd.pvr.ccz */; };
 		8C61C8C1198A7B6C0010186A /* RRGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8C0198A7B6C0010186A /* RRGGameScene.m */; };
 		8C61C8E2198A7BEA0010186A /* RRGLevel+AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8D7198A7BEA0010186A /* RRGLevel+AddObject.m */; };
 		8C61C8E3198A7BEA0010186A /* RRGLevel+CreateTileLayers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C8D9198A7BEA0010186A /* RRGLevel+CreateTileLayers.m */; };
@@ -394,6 +386,14 @@
 		8C61C966198A7C4E0010186A /* RRGModalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C965198A7C4E0010186A /* RRGModalLayer.m */; };
 		8C61C969198B0ADB0010186A /* RRGArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C61C968198B0ADB0010186A /* RRGArrow.m */; };
 		8CA019C21974F652001961C1 /* RRGButtonBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA019C11974F652001961C1 /* RRGButtonBehavior.m */; };
+		8CEC3638198E4F480041F384 /* sprites1-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3630198E4F480041F384 /* sprites1-hd.plist */; };
+		8CEC3639198E4F480041F384 /* sprites1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3631198E4F480041F384 /* sprites1-hd.pvr.ccz */; };
+		8CEC363A198E4F480041F384 /* sprites2-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3632198E4F480041F384 /* sprites2-hd.plist */; };
+		8CEC363B198E4F480041F384 /* sprites2-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3633198E4F480041F384 /* sprites2-hd.pvr.ccz */; };
+		8CEC363C198E4F480041F384 /* sprites3-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3634198E4F480041F384 /* sprites3-hd.plist */; };
+		8CEC363D198E4F480041F384 /* sprites3-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3635198E4F480041F384 /* sprites3-hd.pvr.ccz */; };
+		8CEC363E198E4F480041F384 /* sprites4-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3636198E4F480041F384 /* sprites4-hd.plist */; };
+		8CEC363F198E4F480041F384 /* sprites4-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 8CEC3637198E4F480041F384 /* sprites4-hd.pvr.ccz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -949,16 +949,8 @@
 		8C4456931980C74700748F59 /* shadowInPath.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = shadowInPath.tmx; sourceTree = "<group>"; };
 		8C4456991981E28E00748F59 /* mapLayer.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = mapLayer.tmx; sourceTree = "<group>"; };
 		8C44569A1981E28E00748F59 /* mapLayerTiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapLayerTiles.png; sourceTree = "<group>"; };
-		8C44569D1989124B00748F59 /* sprites1-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites1-hd.plist"; sourceTree = "<group>"; };
-		8C44569E1989124B00748F59 /* sprites1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites1-hd.pvr.ccz"; sourceTree = "<group>"; };
 		8C44569F1989124B00748F59 /* sprites1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sprites1.plist; sourceTree = "<group>"; };
 		8C4456A01989124B00748F59 /* sprites1.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = sprites1.pvr.ccz; sourceTree = "<group>"; };
-		8C4456A11989124B00748F59 /* sprites2-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites2-hd.plist"; sourceTree = "<group>"; };
-		8C4456A21989124B00748F59 /* sprites2-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites2-hd.pvr.ccz"; sourceTree = "<group>"; };
-		8C4456A31989124B00748F59 /* sprites3-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites3-hd.plist"; sourceTree = "<group>"; };
-		8C4456A41989124B00748F59 /* sprites3-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites3-hd.pvr.ccz"; sourceTree = "<group>"; };
-		8C4456A51989124B00748F59 /* sprites4-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites4-hd.plist"; sourceTree = "<group>"; };
-		8C4456A61989124B00748F59 /* sprites4-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites4-hd.pvr.ccz"; sourceTree = "<group>"; };
 		8C61C8BF198A7B6C0010186A /* RRGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGGameScene.h; sourceTree = "<group>"; };
 		8C61C8C0198A7B6C0010186A /* RRGGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGGameScene.m; sourceTree = "<group>"; };
 		8C61C8D6198A7BEA0010186A /* RRGLevel+AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RRGLevel+AddObject.h"; sourceTree = "<group>"; };
@@ -1057,6 +1049,14 @@
 		8C61C968198B0ADB0010186A /* RRGArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGArrow.m; sourceTree = "<group>"; };
 		8CA019C01974F652001961C1 /* RRGButtonBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRGButtonBehavior.h; sourceTree = "<group>"; };
 		8CA019C11974F652001961C1 /* RRGButtonBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRGButtonBehavior.m; sourceTree = "<group>"; };
+		8CEC3630198E4F480041F384 /* sprites1-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites1-hd.plist"; sourceTree = "<group>"; };
+		8CEC3631198E4F480041F384 /* sprites1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites1-hd.pvr.ccz"; sourceTree = "<group>"; };
+		8CEC3632198E4F480041F384 /* sprites2-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites2-hd.plist"; sourceTree = "<group>"; };
+		8CEC3633198E4F480041F384 /* sprites2-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites2-hd.pvr.ccz"; sourceTree = "<group>"; };
+		8CEC3634198E4F480041F384 /* sprites3-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites3-hd.plist"; sourceTree = "<group>"; };
+		8CEC3635198E4F480041F384 /* sprites3-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites3-hd.pvr.ccz"; sourceTree = "<group>"; };
+		8CEC3636198E4F480041F384 /* sprites4-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites4-hd.plist"; sourceTree = "<group>"; };
+		8CEC3637198E4F480041F384 /* sprites4-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sprites4-hd.pvr.ccz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2187,16 +2187,16 @@
 		8C14DAD7194C737200AADB4A /* sprites */ = {
 			isa = PBXGroup;
 			children = (
-				8C44569D1989124B00748F59 /* sprites1-hd.plist */,
-				8C44569E1989124B00748F59 /* sprites1-hd.pvr.ccz */,
 				8C44569F1989124B00748F59 /* sprites1.plist */,
 				8C4456A01989124B00748F59 /* sprites1.pvr.ccz */,
-				8C4456A11989124B00748F59 /* sprites2-hd.plist */,
-				8C4456A21989124B00748F59 /* sprites2-hd.pvr.ccz */,
-				8C4456A31989124B00748F59 /* sprites3-hd.plist */,
-				8C4456A41989124B00748F59 /* sprites3-hd.pvr.ccz */,
-				8C4456A51989124B00748F59 /* sprites4-hd.plist */,
-				8C4456A61989124B00748F59 /* sprites4-hd.pvr.ccz */,
+				8CEC3630198E4F480041F384 /* sprites1-hd.plist */,
+				8CEC3631198E4F480041F384 /* sprites1-hd.pvr.ccz */,
+				8CEC3632198E4F480041F384 /* sprites2-hd.plist */,
+				8CEC3633198E4F480041F384 /* sprites2-hd.pvr.ccz */,
+				8CEC3634198E4F480041F384 /* sprites3-hd.plist */,
+				8CEC3635198E4F480041F384 /* sprites3-hd.pvr.ccz */,
+				8CEC3636198E4F480041F384 /* sprites4-hd.plist */,
+				8CEC3637198E4F480041F384 /* sprites4-hd.pvr.ccz */,
 			);
 			name = sprites;
 			path = Resources/sprites;
@@ -2525,6 +2525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C14DB66194C737200AADB4A /* Teleportation_Trap_Unbreakable.plist in Resources */,
+				8CEC363C198E4F480041F384 /* sprites3-hd.plist in Resources */,
 				8C14DB78194C737200AADB4A /* UserDefaults.plist in Resources */,
 				8C14DB61194C737200AADB4A /* Sleeping_Gas_Trap.plist in Resources */,
 				8C14DB3A194C737200AADB4A /* Angry_Rufus.plist in Resources */,
@@ -2555,7 +2556,6 @@
 				8C14DB25194C737200AADB4A /* smoke.caf in Resources */,
 				8C14DA2C194C730F00AADB4A /* LICENSE_Chipmunk.txt in Resources */,
 				8C14DB60194C737200AADB4A /* Rotating_Plate.plist in Resources */,
-				8C4456B01989124B00748F59 /* sprites4-hd.pvr.ccz in Resources */,
 				8C14DB10194C737200AADB4A /* attackLich.caf in Resources */,
 				8C14DB56194C737200AADB4A /* Staff_of_Switching.plist in Resources */,
 				8C14DB1A194C737200AADB4A /* confusion.caf in Resources */,
@@ -2570,13 +2570,10 @@
 				8C14DB2A194C737200AADB4A /* Explosion.plist in Resources */,
 				8C44569C1981E28E00748F59 /* mapLayerTiles.png in Resources */,
 				8C4162ED198B34F90065D05D /* Staff_of_Teleportation.plist in Resources */,
-				8C4456AC1989124B00748F59 /* sprites2-hd.pvr.ccz in Resources */,
 				8C14DB7C194C757C00AADB4A /* iTunesArtwork@2x.png in Resources */,
 				8C14D92E194C730F00AADB4A /* LICENSE_cocos2d.txt in Resources */,
 				8C14DB08194C737200AADB4A /* levelDown.caf in Resources */,
 				8C14DB7B194C757C00AADB4A /* iTunesArtwork.png in Resources */,
-				8C4456AB1989124B00748F59 /* sprites2-hd.plist in Resources */,
-				8C4456A71989124B00748F59 /* sprites1-hd.plist in Resources */,
 				8C14DB28194C737200AADB4A /* warp.caf in Resources */,
 				8C14DB00194C737200AADB4A /* break.caf in Resources */,
 				8C4456AA1989124B00748F59 /* sprites1.pvr.ccz in Resources */,
@@ -2596,6 +2593,8 @@
 				8C14DAFA194C737200AADB4A /* Icon-Small@2x.png in Resources */,
 				8C14DB3C194C737200AADB4A /* Rufus.plist in Resources */,
 				8C14DAF3194C737200AADB4A /* Icon-72@2x.png in Resources */,
+				8CEC3638198E4F480041F384 /* sprites1-hd.plist in Resources */,
+				8CEC363F198E4F480041F384 /* sprites4-hd.pvr.ccz in Resources */,
 				8C14DB53194C737200AADB4A /* Staff_of_Pulling.plist in Resources */,
 				8C14DAED194C737200AADB4A /* font.fnt in Resources */,
 				8C14DB05194C737200AADB4A /* equip.caf in Resources */,
@@ -2607,9 +2606,11 @@
 				8C14DB5B194C737200AADB4A /* Alarm_Trap.plist in Resources */,
 				8C14DB50194C737200AADB4A /* Staff_of_Jumping.plist in Resources */,
 				8C14DB07194C737200AADB4A /* hit.caf in Resources */,
+				8CEC363A198E4F480041F384 /* sprites2-hd.plist in Resources */,
 				8C14DB5F194C737200AADB4A /* Pygmy_Trap.plist in Resources */,
 				8C14DAF4194C737200AADB4A /* Icon-76.png in Resources */,
 				8C14DB31194C737200AADB4A /* Mirror_King.plist in Resources */,
+				8CEC363D198E4F480041F384 /* sprites3-hd.pvr.ccz in Resources */,
 				8C4456941980C74700748F59 /* shadowInPath.tmx in Resources */,
 				8C14DB22194C737200AADB4A /* explosion.caf in Resources */,
 				8C14DB77194C737200AADB4A /* wall.png in Resources */,
@@ -2623,7 +2624,6 @@
 				8C14DB01194C737200AADB4A /* breakGlass.caf in Resources */,
 				8C14DB43194C737200AADB4A /* Tamara.plist in Resources */,
 				8C14DB75194C737200AADB4A /* tilemapNotRandom.tmx in Resources */,
-				8C4456AD1989124B00748F59 /* sprites3-hd.plist in Resources */,
 				8C14DAF2194C737200AADB4A /* Icon-72.png in Resources */,
 				8C14DB1E194C737200AADB4A /* sleep.caf in Resources */,
 				8C14DB55194C737200AADB4A /* Staff_of_Sloth.plist in Resources */,
@@ -2639,6 +2639,7 @@
 				8C14DB29194C737200AADB4A /* Bless.plist in Resources */,
 				8C14DB71194C737200AADB4A /* ground.png in Resources */,
 				8C14DB74194C737200AADB4A /* tilemapAtRandom.tmx in Resources */,
+				8CEC3639198E4F480041F384 /* sprites1-hd.pvr.ccz in Resources */,
 				8C14DB38194C737200AADB4A /* Sea_Mystikoi.plist in Resources */,
 				8C14DB4C194C737200AADB4A /* Staff_of_Archlich.plist in Resources */,
 				8C14DB44194C737200AADB4A /* TestDungeon.plist in Resources */,
@@ -2646,6 +2647,7 @@
 				8C14DB2B194C737200AADB4A /* MagicBullet.plist in Resources */,
 				8C14DB52194C737200AADB4A /* Staff_of_Progress.plist in Resources */,
 				8C14DB0B194C737200AADB4A /* magicBullet.caf in Resources */,
+				8CEC363B198E4F480041F384 /* sprites2-hd.pvr.ccz in Resources */,
 				8C14DB72194C737200AADB4A /* shadow.png in Resources */,
 				8C14DB04194C737200AADB4A /* damage.caf in Resources */,
 				8C14DB2C194C737200AADB4A /* PoisonGas.plist in Resources */,
@@ -2662,9 +2664,8 @@
 				8C44569B1981E28E00748F59 /* mapLayer.tmx in Resources */,
 				8C14DB24194C737200AADB4A /* rotate.caf in Resources */,
 				8C14DB54194C737200AADB4A /* Staff_of_Regress.plist in Resources */,
-				8C4456AE1989124B00748F59 /* sprites3-hd.pvr.ccz in Resources */,
 				8C14DB11194C737200AADB4A /* attackMirrorMan.caf in Resources */,
-				8C4456AF1989124B00748F59 /* sprites4-hd.plist in Resources */,
+				8CEC363E198E4F480041F384 /* sprites4-hd.plist in Resources */,
 				8C14DB51194C737200AADB4A /* Staff_of_Lich.plist in Resources */,
 				8C14DB0E194C737200AADB4A /* waveStaff.caf in Resources */,
 				8C14DAFB194C737200AADB4A /* Icon-Spotlight-iOS7.png in Resources */,
@@ -2676,7 +2677,6 @@
 				8C14DB63194C737200AADB4A /* Spike_Trap.plist in Resources */,
 				8C14DB0F194C737200AADB4A /* attack.caf in Resources */,
 				8C14DB1D194C737200AADB4A /* poison.caf in Resources */,
-				8C4456A81989124B00748F59 /* sprites1-hd.pvr.ccz in Resources */,
 				8C14D7D9194C730D00AADB4A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

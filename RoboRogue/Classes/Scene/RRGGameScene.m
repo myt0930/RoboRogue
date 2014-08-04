@@ -54,6 +54,9 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
     self = [super init];
 
     if (self) {
+        _mapLayerQueue = dispatch_queue_create("info.mygames888.roborogue.mapLayer", NULL);
+        _MessageWindowQueue = dispatch_queue_create("info.mygames888.roborogue.messageWindow", NULL);
+        
         _level = sharedSavedDataHandler.level;
         if (_level == nil) {
             CCLOG(@"start with initial level");
@@ -65,6 +68,13 @@ typedef NS_ENUM(NSUInteger, ZOrderInGameScene)
         _level.userInteractionEnabled = YES;
     }
     return self;
+}
+-(void)dealloc
+{
+    CCLOG(@"%s", __PRETTY_FUNCTION__);
+    
+    dispatch_release(_mapLayerQueue);
+    dispatch_release(_MessageWindowQueue);
 }
 #pragma mark - dungeon readonly properties
 -(NSUInteger)goal
